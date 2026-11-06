@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>About Us | AuraPlay - Elite Esports & Battlestations</title>
+  <meta name="description" content="Discover the mission, history, hardware engineering, and gamer team behind AuraPlay - the premier competitive esports arena and social gaming lounge.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const savedDir = localStorage.getItem('site-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#00F0FF',
+              'cyan-dark': '#0891B2',
+              purple: '#8B5CF6',
+              'purple-dark': '#6D28D9',
+              pink: '#EC4899',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+            },
+            darkslate: {
+              DEFAULT: '#0F172A',
+              deep: '#090D16',
+              card: '#131B2E',
+              border: '#1E293B',
+              lighter: '#1E293B',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            display: ['Rajdhani', 'Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-black dark:text-slate-200 dark:bg-darkslate-deep dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- ================= STICKY HEADER SECTION (HORIZONTAL NON-WRAPPING) ================= -->
+  <header class="sticky top-0 z-50 w-full auraplay-navbar bg-white/95 dark:bg-darkslate-deep/95 backdrop-blur-md border-b border-slate-200 dark:border-darkslate-border shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 whitespace-nowrap">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse shrink-0 group whitespace-nowrap">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+            Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation: Horizontal No-Wrap -->
+        <nav class="hidden xl:flex items-center space-x-6 rtl:space-x-reverse mx-4 font-semibold text-sm whitespace-nowrap flex-nowrap">
+          <div class="relative group shrink-0">
+            <button class="dropdown-toggle flex items-center space-x-1.5 rtl:space-x-reverse text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 py-2 transition-colors whitespace-nowrap">
+              <span>Home</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 rtl:right-0 rtl:left-auto mt-2 w-64 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-2xl hidden group-hover:block z-50 p-2">
+              <a href="index.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 font-semibold transition-all">Neon Arena</a>
+              <a href="player-lounge.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 font-semibold transition-all">Player's Lounge</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="text-cyan-600 dark:text-cyan-400 font-bold active-nav-link whitespace-nowrap shrink-0">About Us</a>
+          <a href="games.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Games</a>
+          <a href="pricing.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Pricing</a>
+
+          <div class="relative group shrink-0">
+            <button class="dropdown-toggle flex items-center space-x-1.5 rtl:space-x-reverse text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 py-2 transition-colors whitespace-nowrap">
+              <span>Explore</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 rtl:right-0 rtl:left-auto mt-2 w-60 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-2xl hidden group-hover:block z-50 p-2">
+              <a href="book-slot.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-all">
+                <div class="text-sm">Book Slot Page</div>
+                <div class="text-xs text-black dark:text-slate-400 font-normal">Reserve PC or PS5 Station</div>
+              </a>
+              <a href="membership.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-all">
+                <div class="text-sm">Membership Passes</div>
+                <div class="text-xs text-black dark:text-slate-400 font-normal">Gamer Tiers & Perks</div>
+              </a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Blog</a>
+          <a href="contact.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Contact Us</a>
+          <a href="dashboard.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Dashboard</a>
+        </nav>
+
+        <!-- Header Actions: Theme Toggle, LTR/RTL Toggle, Login, Mobile Menu Button -->
+        <div class="flex items-center space-x-3 rtl:space-x-reverse whitespace-nowrap shrink-0">
+          <button type="button" class="rtl-toggle-btn hidden xl:inline-flex px-3 py-2 text-xs font-bold rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all items-center space-x-1 rtl:space-x-reverse shrink-0" title="Switch text direction">
+            <svg class="w-3.5 h-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+
+          <button type="button" class="theme-toggle-btn hidden xl:inline-flex p-2 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 transition-all shrink-0" aria-label="Toggle dark/light mode">
+            <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            <svg class="theme-moon-icon w-5 h-5 text-black dark:text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+
+          <!-- Login Desktop CTA -->
+          <a href="login.html" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
+            Sign In
+          </a>
+
+          <button id="mobile-menu-btn" type="button" class="xl:hidden p-2.5 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-200 hover:text-cyan-500 transition-colors focus:outline-none shrink-0" aria-label="Open mobile menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU DRAWER ================= -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 z-50 w-80 max-w-[85vw] h-full bg-white dark:bg-darkslate-card border-l rtl:border-l-0 rtl:border-r border-slate-200 dark:border-darkslate-border shadow-2xl transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto">
+    <div>
+      <!-- Drawer Top Bar: Brand Logo & Close Icon -->
+      <div class="p-6 border-b border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+        <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <span class="text-xl font-black font-display uppercase tracking-tight text-black dark:text-white">Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span></span>
+        </a>
+        <button id="mobile-menu-close" type="button" class="p-2 rounded-xl text-black dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-darkslate-deep transition-colors focus:outline-none" aria-label="Close mobile menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links (Matching Image 4) -->
+      <nav class="p-5 space-y-1.5 font-bold">
+        <!-- 1. Home Dropdown -->
+        <div>
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors" data-target="mobile-sub-home">
+            <span>Home</span>
+            <svg class="mobile-arrow w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-sub-home" class="hidden pl-4 rtl:pl-0 rtl:pr-4 py-1 space-y-1">
+            <a href="index.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Neon Arena</a>
+            <a href="player-lounge.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Player's Lounge</a>
+          </div>
+        </div>
+
+        <!-- 2. About Us -->
+        <a href="about.html" class="block p-3 rounded-xl text-base font-bold bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400">About Us</a>
+
+        <!-- 3. Games -->
+        <a href="games.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Games</a>
+
+        <!-- 4. Pricing -->
+        <a href="pricing.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Pricing</a>
+
+        <!-- 5. Explore Dropdown -->
+        <div>
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors" data-target="mobile-sub-explore">
+            <span>Explore</span>
+            <svg class="mobile-arrow w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-sub-explore" class="hidden pl-4 rtl:pl-0 rtl:pr-4 py-1 space-y-1">
+            <a href="book-slot.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Book Slot Page</a>
+            <a href="membership.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Membership Passes</a>
+          </div>
+        </div>
+
+        <!-- 6. Blog -->
+        <a href="blog.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Blog</a>
+
+        <!-- 7. Contact Us -->
+        <a href="contact.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Contact Us</a>
+
+        <!-- 8. Dashboard -->
+        <a href="dashboard.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Dashboard</a>
+      </nav>
+    </div>
+
+    <!-- Drawer Footer: Sign In / Register & Settings Controls (Matching Image 4 & Image 5) -->
+    <div class="p-6 border-t border-slate-200 dark:border-darkslate-border space-y-4">
+      <a href="login.html" class="w-full flex items-center justify-center py-3.5 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all text-center">
+        Sign In / Register
+      </a>
+
+      <!-- Settings row directly below Sign In button (Image 5) -->
+      <div class="pt-2 flex items-center justify-between">
+        <span class="text-sm font-bold text-slate-900 dark:text-white">Settings:</span>
+        <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+          <!-- Theme toggle button matching Image 5 -->
+          <button type="button" class="theme-toggle-btn w-10 h-10 rounded-2xl bg-slate-100 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-center text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-colors shadow-sm" aria-label="Toggle dark mode">
+            <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            <svg class="theme-moon-icon w-5 h-5 text-slate-800 dark:text-slate-200" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+          <!-- RTL toggle button matching Image 5 -->
+          <button type="button" class="rtl-toggle-btn px-4 h-10 rounded-2xl bg-slate-100 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center space-x-1.5 rtl:space-x-reverse text-sm font-bold text-slate-900 dark:text-white hover:border-cyan-500 transition-colors shadow-sm" title="Switch text direction">
+            <span class="rtl-arrow text-sm">←</span>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<main>
+
+    <!-- ================= SECTION 1: ABOUT HERO (HARDWARE LAB) ================= -->
+    <section class="py-16 lg:py-24 bg-slate-100 dark:bg-darkslate-deep border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden transition-colors duration-300">
+      <!-- Background Image with Theme-Adaptive Scrim Overlay -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img src="assets/images/hero-bg-about.jpg" alt="AuraPlay Hardware Lab" class="w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-slate-50/35 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep backdrop-blur-[0.5px]"></div>
+      </div>
+      <!-- Subtle Digital Glow Accents -->
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 blur-3xl pointer-events-none rounded-full"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
+        
+        <!-- Live Badge -->
+        <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+          <span>THE STORY BEHIND AURAPLAY • SUNNYVALE, CA</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-tight hero-headline">
+          Born From Passion. <br>
+          <span>Engineered For Champions.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-lg text-black dark:text-white leading-relaxed max-w-2xl mx-auto font-bold hero-subtitle-boosted">
+          AuraPlay was founded by competitive gamers and hardware engineers to eliminate the latency and performance divide between casual enthusiasts and tier-one esports pros.
+        </p>
+
+        <!-- 3 Core Founding Pillars (Clean Visual Cards) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left rtl:text-right">
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-2">
+            <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-black text-sm">
+              01
+            </div>
+            <h3 class="font-black text-sm uppercase text-black dark:text-white font-display">Zero Hardware Gatekeeping</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Every station features liquid-cooled RTX 4090s and 360Hz QD-OLED displays open to every player.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-2">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-black text-sm">
+              02
+            </div>
+            <h3 class="font-black text-sm uppercase text-black dark:text-white font-display">LAN Tournament Grade</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Dual 10Gbps dedicated optical fiber providing sub-4ms routing directly to NA competitive servers.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-2">
+            <div class="w-9 h-9 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center font-black text-sm">
+              03
+            </div>
+            <h3 class="font-black text-sm uppercase text-black dark:text-white font-display">Social Gaming Clubhouse</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Console couch lounges and motion sim cockpits built for shoulder-to-shoulder camaraderie.
+            </p>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="book-slot.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider text-black bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/25 transition-all">
+            Reserve A Battlestation →
+          </a>
+          <a href="pricing.html" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black dark:text-slate-200 dark:text-white bg-white dark:bg-darkslate-card hover:bg-slate-50 dark:hover:bg-darkslate-lighter border border-slate-200 dark:border-darkslate-border transition-all">
+            View Hour Passes
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: FAST FACTS & MILESTONES ================= -->
+    <section class="py-10 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+          <div>
+            <div class="text-3xl font-black font-display text-cyan-600 dark:text-cyan-400">2021</div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Founded in Tech District</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black font-display text-purple-600 dark:text-purple-400">85,000+</div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Gamers Hosted</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black font-display text-pink-600 dark:text-pink-400">70 Rigs</div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Custom Liquid Cooled</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black font-display text-emerald-600 dark:text-emerald-400">10 Gbps</div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Dual Optical Fiber</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black font-display text-amber-600 dark:text-amber-400">$120K+</div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Tournament Cash Paid</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: MISSION & MANIFESTO ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">Our Manifesto</span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Democratizing Peak Esports Performance
+            </h2>
+            <p class="text-black dark:text-slate-300 text-base leading-relaxed">
+              We believe great aim, strategic brilliance, and game sense shouldn't be gated behind a \$4,000 personal gaming rig or expensive fiber contracts. At AuraPlay, every kid, college student, and working adult has the same access to cutting-edge hardware as top professional athletes.
+            </p>
+            <p class="text-black dark:text-slate-300 text-base leading-relaxed">
+              More than raw specs, AuraPlay is a third place: a welcoming social clubhouse where high-fives celebrate clutches and local LAN communities thrive.
+            </p>
+          </div>
+          <div class="lg:col-span-6">
+            <img src="assets/images/about-manifesto-esports-team.jpg" alt="AuraPlay Gamer Squad High-Fiving at PC Arena" class="rounded-3xl shadow-xl border border-slate-200 dark:border-darkslate-border w-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: THE FOUNDING HISTORY ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Timeline of Glory</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            From Dorm LANs to City Landmark
+          </h2>
+        </div>
+
+        <div class="space-y-8 relative before:absolute before:inset-0 before:left-1/2 before:w-0.5 before:bg-slate-200 dark:before:bg-darkslate-border before:-translate-x-1/2 hidden md:block">
+          <!-- 2021 -->
+          <div class="relative flex items-center justify-between">
+            <div class="w-5/12 pr-8 text-right rtl:pr-0 rtl:pl-8 rtl:text-left">
+              <span class="text-sm font-black text-cyan-500">FALL 2021</span>
+              <h4 class="text-xl font-bold font-display uppercase text-black dark:text-white mt-1">The First 12 Rigs</h4>
+              <p class="text-xs text-black dark:text-slate-400 mt-1">Four collegiate Counter-Strike teammates crowdfunded 12 custom PCs in an empty warehouse loft.</p>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-cyan-500 text-white font-bold flex items-center justify-center z-10 text-xs">1</div>
+            <div class="w-5/12 pl-8 rtl:pl-0 rtl:pr-8"></div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="relative flex items-center justify-between">
+            <div class="w-5/12 pr-8"></div>
+            <div class="w-8 h-8 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center z-10 text-xs">2</div>
+            <div class="w-5/12 pl-8 rtl:pl-0 rtl:pr-8">
+              <span class="text-sm font-black text-purple-500">SUMMER 2023</span>
+              <h4 class="text-xl font-bold font-display uppercase text-black dark:text-white mt-1">The Grand Expansion</h4>
+              <p class="text-xs text-black dark:text-slate-400 mt-1">Expanded into our 12,000 sq ft current arena. Added sim racing bays, VR suites, and the Gourmet Fuel Bar.</p>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="relative flex items-center justify-between">
+            <div class="w-5/12 pr-8 text-right rtl:pr-0 rtl:pl-8 rtl:text-left">
+              <span class="text-sm font-black text-pink-500">SPRING 2025</span>
+              <h4 class="text-xl font-bold font-display uppercase text-black dark:text-white mt-1">RTX 4090 + 360Hz Upgrade</h4>
+              <p class="text-xs text-black dark:text-slate-400 mt-1">Full fleet modernization with Intel 14th Gen, RTX 4090 GPUs, and 360Hz QD-OLED esports panels.</p>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-pink-500 text-white font-bold flex items-center justify-center z-10 text-xs">3</div>
+            <div class="w-5/12 pl-8 rtl:pl-0 rtl:pr-8"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: LEADERSHIP & COACHING TEAM ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">The Crew</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            Meet Our Leadership Team
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" alt="Founder" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-cyan-500/30">
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Elena 'Valkyrie' Rostova</h4>
+            <div class="text-xs text-cyan-500 font-bold">Co-Founder & CEO</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Former national CS:GO competitor with 10 years experience in esports venue operations.</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" alt="Hardware Engineer" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-purple-500/30">
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Marcus Sterling</h4>
+            <div class="text-xs text-purple-500 font-bold">Chief Hardware Architect</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Overclocking specialist and electrical engineer overseeing custom liquid cooling loops.</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop" alt="Tournament Director" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-pink-500/30">
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Kai Takahashi</h4>
+            <div class="text-xs text-pink-500 font-bold">Tournament Director</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Oversees our weekly LAN cash cups, anti-cheat refereeing, and live Twitch casting.</p>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop" alt="Executive Chef" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 ring-4 ring-amber-500/30">
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Chef Chloe Bennett</h4>
+            <div class="text-xs text-amber-500 font-bold">Executive Fuel Bar Chef</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Culinary innovator designing delicious high-protein gamer meals and nootropic drinks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: HARDWARE & NETWORK INFRASTRUCTURE ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-emerald-500">The Server Room</span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Behind The Scenes: Enterprise Grade Network
+            </h2>
+            <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+              We operate an on-premise datacenter rack featuring redundant fiber links from two independent Tier-1 backbones with automatic BGP multi-homing. Local Steam and Riot content cache servers push game updates at 10 Gigabits per second, so you never wait for game patches.
+            </p>
+            <div class="space-y-3 text-xs sm:text-sm text-black dark:text-slate-300">
+              <div class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-emerald-500 font-bold">✔</span><span>Zero dropped frames via Cisco Nexus enterprise switching</span></div>
+              <div class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-emerald-500 font-bold">✔</span><span>On-site 40kVA UPS battery backup with generator failover</span></div>
+              <div class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-emerald-500 font-bold">✔</span><span>Precision climate controlled at 68°F (20°C) with low humidity</span></div>
+            </div>
+          </div>
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-2xl group relative">
+              <img src="assets/images/about-server-room.jpg" alt="AuraPlay Enterprise Server Room Racks & High-Speed Optical Fiber" class="w-full h-80 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-xs font-bold text-white bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>10Gbps Tier-1 Dual Redundant Backbones Active</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 7: OUR FOUR CORE VALUES ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Guiding Principles</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            The AuraPlay Standards
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <div class="text-3xl mb-3">⚡</div>
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Zero Latency</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">No packet loss. No frame drops. No excuses. We test every station with hardware probes every morning.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <div class="text-3xl mb-3">🤝</div>
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Zero Toxicity</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">Competitive passion is encouraged; hate and harassment are strictly banned. Everyone plays with dignity.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <div class="text-3xl mb-3">🧼</div>
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Hospital-Grade Clean</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">Keyboards, mice, and desk mats undergo continuous cleaning cycles throughout every shift.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <div class="text-3xl mb-3">💡</div>
+            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Community First</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">Every member is family. We host beginner workshops, collegiate scrims, and fun community mixers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 8: FAIR PLAY & TOURNAMENT INTEGRITY ================= -->
+    <section class="py-16 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10 space-y-2">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">Competitive Integrity</span>
+          <h3 class="text-2xl sm:text-3xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            The AuraPlay Fair-Play & Anti-Cheat Standard
+          </h3>
+          <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed">
+            Every competitive battlestation is monitored by kernel-level isolation, proctored tournament environments, and tamper-evident peripheral verification.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-bold text-lg shrink-0">🛡️</div>
+                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white">Hardware Sandbox Isolation</h4>
+              </div>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Disk images are re-flashed via PXE boot between player sessions, wiping local memory and eliminating background scripts.</p>
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-lg shrink-0">⚖️</div>
+                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white">Tournament Referee Sanctioning</h4>
+              </div>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Live match arbiters verify all user peripheral configs, rapid-trigger actuations, and enforce sanctioned rulebooks.</p>
+            </div>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+            <div>
+              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+                <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center font-bold text-lg shrink-0">⚡</div>
+                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white">Sub-Millisecond Ping Parity</h4>
+              </div>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Enterprise fiber switches equalize routing hops so every station competes on identical 4ms local gateway latency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 9: HYGIENE & STERILIZATION ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-500">Hygiene Commitment</span>
+        <h3 class="text-3xl sm:text-4xl font-black font-display uppercase text-black dark:text-white">
+          The 3-Step Sanitization Guarantee
+        </h3>
+        <p class="text-black dark:text-slate-300 text-sm max-w-2xl mx-auto">
+          Before any gamer sits down, staff members execute a mandatory UV-C wand sweep, isopropyl sanitization wipe on mouse and keyboard keys, and fresh ear cushion replacements on request.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 10: YOUTH ESPORTS ACADEMY ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-2xl group relative">
+              <img src="assets/images/about-junior-academy.jpg" alt="AuraPlay Junior Academy Youth Esports Training & Coaching" class="w-full h-80 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
+                <div class="flex items-center space-x-2 rtl:space-x-reverse text-xs font-bold text-white bg-purple-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-purple-400/20">
+                  <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                  <span>Ages 10–18 • Fundamentals & Mental Resilience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Future Champions</span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              AuraPlay Junior Academy
+            </h2>
+            <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+              We partner with local high schools and collegiate programs to teach communication skills, game analytics, healthy physical posture, eye rest habits, and competitive sportsmanship.
+            </p>
+            <div class="pt-2">
+              <a href="contact.html" class="px-6 py-3 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white">Learn About Academy Programs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 11: GAMER HALL OF FAME ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-amber-500">Trophy Wall</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            AuraPlay Hall of Champions
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">🥇</div>
+            <h4 class="font-bold font-display uppercase text-black dark:text-white">Team Apex Shadows</h4>
+            <div class="text-xs text-amber-500 font-bold">2025 Regional LAN Champions</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Trained 400+ hours inside AuraPlay Bootcamp Suite 01 before qualifying for Nationals.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">🏎️</div>
+            <h4 class="font-bold font-display uppercase text-black dark:text-white">Liam 'Apex' Sterling</h4>
+            <div class="text-xs text-pink-500 font-bold">Sim Hotlap World Record #4</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Achieved a 1:41.22 lap at Spa-Francorchamps on our Fanatec DD2 motion rig.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">🥊</div>
+            <h4 class="font-bold font-display uppercase text-black dark:text-white">Kenji Sato</h4>
+            <div class="text-xs text-cyan-500 font-bold">Tekken 8 Summer Brawler Winner</div>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Undefeated 18-match streak in our Sunday Fighter lounge competitions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 12: ARENA FLOOR PLAN & ZONES ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-950/80 border border-cyan-300 dark:border-cyan-800 text-cyan-800 dark:text-cyan-300 text-xs font-bold uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+            <span>INTERACTIVE ARENA FLOOR PLAN</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            12,000 Sq Ft of Pure Esports Space
+          </h2>
+          <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            Engineered from the ground up for maximum competition and acoustic balance. Divided into four specialized high-performance zones with dedicated sub-networks.
+          </p>
+        </div>
+
+        <!-- 4 Detailed Zone Architecture Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          
+          <!-- Zone A -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border hover:border-cyan-500 transition-all duration-300 group flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+                    ZONE A • 48 STATIONS
+                  </span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                </div>
+                <h3 class="text-lg font-black font-display uppercase text-black dark:text-white group-hover:text-cyan-500 transition-colors">
+                  PC Master Battlestations
+                </h3>
+                <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed min-h-[52px]">
+                  Liquid-cooled RTX 4090 rigs, i9-14900KS, 360Hz QD-OLED monitors, and tournament sound-dampened partitions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain horizontal line -->
+            <div class="w-full border-t border-slate-300 dark:border-slate-700 my-4"></div>
+
+            <div class="space-y-2 text-[11px] font-semibold text-black dark:text-slate-400">
+              <div class="flex justify-between items-center"><span>Display:</span><strong class="text-black dark:text-white">360Hz QD-OLED 0.03ms</strong></div>
+              <div class="flex justify-between items-center"><span>Network:</span><strong class="text-cyan-500">Dual 10Gbps Dedicated</strong></div>
+              <div class="flex justify-between items-center"><span>Status:</span><strong class="text-emerald-500">Live & Available</strong></div>
+            </div>
+          </div>
+
+          <!-- Zone B -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border hover:border-purple-500 transition-all duration-300 group flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                    ZONE B • 12 PODS
+                  </span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                </div>
+                <h3 class="text-lg font-black font-display uppercase text-black dark:text-white group-hover:text-purple-500 transition-colors">
+                  PS5 Pro Couch Suites
+                </h3>
+                <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed min-h-[52px]">
+                  Sony PlayStation 5 Pro consoles connected to calibrated 65" LG OLED displays with 7.1 Dolby Atmos soundbars.
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain horizontal line -->
+            <div class="w-full border-t border-slate-300 dark:border-slate-700 my-4"></div>
+
+            <div class="space-y-2 text-[11px] font-semibold text-black dark:text-slate-400">
+              <div class="flex justify-between items-center"><span>Display:</span><strong class="text-black dark:text-white">65" 4K 120Hz VRR OLED</strong></div>
+              <div class="flex justify-between items-center"><span>Audio:</span><strong class="text-purple-500">Dolby Atmos Surround</strong></div>
+              <div class="flex justify-between items-center"><span>Seating:</span><strong class="text-emerald-500">Custom Squad Couches</strong></div>
+            </div>
+          </div>
+
+          <!-- Zone C -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border hover:border-pink-500 transition-all duration-300 group flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20">
+                    ZONE C • 6 RIGS
+                  </span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                </div>
+                <h3 class="text-lg font-black font-display uppercase text-black dark:text-white group-hover:text-pink-500 transition-colors">
+                  Direct-Drive Sim Cockpits
+                </h3>
+                <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed min-h-[52px]">
+                  Fanatec Podium DD2 25Nm wheelbases, hydraulic load-cell inverted pedals, and active D-BOX 4-axis motion chassis.
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain horizontal line -->
+            <div class="w-full border-t border-slate-300 dark:border-slate-700 my-4"></div>
+
+            <div class="space-y-2 text-[11px] font-semibold text-black dark:text-slate-400">
+              <div class="flex justify-between items-center"><span>Wheelbase:</span><strong class="text-black dark:text-white">25Nm Direct Drive</strong></div>
+              <div class="flex justify-between items-center"><span>Motion:</span><strong class="text-pink-500">D-BOX 4-Axis G-Force</strong></div>
+              <div class="flex justify-between items-center"><span>View:</span><strong class="text-emerald-500">Triple 32" Curved 240Hz</strong></div>
+            </div>
+          </div>
+
+          <!-- Zone D -->
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border hover:border-amber-500 transition-all duration-300 group flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                    ZONE D • PRO LAB
+                  </span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                </div>
+                <h3 class="text-lg font-black font-display uppercase text-black dark:text-white group-hover:text-amber-500 transition-colors">
+                  Hardware Tuning Lab
+                </h3>
+                <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed min-h-[52px]">
+                  Hardware customization desk with rapid-trigger analog switches, 8000Hz polling mice, glass mousepads, and audiophile DACs.
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain horizontal line -->
+            <div class="w-full border-t border-slate-300 dark:border-slate-700 my-4"></div>
+
+            <div class="space-y-2 text-[11px] font-semibold text-black dark:text-slate-400">
+              <div class="flex justify-between items-center"><span>Switches:</span><strong class="text-black dark:text-white">0.1mm Rapid Trigger</strong></div>
+              <div class="flex justify-between items-center"><span>Sensors:</span><strong class="text-amber-500">8,000Hz HyperPolling</strong></div>
+              <div class="flex justify-between items-center"><span>Access:</span><strong class="text-emerald-500">Free With Any Pass</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 13: TESTIMONIALS & SQUAD ENDORSEMENTS ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">Verified Squad Feedback</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            What Pro Gamers Say
+          </h2>
+          <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            From premier collegiate varsity players to weekend warriors, our community thrives on zero-latency fairness.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <!-- Testimonial 1 -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-400 text-sm">★★★★★</div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-cyan-50 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 border border-cyan-500/20">
+                VERIFIED SQUAD CAPTAIN
+              </span>
+            </div>
+            <p class="text-sm sm:text-base italic text-black dark:text-slate-300 leading-relaxed">
+              "AuraPlay feels like home. The staff actually knows gaming, the gear is top tier, and there is zero elitism. Everyone from beginners to Radiant players feel welcome."
+            </p>
+            <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/images/avatar-3.jpg" alt="Samira Patel" class="w-10 h-10 rounded-full object-cover shrink-0 border border-cyan-500/30 shadow-md">
+              <div>
+                <strong class="text-sm font-bold text-black dark:text-white block">Samira Patel</strong>
+                <span class="text-xs text-black dark:text-slate-400 font-normal">Collegiate Esports Guild Member • CS2 Rank: Level 10 Faceit</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-8 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all duration-300 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-400 text-sm">★★★★★</div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-500/20">
+                LAN TOURNAMENT CHAMPION
+              </span>
+            </div>
+            <p class="text-sm sm:text-base italic text-black dark:text-slate-300 leading-relaxed">
+              "Having dual 10Gbps lines with 3ms ping means you will never lose a duel because of lag. The 360Hz monitors are an absolute revelation for tracking fast targets."
+            </p>
+            <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/images/avatar-5.jpg" alt="Jonas Richter" class="w-10 h-10 rounded-full object-cover shrink-0 border border-purple-500/30 shadow-md">
+              <div>
+                <strong class="text-sm font-bold text-black dark:text-white block">Jonas Richter</strong>
+                <span class="text-xs text-black dark:text-slate-400 font-normal">Valorant Premier Team Lead • Apex Legends Predator</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 14: CAREERS & SQUAD RECRUITMENT ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-pink-600 dark:text-pink-400">Careers & Opportunities</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            Join The AuraPlay Crew
+          </h2>
+          <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            Passionate about PC hardware, tournament production, or guest hospitality? We are expanding our Sunnyvale arena team.
+          </p>
+        </div>
+
+        <!-- 3 Role Opportunity Badges -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 items-stretch">
+          
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col">
+              <div class="mb-3">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+                  FULL TIME • HARDWARE
+                </span>
+              </div>
+              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2">Rig & System Engineer</h3>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed min-h-[48px]">
+                Maintain custom water loops, diagnose GPU overclocking stability, and manage 10Gbps PXE network image deployment.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-200 dark:border-darkslate-border/80">
+              <div class="text-xs font-bold text-cyan-500 flex items-center justify-between">
+                <span>Competitive Pay</span>
+                <span class="text-slate-400 dark:text-slate-600 font-normal">•</span>
+                <span>Unlimited Playtime</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col">
+              <div class="mb-3">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                  PART TIME • EVENTS
+                </span>
+              </div>
+              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2">Tournament Arbiter</h3>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed min-h-[48px]">
+                Manage live Challengers brackets, resolve in-game disputes, arbitrate LAN matches, and stream match scores on Twitch.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-200 dark:border-darkslate-border/80">
+              <div class="text-xs font-bold text-purple-500 flex items-center justify-between">
+                <span>Weekend Shifts</span>
+                <span class="text-slate-400 dark:text-slate-600 font-normal">•</span>
+                <span>Gear Allowance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col">
+              <div class="mb-3">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20">
+                  FULL / PART TIME
+                </span>
+              </div>
+              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2">Lounge Concierge</h3>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed min-h-[48px]">
+                Welcome players, manage station check-ins, guide gamers on hardware tuning, and ensure pristine station cleanliness.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-200 dark:border-darkslate-border/80">
+              <div class="text-xs font-bold text-pink-500 flex items-center justify-between">
+                <span>Flexible Hours</span>
+                <span class="text-slate-400 dark:text-slate-600 font-normal">•</span>
+                <span>Free Shift Snacks</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+        <div class="text-center">
+          <a href="contact.html" class="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl text-xs font-black uppercase tracking-wider bg-slate-900 text-white dark:bg-white dark:text-black hover:opacity-90 shadow-lg transition-all">
+            <span>Apply For An Open Role Today →</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 15: ABOUT CTA ================= -->
+    <section class="py-20 bg-gradient-to-r from-cyan-950 via-slate-900 to-purple-950 text-white text-center">
+      <div class="max-w-4xl mx-auto px-4 space-y-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">Step Into The Arena</span>
+        <h2 class="text-3xl sm:text-5xl font-black font-display uppercase text-white">Ready To Play On The Best Rigs In Town?</h2>
+        <p class="text-slate-300 max-w-xl mx-auto text-base">Book a station or stop by for a tour. Our doors are open 24 hours a day.</p>
+        <div class="pt-2">
+          <a href="book-slot.html" class="px-8 py-4 rounded-xl text-base font-extrabold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white shadow-xl shadow-cyan-400/25">
+            Book Your Station Today
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <!-- ================= UNIFIED FOOTER ================= -->
+  <!-- ================= UNIFIED FOOTER ================= -->
+  <footer class="bg-white dark:bg-darkslate-card border-t border-slate-200 dark:border-darkslate-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        
+        <!-- Brand & Social Column -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse group whitespace-nowrap">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+              </svg>
+            </div>
+            <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+              Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+            </span>
+          </a>
+          <p class="text-black dark:text-slate-400 text-sm leading-relaxed max-w-sm">
+            Premier competitive gaming arena, custom liquid-cooled RTX 4090 battlestations, 360Hz OLED displays, Fanatec direct drive sim cockpits, and PS5 Pro tournament suites.
+          </p>
+          <div class="space-y-1.5 text-xs text-black dark:text-slate-400">
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-cyan-500">📍</span>
+              <span>42 Blossom Valley Way, Sunnyvale, CA 94087</span>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-purple-500">🕒</span>
+              <span>Open 24 Hours / 7 Days a Week</span>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-emerald-500">📞</span>
+              <span>+1 (800) 555-AURA (2872)</span>
+            </div>
+          </div>
+
+          <!-- Social Media Icons (Light & Dark Mode) -->
+          <div class="pt-2">
+            <div class="text-xs font-bold uppercase text-black dark:text-slate-300 mb-2.5 tracking-wider">Connect With Us</div>
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on Instagram" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 hover:border-pink-400 dark:hover:border-pink-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-5 h-5 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on Facebook" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <!-- Twitter / X -->
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on X" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-black dark:hover:text-white hover:border-slate-400 dark:hover:border-slate-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on LinkedIn" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Navigation</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="index.html" class="hover:text-cyan-500 transition-colors">Neon Arena</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">Player's Lounge</a></li>
+            <li><a href="about.html" class="hover:text-cyan-500 transition-colors">About AuraPlay</a></li>
+            <li><a href="games.html" class="hover:text-cyan-500 transition-colors">180+ Game Catalog</a></li>
+            <li><a href="pricing.html" class="hover:text-cyan-500 transition-colors">Hourly Rates & Passes</a></li>
+            <li><a href="membership.html" class="hover:text-cyan-500 transition-colors">Membership Perks</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Arena Stations & Booking -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Arena Stations</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="book-slot.html" class="hover:text-cyan-500 transition-colors">Reserve Battlestation</a></li>
+            <li><a href="book-slot.html" class="hover:text-cyan-500 transition-colors">Alpha RTX 4090 Rigs</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">Fanatec Sim Racing Bays</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">PS5 Pro OLED Lounges</a></li>
+            <li><a href="dashboard.html" class="hover:text-cyan-500 transition-colors">Gamer Dashboard</a></li>
+            <li><a href="dashboard-packs.html" class="hover:text-cyan-500 transition-colors">Active Time Packs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Community & Support -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Community & Support</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="blog.html" class="hover:text-cyan-500 transition-colors">Gaming Tips & Guides</a></li>
+            <li><a href="blog.html" class="hover:text-cyan-500 transition-colors">Esports Tournament News</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-500 transition-colors">Contact Arena Desk</a></li>
+            <li><a href="login.html" class="hover:text-cyan-500 transition-colors">Gamer Portal Login</a></li>
+            <li><a href="dashboard-history.html" class="hover:text-cyan-500 transition-colors">Match History</a></li>
+            <li><a href="404.html" class="hover:text-cyan-500 transition-colors">System Diagnostics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Sub-Footer / Centered Copyright (Links from Image 3 removed) -->
+      <div class="mt-12 pt-8 border-t border-slate-200 dark:border-darkslate-border text-center text-xs text-black dark:text-slate-400">
+        © 2026 AuraPlay Gaming Lounge LLC. All Rights Reserved. Built for champions.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

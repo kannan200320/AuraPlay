@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Games Library | AuraPlay - 15 Flagship Esports & Console Titles</title>
+  <meta name="description" content="Explore AuraPlay's curated 15 flagship titles across PC Competitive, PS5 Pro, Sim Racing, VR Holodeck, and Fighting Game Dojo. Zero downloads, instant launch.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const savedDir = localStorage.getItem('site-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#00F0FF',
+              'cyan-dark': '#0891B2',
+              purple: '#8B5CF6',
+              'purple-dark': '#6D28D9',
+              pink: '#EC4899',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+            },
+            darkslate: {
+              DEFAULT: '#0F172A',
+              deep: '#090D16',
+              card: '#131B2E',
+              border: '#1E293B',
+              lighter: '#1E293B',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            display: ['Rajdhani', 'Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-black dark:text-slate-200 dark:bg-darkslate-deep dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- ================= STICKY HEADER SECTION ================= -->
+  <header class="sticky top-0 z-50 w-full auraplay-navbar bg-white/95 dark:bg-darkslate-deep/95 backdrop-blur-md border-b border-slate-200 dark:border-darkslate-border shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 whitespace-nowrap">
+        
+        <!-- Logo (Identical size & color in header and footer, NO subtitle) -->
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse shrink-0 group whitespace-nowrap">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+            Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation: Horizontal No-Wrap (Dashboard as text after Contact Us) -->
+        <nav class="hidden xl:flex items-center space-x-6 rtl:space-x-reverse mx-4 font-semibold text-sm whitespace-nowrap flex-nowrap">
+          
+          <!-- Home Dropdown -->
+          <div class="relative group shrink-0">
+            <button class="dropdown-toggle flex items-center space-x-1.5 rtl:space-x-reverse text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 py-2 transition-colors whitespace-nowrap">
+              <span>Home</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 rtl:right-0 rtl:left-auto mt-2 w-64 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-2xl hidden group-hover:block z-50 p-2">
+              <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 font-semibold transition-all">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-500 shadow-sm shadow-cyan-500 shrink-0"></span>
+                <div>
+                  <div class="text-sm">Neon Arena</div>
+                  <div class="text-xs text-black dark:text-slate-400 font-normal">Flagship competitive arena</div>
+                </div>
+              </a>
+              <a href="player-lounge.html" class="flex items-center space-x-3 rtl:space-x-reverse p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 font-semibold transition-all">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-500 shrink-0"></span>
+                <div>
+                  <div class="text-sm">Player's Lounge</div>
+                  <div class="text-xs text-black dark:text-slate-400 font-normal">Console, Sim & VR pods</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">About Us</a>
+          <a href="games.html" class="text-cyan-600 dark:text-cyan-400 font-bold active-nav-link whitespace-nowrap shrink-0">Games</a>
+          <a href="pricing.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Pricing</a>
+
+          <!-- Explore Dropdown -->
+          <div class="relative group shrink-0">
+            <button class="dropdown-toggle flex items-center space-x-1.5 rtl:space-x-reverse text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 py-2 transition-colors whitespace-nowrap">
+              <span>Explore</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 rtl:right-0 rtl:left-auto mt-2 w-60 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-2xl hidden group-hover:block z-50 p-2">
+              <a href="book-slot.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-all">
+                <div class="text-sm">Book Slot Page</div>
+                <div class="text-xs text-black dark:text-slate-400 font-normal">Reserve PC or PS5 Station</div>
+              </a>
+              <a href="membership.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-all">
+                <div class="text-sm">Membership Passes</div>
+                <div class="text-xs text-black dark:text-slate-400 font-normal">Gamer Tiers & Perks</div>
+              </a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Blog</a>
+          <a href="contact.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Contact Us</a>
+          <a href="dashboard.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Dashboard</a>
+        </nav>
+
+        <!-- Header Actions: LTR/RTL Toggle, Theme Toggle, Login (NO Book Station button) -->
+        <div class="flex items-center space-x-3 rtl:space-x-reverse whitespace-nowrap shrink-0">
+          
+          <!-- LTR / RTL Toggle Button -->
+          <button type="button" class="rtl-toggle-btn hidden xl:inline-flex px-3 py-2 text-xs font-bold rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all items-center space-x-1 rtl:space-x-reverse shrink-0" title="Switch text direction">
+            <svg class="w-3.5 h-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+
+          <!-- Dark / Light Mode Toggle Button -->
+          <button type="button" class="theme-toggle-btn hidden xl:inline-flex p-2 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 transition-all shrink-0" aria-label="Toggle dark/light mode">
+            <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+            </svg>
+            <svg class="theme-moon-icon w-5 h-5 text-black dark:text-slate-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+
+          <!-- Login CTA -->
+          <a href="login.html" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
+            Sign In
+          </a>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button id="mobile-menu-btn" type="button" class="xl:hidden p-2.5 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-200 hover:text-cyan-500 transition-colors focus:outline-none shrink-0" aria-label="Open mobile menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU DRAWER ================= -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 z-50 w-80 max-w-[85vw] h-full bg-white dark:bg-darkslate-card border-l rtl:border-l-0 rtl:border-r border-slate-200 dark:border-darkslate-border shadow-2xl transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto">
+    <div>
+      <!-- Drawer Top Bar: Brand Logo & Close Icon -->
+      <div class="p-6 border-b border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+        <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <span class="text-xl font-black font-display uppercase tracking-tight text-black dark:text-white">Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span></span>
+        </a>
+        <button id="mobile-menu-close" type="button" class="p-2 rounded-xl text-black dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-darkslate-deep transition-colors focus:outline-none" aria-label="Close mobile menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links (Matching Image 4) -->
+      <nav class="p-5 space-y-1.5 font-bold">
+        <!-- 1. Home Dropdown -->
+        <div>
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors" data-target="mobile-sub-home">
+            <span>Home</span>
+            <svg class="mobile-arrow w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-sub-home" class="hidden pl-4 rtl:pl-0 rtl:pr-4 py-1 space-y-1">
+            <a href="index.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Neon Arena</a>
+            <a href="player-lounge.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Player's Lounge</a>
+          </div>
+        </div>
+
+        <!-- 2. About Us -->
+        <a href="about.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">About Us</a>
+
+        <!-- 3. Games -->
+        <a href="games.html" class="block p-3 rounded-xl text-base font-bold bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400">Games</a>
+
+        <!-- 4. Pricing -->
+        <a href="pricing.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Pricing</a>
+
+        <!-- 5. Explore Dropdown -->
+        <div>
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors" data-target="mobile-sub-explore">
+            <span>Explore</span>
+            <svg class="mobile-arrow w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-sub-explore" class="hidden pl-4 rtl:pl-0 rtl:pr-4 py-1 space-y-1">
+            <a href="book-slot.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Book Slot Page</a>
+            <a href="membership.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Membership Passes</a>
+          </div>
+        </div>
+
+        <!-- 6. Blog -->
+        <a href="blog.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Blog</a>
+
+        <!-- 7. Contact Us -->
+        <a href="contact.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Contact Us</a>
+
+        <!-- 8. Dashboard -->
+        <a href="dashboard.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Dashboard</a>
+      </nav>
+    </div>
+
+    <!-- Drawer Footer: Sign In / Register & Settings Controls (Matching Image 4 & Image 5) -->
+    <div class="p-6 border-t border-slate-200 dark:border-darkslate-border space-y-4">
+      <a href="login.html" class="w-full flex items-center justify-center py-3.5 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all text-center">
+        Sign In / Register
+      </a>
+
+      <!-- Settings row directly below Sign In button (Image 5) -->
+      <div class="pt-2 flex items-center justify-between">
+        <span class="text-sm font-bold text-slate-900 dark:text-white">Settings:</span>
+        <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+          <!-- Theme toggle button matching Image 5 -->
+          <button type="button" class="theme-toggle-btn w-10 h-10 rounded-2xl bg-slate-100 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-center text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-colors shadow-sm" aria-label="Toggle dark mode">
+            <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            <svg class="theme-moon-icon w-5 h-5 text-slate-800 dark:text-slate-200" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+          <!-- RTL toggle button matching Image 5 -->
+          <button type="button" class="rtl-toggle-btn px-4 h-10 rounded-2xl bg-slate-100 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center space-x-1.5 rtl:space-x-reverse text-sm font-bold text-slate-900 dark:text-white hover:border-cyan-500 transition-colors shadow-sm" title="Switch text direction">
+            <span class="rtl-arrow text-sm">←</span>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<main>
+
+    <!-- SECTION 1: HERO & LIVE INSTANT SEARCH -->
+    <section class="py-16 lg:py-24 bg-slate-100/90 dark:bg-darkslate-deep/90 border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
+      <!-- Background Image with Theme-Adaptive Scrim Overlay -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img src="assets/images/hero-bg-games.jpg" alt="AuraPlay Games Arena" class="w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-slate-50/35 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep backdrop-blur-[0.5px]"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
+          High-Speed SAN Storage • 15 Flagship Titles Across 5 Platforms
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-tight hero-headline">
+          Zero Downloads. <span>Instant Launch.</span> Maximum FPS.
+        </h1>
+        <p class="text-black dark:text-white text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-bold hero-subtitle-boosted">
+          Every battlestation is pre-loaded with top-tier competitive esports, PS5 Pro tournament brawlers, precision sim racing circuits, and full-immersion VR on dedicated 10Gbps NVMe storage.
+        </p>
+
+        <!-- Live Instant Search Bar -->
+        <div class="relative max-w-2xl mx-auto pt-4">
+          <input type="text" id="game-search-input" placeholder="Search 15 flagship titles by name, genre, publisher, or platform..." class="w-full pl-12 pr-32 py-4 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white placeholder-slate-500 dark:placeholder-slate-400 font-bold focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 shadow-xl transition-all">
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none pt-4 rtl:left-auto rtl:right-0 rtl:pr-4">
+            <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <button id="search-clear-btn" class="absolute inset-y-0 right-2 top-6 bottom-2 my-auto px-5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold text-xs uppercase tracking-wider transition-all rtl:right-auto rtl:left-2">
+            Filter
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE FILTER TABS & PLATFORM SELECTOR -->
+    <section class="py-6 bg-white/95 dark:bg-darkslate-card/95 border-b border-slate-200 dark:border-darkslate-border sticky top-20 z-40 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center space-x-2 sm:space-x-3 rtl:space-x-reverse overflow-x-auto py-1">
+        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-cyan-500 text-black shadow-md transition-all whitespace-nowrap active-filter" data-category="all">
+          All Titles (15)
+        </button>
+        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="pc">
+          PC Competitive (RTX 4090)
+        </button>
+        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="console">
+          PS5 Pro & Switch
+        </button>
+        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="sim">
+          Sim Racing (Fanatec DD)
+        </button>
+        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="vr">
+          VR Holodeck
+        </button>
+        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="fighting">
+          Fighting Game Dojo
+        </button>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 15 UNIQUE GAMES SHOWCASE (3 CARDS PER PLATFORM, PERFECTLY ALIGNED) -->
+    <section id="games-grid-section" class="py-16 lg:py-20 bg-slate-50/90 dark:bg-darkslate-deep/90">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-500">Curated Master Roster</span>
+            <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">15 Flagship Competitive Titles</h2>
+          </div>
+          <p class="text-black dark:text-slate-400 text-sm max-w-md mt-2 md:mt-0">
+            Exactly 3 benchmark games engineered for each platform, loaded with low-latency drivers, optical switches, and sub-1ms display pipelines.
+          </p>
+        </div>
+
+        <!-- 15 Cards Grid: Exactly 3 unique games per platform -->
+        <div id="games-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- PLATFORM 1: PC COMPETITIVE (CARD 1) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-cyan-500 transition-all hover:-translate-y-1 shadow-md group" data-category="pc" data-title="Valorant">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-valorant-rig.jpg" alt="Valorant 360Hz QD-OLED Battlestation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-cyan-500 text-black font-black text-xs uppercase shadow-md">PC Competitive</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-cyan-300 font-mono text-xs border border-cyan-500/30">360+ FPS Locked</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Riot Games • Tactical 5v5</span>
+                  <span class="text-cyan-500 font-bold">128-Tick Riot Direct</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Valorant</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Precision tactical shooter running at 360Hz on ASUS ROG Swift OLED displays with stretched resolution and optical switches.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Display: 360Hz QD-OLED</span>
+                <span class="text-emerald-500 font-bold">Patch v9.12 Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 1: PC COMPETITIVE (CARD 2) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-cyan-500 transition-all hover:-translate-y-1 shadow-md group" data-category="pc" data-title="Counter-Strike 2">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-cs2-battlestation.png" alt="Counter-Strike 2 Sub-Tick Battlestation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-amber-500 text-black font-black text-xs uppercase shadow-md">PC Competitive</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-amber-300 font-mono text-xs border border-amber-500/30">Sub-Tick Engine</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Valve • Esports FPS</span>
+                  <span class="text-amber-500 font-bold">FaceIT Anti-Cheat</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Counter-Strike 2</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Next-gen Source 2 physics with responsive smoke simulation. FaceIT 10Gbps dedicated routes and custom crosshairs loaded.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Display: 540Hz BenQ ZOWIE</span>
+                <span class="text-emerald-500 font-bold">FaceIT Verified</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 1: PC COMPETITIVE (CARD 3) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-cyan-500 transition-all hover:-translate-y-1 shadow-md group" data-category="pc" data-title="Apex Legends">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-apex-rig.jpg" alt="Apex Legends 240FPS Pro Battlestation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-rose-500 text-white font-black text-xs uppercase shadow-md">PC Competitive</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-rose-300 font-mono text-xs border border-rose-500/30">240+ FPS Cap</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Respawn • Movement BR</span>
+                  <span class="text-rose-500 font-bold">Pro CFG Preloaded</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Apex Legends</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  High-velocity movement shooter with dynamic legend abilities, locked at 240+ frames with 8000Hz polling rate mice.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Display: 1440p 240Hz</span>
+                <span class="text-emerald-500 font-bold">Season 23 Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 2: PS5 PRO & SWITCH (CARD 4) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-purple-500 transition-all hover:-translate-y-1 shadow-md group" data-category="console" data-title="Tekken 8">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-tekken-brawler-console.png" alt="Tekken 8 & Fighting Console Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-black text-xs uppercase shadow-md">PS5 Pro Suite</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-purple-300 font-mono text-xs border border-purple-500/30">4K 60FPS Lock</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Bandai Namco • 3D Fighting</span>
+                  <span class="text-purple-500 font-bold">DualSense Edge</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Tekken 8</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Unreal Engine 5 brawler optimized on PS5 Pro consoles connected to low-latency LG OLED C3 displays with custom fightsticks.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Audio: 3D Tempest</span>
+                <span class="text-emerald-500 font-bold">Ranked Online Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 2: PS5 PRO & SWITCH (CARD 5) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-purple-500 transition-all hover:-translate-y-1 shadow-md group" data-category="console" data-title="Marvel's Spider-Man 2">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-spiderman-ps5pro.png" alt="Spider-Man 2 on PS5 Pro 65 inch OLED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-black text-xs uppercase shadow-md">PS5 Pro Suite</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-purple-300 font-mono text-xs border border-purple-500/30">PSSR 120Hz VRR</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Insomniac • Action AAA</span>
+                  <span class="text-purple-500 font-bold">Ray-Tracing Pro</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Spider-Man 2</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Next-generation web-swinging across NYC with PlayStation Spectral Super Resolution (PSSR) at fluid 120Hz high frame rate.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Display: 65" 4K OLED</span>
+                <span class="text-emerald-500 font-bold">DualSense Haptics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 2: PS5 PRO & SWITCH (CARD 6) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-purple-500 transition-all hover:-translate-y-1 shadow-md group" data-category="console" data-title="Super Smash Bros. Ultimate">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-smash-arcade-lounge.png" alt="Super Smash Bros Ultimate Nintendo OLED & Fightstick Suite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-red-600 text-white font-black text-xs uppercase shadow-md">Nintendo OLED</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-red-300 font-mono text-xs border border-red-500/30">8-Player LAN Hub</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Nintendo • Arena Brawler</span>
+                  <span class="text-red-500 font-bold">GameCube Adapter</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Smash Bros. Ultimate</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Ultimate 8-player local party arena featuring official low-latency GameCube controller hubs and tournament rulesets.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Controls: Official GC Hub</span>
+                <span class="text-emerald-500 font-bold">All 89 Fighters</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 3: SIM RACING (CARD 7) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-cyan-500 transition-all hover:-translate-y-1 shadow-md group" data-category="sim" data-title="Assetto Corsa Competizione">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-assetto-corsa-triple.jpg" alt="Assetto Corsa Competizione Triple Screen Rig" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-blue-600 text-white font-black text-xs uppercase shadow-md">Sim Racing DD</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-blue-300 font-mono text-xs border border-blue-500/30">20Nm Direct Drive</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Kunos • GT3 Official</span>
+                  <span class="text-blue-500 font-bold">Fanatec DD2 Wheel</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Assetto Corsa Comp.</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Official GT World Challenge simulator mounted onto Fanatec Podium DD2 rigs with load-cell hydraulic pedals and triple 4K curvature.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Screens: Triple 32" Curved</span>
+                <span class="text-emerald-500 font-bold">FIA Homologated</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 3: SIM RACING (CARD 8) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-cyan-500 transition-all hover:-translate-y-1 shadow-md group" data-category="sim" data-title="iRacing: Global Challenge">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-iracing-cockpit.jpg" alt="iRacing Direct-Drive Simulator Cockpit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-blue-600 text-white font-black text-xs uppercase shadow-md">Sim Racing DD</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-blue-300 font-mono text-xs border border-blue-500/30">Sub-3ms Fiber Line</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>iRacing • Motorsport Sim</span>
+                  <span class="text-blue-500 font-bold">Safety Rating Pro</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">iRacing</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Laser-scanned real-world tracks with physics verified by IMSA and Formula 1 drivers, paired with direct force feedback.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Pedals: Heusinkveld Pro</span>
+                <span class="text-emerald-500 font-bold">2026 Season 1 Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 3: SIM RACING (CARD 9) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-cyan-500 transition-all hover:-translate-y-1 shadow-md group" data-category="sim" data-title="EA Sports WRC">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-wrc-rally-motion.jpg" alt="EA Sports WRC 4-Axis Motion Simulator Rig" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-blue-600 text-white font-black text-xs uppercase shadow-md">Sim Racing DD</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-blue-300 font-mono text-xs border border-blue-500/30">D-Box Motion Haptic</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Codemasters • Rally Sim</span>
+                  <span class="text-blue-500 font-bold">Hydro Handbrake</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">EA Sports WRC</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Extreme rally simulation with sequential gear shifters, hydraulic handbrakes, and pitch-and-roll motion chassis actuators.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Rig: Full Motion 4-Axis</span>
+                <span class="text-emerald-500 font-bold">Stage Times Online</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 4: VR HOLODECK (CARD 10) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-emerald-500 transition-all hover:-translate-y-1 shadow-md group" data-category="vr" data-title="Half-Life: Alyx">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-halflife-vr-arena.jpg" alt="Half-Life Alyx VR Wireless Immersion Arena" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-black font-black text-xs uppercase shadow-md">VR Holodeck</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-emerald-300 font-mono text-xs border border-emerald-500/30">Wi-Fi 6E Wireless</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Valve • AAA VR Narrative</span>
+                  <span class="text-emerald-500 font-bold">Quest 3 & Index</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Half-Life: Alyx</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  The gold standard of virtual reality gaming. Experience 144Hz finger-tracking Index controllers in a 120 sq ft wireless arena.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Headset: Valve Index / Quest 3</span>
+                <span class="text-emerald-500 font-bold">Sub-1ms Tracking</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 4: VR HOLODECK (CARD 11) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-emerald-500 transition-all hover:-translate-y-1 shadow-md group" data-category="vr" data-title="Beat Saber: Expert+">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-beatsaber-vr.png" alt="Beat Saber VR Rhythm Holodeck Station" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-black font-black text-xs uppercase shadow-md">VR Holodeck</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-emerald-300 font-mono text-xs border border-emerald-500/30">144Hz Laser Sync</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Beat Games • Rhythm Action</span>
+                  <span class="text-emerald-500 font-bold">Haptic Vest Sync</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Beat Saber</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  High-tempo rhythm action loaded with custom modded song libraries, haptic chest vests, and sub-0.5ms optical lighthouse tracking.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Packs: Custom Song Packs</span>
+                <span class="text-emerald-500 font-bold">Global Leaderboards</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 4: VR HOLODECK (CARD 12) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-emerald-500 transition-all hover:-translate-y-1 shadow-md group" data-category="vr" data-title="Gran Turismo 7 VR">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-gt7-vr-sim.png" alt="Gran Turismo 7 VR Sim Cockpit with PSVR2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-emerald-500 text-black font-black text-xs uppercase shadow-md">VR Holodeck</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-emerald-300 font-mono text-xs border border-emerald-500/30">PSVR2 4K HDR</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Polyphony • Sim Motorsport</span>
+                  <span class="text-emerald-500 font-bold">OLED Eye-Tracking</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Gran Turismo 7 VR</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  True-to-life cockpit racing in full 4K HDR via PSVR2 with eye-tracked foveated rendering and 3D spatial exhaust audio.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Headset: PSVR2 120Hz</span>
+                <span class="text-emerald-500 font-bold">450+ Licensed Cars</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 5: FIGHTING GAME DOJO (CARD 13) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-pink-500 transition-all hover:-translate-y-1 shadow-md group" data-category="fighting" data-title="Street Fighter 6">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-streetfighter6-hitbox.png" alt="Street Fighter 6 Leverless Hitbox Dojo Station" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-pink-500 text-white font-black text-xs uppercase shadow-md">Fighting Dojo</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-pink-300 font-mono text-xs border border-pink-500/30">Sub-0.8ms Leverless</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Capcom • Fighting Esports</span>
+                  <span class="text-pink-500 font-bold">Sanwa OBSF Buttons</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Street Fighter 6</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Capcom Pro Tour standard fighting setups with custom leverless Hitbox controllers and sub-1ms input latency verification.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Controls: Leverless Sanwa</span>
+                <span class="text-emerald-500 font-bold">CPT Ruleset Active</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 5: FIGHTING GAME DOJO (CARD 14) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-pink-500 transition-all hover:-translate-y-1 shadow-md group" data-category="fighting" data-title="Mortal Kombat 1">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-mortalkombat1-pro.png" alt="Mortal Kombat 1 Pro Dojo Console Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-pink-500 text-white font-black text-xs uppercase shadow-md">Fighting Dojo</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-pink-300 font-mono text-xs border border-pink-500/30">4K 60FPS Lock</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>NetherRealm • Cinematic Fighter</span>
+                  <span class="text-pink-500 font-bold">Tournament Edition</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Mortal Kombat 1</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  Next-gen Kameo fighter running in tournament mode with V-Sync disabled, pristine frame-data overlays, and pro gamepads.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Mode: Khaos Reigns Active</span>
+                <span class="text-emerald-500 font-bold">Pro League Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLATFORM 5: FIGHTING GAME DOJO (CARD 15) -->
+          <div class="game-card h-full flex flex-col justify-between rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border overflow-hidden hover:border-pink-500 transition-all hover:-translate-y-1 shadow-md group" data-category="fighting" data-title="Guilty Gear -Strive-">
+            <div class="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
+              <img src="assets/images/game-guiltygear-fightstick.jpg" alt="Guilty Gear Strive Anime Fighting Dojo Arcade Stick" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3 rtl:left-auto rtl:right-3 px-2.5 py-1 rounded-md bg-pink-500 text-white font-black text-xs uppercase shadow-md">Fighting Dojo</div>
+              <div class="absolute bottom-3 right-3 rtl:right-auto rtl:left-3 px-2.5 py-1 rounded-md bg-black/85 text-pink-300 font-mono text-xs border border-pink-500/30">Rollback Netcode</div>
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+              <div>
+                <div class="flex items-center justify-between text-xs font-semibold text-black dark:text-slate-400 mb-1">
+                  <span>Arc System Works • Anime Brawler</span>
+                  <span class="text-pink-500 font-bold">Qanba Obsidian</span>
+                </div>
+                <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">Guilty Gear -Strive-</h3>
+                <p class="text-xs sm:text-sm text-black dark:text-slate-300 leading-relaxed mt-2 min-h-[4rem]">
+                  High-speed anime combat powered by pristine rollback netcode, dedicated Qanba Obsidian sticks, and 240Hz zero-ghosting panels.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs font-semibold">
+                <span class="text-black dark:text-slate-400">Controls: Arcade Cabinet Sticks</span>
+                <span class="text-emerald-500 font-bold">Season 4 DLCs</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ENTERPRISE SAN STORAGE & 10GBPS NETWORK SPECS -->
+    <section class="py-20 bg-white/95 dark:bg-darkslate-card/95 border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-500">Enterprise SAN Infrastructure</span>
+            <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Instant Launch Engine • Zero Download Waiting
+            </h2>
+            <p class="text-black dark:text-slate-300 text-sm leading-relaxed">
+              Every station is connected via dual redundant 10-Gigabit fiber channels to an all-NVMe Storage Area Network (SAN). Games launch instantly with zero Steam download pauses, background patching delays, or shader compilation stutters.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+                <div class="text-2xl font-black text-cyan-500 font-display">10,000 MB/s</div>
+                <div class="text-xs text-black dark:text-slate-400 font-semibold mt-1">Read Throughput Per Rig</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+                <div class="text-2xl font-black text-purple-500 font-display">&lt; 0.1 ms</div>
+                <div class="text-xs text-black dark:text-slate-400 font-semibold mt-1">SAN Flash Access Latency</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-xl">
+            <img src="assets/images/san-datacenter-racks.jpg" alt="Enterprise SAN Storage Racks with High-Speed Fiber Mesh" class="w-full h-80 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+              <div class="text-white text-xs font-semibold">
+                <span class="text-cyan-400 font-bold">Aura Core SAN:</span> 2 Petabyte NVMe All-Flash Cluster running parallel ZFS caching.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CUSTOM PERIPHERALS LOANER LOCKER -->
+    <section class="py-20 bg-slate-50/90 dark:bg-darkslate-deep/90">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-purple-500">Pro Peripherals Vault</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            Wooting 60HE, Superlight 2 & Artisan Pads
+          </h2>
+          <p class="text-black dark:text-slate-400 text-sm">
+            Borrow tournament-grade peripherals completely free with your gaming pass. Swapped, tested, and sanitized between each match.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">⌨️</div>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">Hall Effect Keyboards</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Equipped with Wooting 60HE+ and DrunkDeer rapid-trigger switches for instantaneous counter-strafing with 0.1mm actuation points.
+            </p>
+            <span class="inline-block text-xs font-bold text-cyan-500">50 Units in Vault</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl">🖱️</div>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">8000Hz Optical Mice</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Logitech G Pro X Superlight 2, Razer Viper V3 Pro, and Finalmouse UltralightX with sub-0.125ms tracking response times.
+            </p>
+            <span class="inline-block text-xs font-bold text-purple-500">75 Units in Vault</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-950/50 text-pink-600 dark:text-pink-400 flex items-center justify-center font-bold text-xl">🎧</div>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">Spatial Audio Headsets</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              HyperX Cloud III Wireless and SteelSeries Arctis Nova Pro with planar magnetic drivers tuned for pinpoint directional footstep queues.
+            </p>
+            <span class="inline-block text-xs font-bold text-pink-500">70 Units in Vault</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CLOUD PROFILE & GAME SAVE SYNCING -->
+    <section class="py-20 bg-white/95 dark:bg-darkslate-card/95 border-b border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-500">Cloud Persistence</span>
+            <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Instant Cloud Login & Keybind Sync
+            </h2>
+            <p class="text-black dark:text-slate-300 text-sm leading-relaxed">
+              Scan your AuraPlay QR code at any station to instantly sync your Steam Cloud, Riot Client, Epic Games, Battle.net, and Ubisoft Connect credentials. When your session ends, our station system automatically sanitizes local tokens to guarantee 100% account security.
+            </p>
+            <ul class="space-y-3 text-xs font-semibold text-black dark:text-slate-300">
+              <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="text-emerald-500">✓</span>
+                <span>Automated Steam Guard & Riot Vanguard 2FA integration</span>
+              </li>
+              <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="text-emerald-500">✓</span>
+                <span>Mouse DPI, crosshairs, and keybinds restored in 1 click</span>
+              </li>
+              <li class="flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="text-emerald-500">✓</span>
+                <span>Automatic session wipe: No cookies or saved credentials left behind</span>
+              </li>
+            </ul>
+          </div>
+          <div class="p-8 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="text-sm font-bold uppercase tracking-wider text-black dark:text-slate-400">Supported Sync Platforms</div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center text-xs font-bold text-black dark:text-slate-200">Steam Cloud</div>
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center text-xs font-bold text-black dark:text-slate-200">Riot Vanguard</div>
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center text-xs font-bold text-black dark:text-slate-200">Battle.net</div>
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center text-xs font-bold text-black dark:text-slate-200">Epic Games</div>
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center text-xs font-bold text-black dark:text-slate-200">EA Play Pro</div>
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center text-xs font-bold text-black dark:text-slate-200">Ubisoft Connect</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: BENCHMARK PERFORMANCE MATRIX -->
+    <section class="py-20 bg-slate-50/90 dark:bg-darkslate-deep/90">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-500">Verified Hardware Telemetry</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            Real Hardware Benchmarks
+          </h2>
+          <p class="text-black dark:text-slate-400 text-sm">
+            Live telemetry recorded across our 70 battlestations running at 1440p and 4K competitive resolutions.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-darkslate-border bg-white dark:bg-darkslate-card shadow-lg">
+          <table class="w-full text-left text-sm whitespace-nowrap">
+            <thead class="bg-slate-100 dark:bg-darkslate-deep text-xs font-bold uppercase tracking-wider text-black dark:text-slate-400 border-b border-slate-200 dark:border-darkslate-border">
+              <tr>
+                <th class="p-4 sm:p-5">Game Title</th>
+                <th class="p-4 sm:p-5">Platform & Rig</th>
+                <th class="p-4 sm:p-5">Resolution</th>
+                <th class="p-4 sm:p-5">Average FPS</th>
+                <th class="p-4 sm:p-5">1% Low FPS</th>
+                <th class="p-4 sm:p-5">Input Latency</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-darkslate-border text-black dark:text-slate-300 font-semibold text-xs sm:text-sm">
+              <tr>
+                <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Valorant</td>
+                <td class="p-4 sm:p-5 text-cyan-500">RTX 4090 / i9-14900KS</td>
+                <td class="p-4 sm:p-5">1440p High</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">580 FPS</td>
+                <td class="p-4 sm:p-5 font-mono">420 FPS</td>
+                <td class="p-4 sm:p-5 text-emerald-500">1.8 ms</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Counter-Strike 2</td>
+                <td class="p-4 sm:p-5 text-cyan-500">RTX 4090 / i9-14900KS</td>
+                <td class="p-4 sm:p-5">1440p Competitive</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">460 FPS</td>
+                <td class="p-4 sm:p-5 font-mono">310 FPS</td>
+                <td class="p-4 sm:p-5 text-emerald-500">2.1 ms</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Tekken 8</td>
+                <td class="p-4 sm:p-5 text-purple-500">PS5 Pro Suite</td>
+                <td class="p-4 sm:p-5">4K Native</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">60 FPS Locked</td>
+                <td class="p-4 sm:p-5 font-mono">60 FPS</td>
+                <td class="p-4 sm:p-5 text-emerald-500">3.2 ms</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Assetto Corsa Comp.</td>
+                <td class="p-4 sm:p-5 text-blue-500">Sim Triple 4K Rig</td>
+                <td class="p-4 sm:p-5">11520 x 2160</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">144 FPS</td>
+                <td class="p-4 sm:p-5 font-mono">118 FPS</td>
+                <td class="p-4 sm:p-5 text-emerald-500">2.8 ms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: COMPETITIVE TOURNAMENTS & COMMUNITY SCRIMS -->
+    <section class="py-20 bg-white/95 dark:bg-darkslate-card/95 border-b border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-amber-500">Weekly Arena Brackets</span>
+            <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">Tournament & Scrim Schedules</h2>
+          </div>
+          <a href="book-slot.html" class="inline-flex items-center text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline mt-2 md:mt-0">
+            Register Tournament Pass →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-4">
+            <span class="px-2.5 py-1 rounded bg-cyan-100 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-300 text-xs font-bold uppercase">Fridays 7:00 PM</span>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">Valorant 5v5 LAN Cup</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">$1,500 weekly cash prize pool with live stage broadcast, caster booth commentary, and team scrim rooms.</p>
+            <div class="text-xs font-semibold text-black dark:text-slate-400">Cap: 16 Teams • Double Elimination</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-4">
+            <span class="px-2.5 py-1 rounded bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 text-xs font-bold uppercase">Saturdays 6:00 PM</span>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">CS2 Premier Showdown</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">FaceIT-validated competitive tournament with custom warm-up servers, 128-tick private routes, and MVP awards.</p>
+            <div class="text-xs font-semibold text-black dark:text-slate-400">Cap: 12 Teams • Best of 3 Finals</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-4">
+            <span class="px-2.5 py-1 rounded bg-pink-100 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 text-xs font-bold uppercase">Sundays 4:00 PM</span>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">Tekken 8 Dojo Clash</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Double-elimination fighting game tournament on PS5 Pro rigs with custom leverless fightsticks provided.</p>
+            <div class="text-xs font-semibold text-black dark:text-slate-400">Cap: 32 Players • Official CPT Rules</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: AUDIO CALIBRATION & SPATIAL SOUND LABS -->
+    <section class="py-20 bg-slate-50/90 dark:bg-darkslate-deep/90">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-500">Acoustic Engineering</span>
+            <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Hardware Soundstage & Footstep Calibration
+            </h2>
+            <p class="text-black dark:text-slate-300 text-sm leading-relaxed">
+              Every station is tuned with dedicated USB DACs (Sound BlasterX G6) and custom EQ presets for Valorant, CS2, and Apex Legends. Pinpoint directional footsteps, weapon reloads, and utility throws with zero white-noise distortion.
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-xs font-semibold text-black dark:text-slate-300">
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+                <span class="text-cyan-500 font-bold block mb-1">SteelSeries Sonar</span>
+                Footstep frequency amplification
+              </div>
+              <div class="p-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+                <span class="text-purple-500 font-bold block mb-1">Dolby Atmos Pro</span>
+                360-degree spatial localization
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-xl">
+            <img src="assets/images/acoustic-headset-dac.png" alt="AuraPlay Acoustic Engineering Audiophile Headset and DAC Setup" class="w-full h-80 object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: PRIVATE SCRIM BOOTHS & 5V5 TEAM PODS -->
+    <section class="py-20 bg-white/95 dark:bg-darkslate-card/95 border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-purple-500">Esports Bootcamp</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            Private 5v5 Sound-Isolated Scrim Rooms
+          </h2>
+          <p class="text-black dark:text-slate-400 text-sm">
+            Tuned for collegiate and semi-pro teams preparing for VCT, ESL, and Challenger tournaments. Fully acoustic dampened with private Gigabit VLANs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-8 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 uppercase">Suite Alpha</span>
+              <span class="text-sm font-black text-black dark:text-white">$45 / Hour (5 Rigs)</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">5-Player Competitive Pod</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Equipped with 5x RTX 4090 battlestations, 360Hz QD-OLED monitors, Herman Miller Embody chairs, and a central coach whiteboard for tactical breakdowns.
+            </p>
+            <div class="text-xs font-semibold text-cyan-500">✓ Isolated 10Gbps Scrim VLAN • Coach Desk Included</div>
+          </div>
+          <div class="p-8 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 uppercase">Suite Omega</span>
+              <span class="text-sm font-black text-black dark:text-white">$90 / Hour (10 Rigs)</span>
+            </div>
+            <h3 class="text-2xl font-bold font-display uppercase text-black dark:text-white">10-Player Head-to-Head LAN Room</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Facing team pods with noise-canceling glass divider, live shoutcaster output, spectator screens, and independent climate control.
+            </p>
+            <div class="text-xs font-semibold text-purple-500">✓ Full Match Production Ready • Zero External Interference</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: GAME REQUEST & PRIORITY PATCHING PORTAL -->
+    <section class="py-20 bg-slate-50/90 dark:bg-darkslate-deep/90">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-6">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-500">Player-Driven Library</span>
+        <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+          Want a Custom Game Installed?
+        </h2>
+        <p class="text-black dark:text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
+          Members can request any title from Steam, Epic, or PlayStation. Our Network Operations Center will cache, verify, and preload the title onto our high-speed NVMe SAN within 4 hours.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+          <input type="text" placeholder="Enter game title or Steam URL..." class="px-5 py-3.5 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-xs text-black dark:text-white focus:outline-none focus:border-cyan-500 shadow-sm flex-1">
+          <button class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:from-cyan-400 hover:to-purple-500 transition-all">
+            Submit Request
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 12: ANTI-CHEAT & FAIR PLAY INTEGRITY PROTOCOL -->
+    <section class="py-20 bg-white/95 dark:bg-darkslate-card/95 border-b border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">🛡️</div>
+            <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white">Kernel-Level Anti-Cheat Integrity</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Riot Vanguard, Valve Anti-Cheat, and Easy Anti-Cheat are natively certified with secure boot and TPM 2.0 active.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold">🔒</div>
+            <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white">Strict Hardware Sandboxing</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">No unauthorized third-party background utilities or macros. Only certified driver suites (Synapse, G HUB) are permitted.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">⚖️</div>
+            <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white">Referees & Match Arbiters</h3>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Weekly tournaments feature live staff arbiters ensuring tournament fairness, clean pause protocols, and instant review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 13: GAMER REVIEWS & STREAMER TESTIMONIALS -->
+    <section class="py-20 bg-slate-50/90 dark:bg-darkslate-deep/90">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-500">Verified Player Feedback</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            What Pro Gamers Say About AuraPlay
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+              "The 360Hz QD-OLED monitors paired with RTX 4090s give unmatched motion clarity. Counter-strafing in Valorant felt like playing on local LAN servers."
+            </p>
+            <div class="text-xs font-bold text-black dark:text-white">— K3nnyS, Tier-2 Valorant Duelist</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+              "The Sim Racing Fanatec DD rigs are true motorsport level. The 20Nm force feedback through Spa Francorchamps gave real curb vibrations."
+            </p>
+            <div class="text-xs font-bold text-black dark:text-white">— Marco R., Sim Motorsport Champion</div>
+          </div>
+          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border space-y-4">
+            <div class="text-amber-400 text-sm">★★★★★</div>
+            <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+              "Our squad booked the private 5v5 scrim suite for regional qualifiers. Absolute zero lag, perfect acoustics, and the Wooting loaners were pristine."
+            </p>
+            <div class="text-xs font-bold text-black dark:text-white">— ApexVortex, Collegiate Esports Captain</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 14: STATION HYGIENE & UV-C DISINFECTION PROTOCOL -->
+    <section class="py-20 bg-white/95 dark:bg-darkslate-card/95 border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-emerald-500">Hygiene & Cleanliness Standards</span>
+            <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Medical-Grade UV-C Sanitization
+            </h2>
+            <p class="text-black dark:text-slate-300 text-sm leading-relaxed">
+              Between every single gamer session, our staff conducts a 5-point disinfection protocol: medical-grade UV-C light wand sweep across the desk, keyboard keycaps, mouse body, and headset ear cushions, paired with alcohol wipes.
+            </p>
+            <div class="flex items-center space-x-6 rtl:space-x-reverse text-xs font-bold text-black dark:text-slate-300">
+              <div>✓ 99.9% Bacteria Elimination</div>
+              <div>✓ Fresh Headset Foam Covers</div>
+              <div>✓ Anti-Static Dust Wipe</div>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-xl">
+            <img src="assets/images/hygiene-uvc-sanitization.png" alt="Medical-Grade UV-C Sanitization of Battlestation Peripherals" class="w-full h-72 object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 15: GAME STATION BOOKING CTA BANNER -->
+    <section class="py-20 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto space-y-6 relative z-10">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-widest border border-cyan-500/40">
+          Ready For Your Next Match?
+        </span>
+        <h2 class="text-4xl sm:text-5xl font-black font-display uppercase tracking-tight text-white">
+          Reserve Your Station & Launch Any Title in Seconds
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Select your favorite game, pick your hardware tier, and walk into a battle station pre-configured with your game running at maximum FPS.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <a href="book-slot.html" class="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-xl shadow-cyan-500/25 transition-all">
+            Reserve Gaming Slot
+          </a>
+          <a href="pricing.html" class="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-slate-200 hover:text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all">
+            View Hour Packs & Passes
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER SECTION (IDENTICAL LOGO IN HEADER & FOOTER) ================= -->
+  <!-- ================= UNIFIED FOOTER ================= -->
+  <!-- ================= UNIFIED FOOTER ================= -->
+  <footer class="bg-white dark:bg-darkslate-card border-t border-slate-200 dark:border-darkslate-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        
+        <!-- Brand & Social Column -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse group whitespace-nowrap">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+              </svg>
+            </div>
+            <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+              Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+            </span>
+          </a>
+          <p class="text-black dark:text-slate-400 text-sm leading-relaxed max-w-sm">
+            Premier competitive gaming arena, custom liquid-cooled RTX 4090 battlestations, 360Hz OLED displays, Fanatec direct drive sim cockpits, and PS5 Pro tournament suites.
+          </p>
+          <div class="space-y-1.5 text-xs text-black dark:text-slate-400">
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-cyan-500">📍</span>
+              <span>42 Blossom Valley Way, Sunnyvale, CA 94087</span>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-purple-500">🕒</span>
+              <span>Open 24 Hours / 7 Days a Week</span>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-emerald-500">📞</span>
+              <span>+1 (800) 555-AURA (2872)</span>
+            </div>
+          </div>
+
+          <!-- Social Media Icons (Light & Dark Mode) -->
+          <div class="pt-2">
+            <div class="text-xs font-bold uppercase text-black dark:text-slate-300 mb-2.5 tracking-wider">Connect With Us</div>
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on Instagram" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 hover:border-pink-400 dark:hover:border-pink-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-5 h-5 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on Facebook" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <!-- Twitter / X -->
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on X" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-black dark:hover:text-white hover:border-slate-400 dark:hover:border-slate-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on LinkedIn" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Navigation</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="index.html" class="hover:text-cyan-500 transition-colors">Neon Arena</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">Player's Lounge</a></li>
+            <li><a href="about.html" class="hover:text-cyan-500 transition-colors">About AuraPlay</a></li>
+            <li><a href="games.html" class="hover:text-cyan-500 transition-colors">180+ Game Catalog</a></li>
+            <li><a href="pricing.html" class="hover:text-cyan-500 transition-colors">Hourly Rates & Passes</a></li>
+            <li><a href="membership.html" class="hover:text-cyan-500 transition-colors">Membership Perks</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Arena Stations & Booking -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Arena Stations</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="book-slot.html" class="hover:text-cyan-500 transition-colors">Reserve Battlestation</a></li>
+            <li><a href="book-slot.html" class="hover:text-cyan-500 transition-colors">Alpha RTX 4090 Rigs</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">Fanatec Sim Racing Bays</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">PS5 Pro OLED Lounges</a></li>
+            <li><a href="dashboard.html" class="hover:text-cyan-500 transition-colors">Gamer Dashboard</a></li>
+            <li><a href="dashboard-packs.html" class="hover:text-cyan-500 transition-colors">Active Time Packs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Community & Support -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Community & Support</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="blog.html" class="hover:text-cyan-500 transition-colors">Gaming Tips & Guides</a></li>
+            <li><a href="blog.html" class="hover:text-cyan-500 transition-colors">Esports Tournament News</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-500 transition-colors">Contact Arena Desk</a></li>
+            <li><a href="login.html" class="hover:text-cyan-500 transition-colors">Gamer Portal Login</a></li>
+            <li><a href="dashboard-history.html" class="hover:text-cyan-500 transition-colors">Match History</a></li>
+            <li><a href="404.html" class="hover:text-cyan-500 transition-colors">System Diagnostics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Sub-Footer / Centered Copyright (Links from Image 3 removed) -->
+      <div class="mt-12 pt-8 border-t border-slate-200 dark:border-darkslate-border text-center text-xs text-black dark:text-slate-400">
+        © 2026 AuraPlay Gaming Lounge LLC. All Rights Reserved. Built for champions.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Platform Filter Logic for 15 Cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.game-filter-btn');
+      const gameCards = document.querySelectorAll('.game-card');
+      const searchInput = document.getElementById('game-search-input');
+
+      function filterGames() {
+        const activeBtn = document.querySelector('.game-filter-btn.active-filter');
+        const selectedCategory = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+        gameCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          const title = (card.getAttribute('data-title') || '').toLowerCase();
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesCat = selectedCategory === 'all' || cardCat === selectedCategory;
+          const matchesQuery = !query || title.includes(query) || cardText.includes(query);
+
+          if (matchesCat && matchesQuery) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active-filter', 'bg-cyan-500', 'text-black');
+            b.classList.add('bg-slate-100', 'dark:bg-darkslate-deep', 'text-black dark:text-slate-300', 'dark:text-slate-300');
+          });
+          btn.classList.add('active-filter', 'bg-cyan-500', 'text-black');
+          btn.classList.remove('bg-slate-100', 'dark:bg-darkslate-deep', 'text-black dark:text-slate-300', 'dark:text-slate-300');
+          filterGames();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterGames);
+      }
+    });
+  </script>
+</body>
+</html>

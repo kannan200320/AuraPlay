@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>Gamer Dashboard | AuraPlay - Real-Time Rig Telemetry & Hour Packs</title>
+  <meta name="description" content="Manage your AuraPlay gamer profile, track active session hours, book PC slots, buy hour packs, view play history, and manage hardware peripherals.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const savedDir = localStorage.getItem('site-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#00F0FF',
+              'cyan-dark': '#0891B2',
+              purple: '#8B5CF6',
+              'purple-dark': '#6D28D9',
+              pink: '#EC4899',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+            },
+            darkslate: {
+              DEFAULT: '#0F172A',
+              deep: '#090D16',
+              card: '#131B2E',
+              border: '#1E293B',
+              lighter: '#1E293B',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            display: ['Rajdhani', 'Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-100 text-black dark:text-slate-200 dark:bg-darkslate-deep dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-purple-600 selection:text-white min-h-screen flex">
+
+  <!-- Dashboard Sidebar Overlay (Active on Mobile Drawer only) -->
+  <div id="dashboard-sidebar-overlay" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+
+  <!-- ================= DASHBOARD SIDEBAR (DESKTOP DOCKED / MOBILE STICKY DRAWER) ================= -->
+  <aside id="dashboard-sidebar" class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-50 lg:z-30 w-72 max-w-[85vw] lg:w-64 h-full bg-white dark:bg-darkslate-card border-r rtl:border-r-0 rtl:border-l border-slate-200 dark:border-darkslate-border shadow-2xl lg:shadow-none transform -translate-x-full rtl:translate-x-full lg:translate-x-0 rtl:lg:translate-x-0 transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto">
+    <div>
+      <!-- Drawer Top Bar: Brand Logo & Mobile Close Button -->
+      <div class="h-16 sm:h-20 flex items-center justify-between px-6 border-b border-slate-200 dark:border-darkslate-border whitespace-nowrap">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse shrink-0 group whitespace-nowrap">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+            Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+          </span>
+        </a>
+        <!-- Mobile close button (Hidden on Laptop) -->
+        <button id="dashboard-sidebar-close" type="button" class="lg:hidden p-2 rounded-xl text-black dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-darkslate-deep transition-colors focus:outline-none" aria-label="Close dashboard menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="p-4 space-y-1.5 text-xs font-semibold whitespace-nowrap">
+        <a href="dashboard.html" class="dash-nav-link flex items-center space-x-3 rtl:space-x-reverse px-3.5 py-2.5 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-300 font-bold transition-all shadow-sm">
+          <svg class="w-4 h-4 text-cyan-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          <span>Dashboard Overview</span>
+        </a>
+        <a href="book-slot.html" class="dash-nav-link flex items-center space-x-3 rtl:space-x-reverse px-3.5 py-2.5 rounded-xl text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all">
+          <svg class="w-4 h-4 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          <span>Book Station Slot</span>
+        </a>
+        <a href="dashboard-packs.html" class="dash-nav-link flex items-center space-x-3 rtl:space-x-reverse px-3.5 py-2.5 rounded-xl text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all">
+          <svg class="w-4 h-4 text-pink-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Buy Hour Packs</span>
+        </a>
+        <a href="dashboard-history.html" class="dash-nav-link flex items-center space-x-3 rtl:space-x-reverse px-3.5 py-2.5 rounded-xl text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all">
+          <svg class="w-4 h-4 text-amber-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Play History & Logs</span>
+        </a>
+        <a href="dashboard-payments.html" class="dash-nav-link flex items-center space-x-3 rtl:space-x-reverse px-3.5 py-2.5 rounded-xl text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all">
+          <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          <span>Payments & Billing</span>
+        </a>
+        <a href="dashboard-settings.html" class="dash-nav-link flex items-center space-x-3 rtl:space-x-reverse px-3.5 py-2.5 rounded-xl text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all">
+          <svg class="w-4 h-4 text-cyan-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Account & Settings</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- User Profile Card & Settings Controls in Sidebar -->
+    <div class="p-4 border-t border-slate-200 dark:border-darkslate-border space-y-3">
+      <div class="p-3 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="assets/images/avatar-5.jpg" alt="PhoenixAim" class="w-10 h-10 rounded-full object-cover shrink-0 shadow-md border border-cyan-500/30">
+          <div>
+            <div class="font-bold text-xs text-black dark:text-white">PhoenixAim</div>
+            <div class="text-[10px] text-cyan-600 dark:text-cyan-400 font-bold">VIP Champion • Lv 28</div>
+          </div>
+        </div>
+        <a href="login.html" class="p-1.5 rounded-lg text-black dark:text-slate-400 hover:text-rose-500 transition-colors" title="Log out">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+        </a>
+      </div>
+
+      <!-- Settings row in Sidebar (Mobile Only: In Lap View toggles are already in the top bar) -->
+      <div class="pt-2 flex lg:hidden items-center justify-between border-t border-slate-200 dark:border-darkslate-border">
+        <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Settings:</span>
+        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+          <button type="button" class="theme-toggle-btn w-9 h-9 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-center justify-center text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-colors shadow-sm cursor-pointer" aria-label="Toggle dark mode">
+            <svg class="theme-sun-icon w-4 h-4 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            <svg class="theme-moon-icon w-4 h-4 text-slate-800 dark:text-slate-200" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+          <button type="button" class="rtl-toggle-btn px-3 h-9 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-center space-x-1 rtl:space-x-reverse text-xs font-bold text-slate-900 dark:text-white hover:border-cyan-500 transition-colors shadow-sm cursor-pointer" title="Switch text direction">
+            <span class="rtl-arrow text-xs">←</span>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN WRAPPER (DOCKED SIDEBAR OFFSET ON LAPTOP) ================= -->
+  <div class="flex-1 lg:pl-64 rtl:lg:pl-0 rtl:lg:pr-64 flex flex-col min-h-screen w-full transition-all duration-300">
+
+    <!-- ================= STICKY TOP HEADER ================= -->
+    <header class="sticky top-0 z-40 w-full bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border-b border-slate-200 dark:border-darkslate-border shadow-sm transition-colors duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- MOBILE VIEW ONLY (EXACTLY MATCHING THE REFERENCE IMAGE media_1793949435352_b99113e6.png) -->
+        <div class="flex lg:hidden items-center justify-between h-16 sm:h-20">
+          
+          <!-- Left: Rounded Hamburger Menu Button + Brand Logo -->
+          <div class="flex items-center space-x-3 sm:space-x-4 rtl:space-x-reverse">
+            <!-- Rounded Hamburger Toggle Button matching Reference Image -->
+            <button id="sidebar-toggle-btn" type="button" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl border border-slate-200 dark:border-darkslate-border bg-slate-50 dark:bg-darkslate-deep text-slate-800 dark:text-slate-200 hover:text-cyan-500 hover:border-cyan-500 transition-colors focus:outline-none shadow-sm flex items-center justify-center cursor-pointer" aria-label="Toggle Dashboard Menu" aria-expanded="false">
+              <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+
+            <!-- Brand Logo matching Reference Layout with Circular Icon & AuraPlay Brand -->
+            <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse group shrink-0">
+              <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                </svg>
+              </div>
+              <span class="text-xl sm:text-2xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-none">
+                Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Right: Circular Profile Avatar (Matching Reference Image Position & AuraPlay Theme) -->
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+            <a href="dashboard-settings.html" class="group flex items-center focus:outline-none" title="Gamer Profile & Settings">
+              <img src="assets/images/avatar-5.jpg" alt="PhoenixAim Profile" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-cyan-500/40 group-hover:ring-cyan-400 shadow-md transition-all">
+            </a>
+          </div>
+
+        </div>
+
+        <!-- LAPTOP / DESKTOP VIEW ONLY (FULL DESKTOP TELEMETRY NAVBAR) -->
+        <div class="hidden lg:flex items-center justify-between h-20 whitespace-nowrap">
+          
+          <!-- Live Status Telemetry Ticker -->
+          <div class="flex items-center space-x-3 rtl:space-x-reverse text-xs font-bold whitespace-nowrap">
+            <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Arena Online: 10Gbps Fiber</span>
+            </span>
+            <span class="text-slate-400 dark:text-slate-500">•</span>
+            <span class="text-slate-600 dark:text-slate-400">Ping: <strong class="text-cyan-600 dark:text-cyan-400">3.2ms</strong></span>
+            <span class="text-slate-400 dark:text-slate-500">•</span>
+            <span class="text-slate-600 dark:text-slate-400">Open Rigs: <strong class="text-purple-600 dark:text-purple-400">18 / 70</strong></span>
+          </div>
+
+          <!-- Desktop Top Actions -->
+          <div class="flex items-center space-x-3 rtl:space-x-reverse whitespace-nowrap shrink-0">
+            <!-- Banked Hours Display -->
+            <div class="flex items-center space-x-2 rtl:space-x-reverse px-3.5 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800/50 text-xs font-bold text-purple-700 dark:text-purple-300">
+              <span>⏱ Banked:</span>
+              <span class="font-mono text-black dark:text-white">14h 25m</span>
+            </div>
+
+            <!-- Top-Up CTA -->
+            <a href="dashboard-packs.html" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition-all">
+              + Top-Up Hours
+            </a>
+
+            <!-- LTR / RTL Toggle -->
+            <button type="button" class="rtl-toggle-btn px-3 py-2 text-xs font-bold rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-cyan-500 hover:text-cyan-600 transition-all items-center space-x-1 rtl:space-x-reverse cursor-pointer" title="Switch text direction">
+              <span class="rtl-arrow text-xs">←</span>
+              <span class="rtl-status-text">RTL</span>
+            </button>
+
+            <!-- Dark / Light Mode Toggle -->
+            <button type="button" class="theme-toggle-btn p-2 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-purple-500 hover:text-purple-600 transition-all cursor-pointer" aria-label="Toggle dark/light mode">
+              <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+              <svg class="theme-moon-icon w-5 h-5 text-black dark:text-slate-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+            </button>
+
+            <!-- Circular Profile Avatar on Desktop -->
+            <a href="dashboard-settings.html" class="group flex items-center focus:outline-none" title="Gamer Profile & Settings">
+              <img src="assets/images/avatar-5.jpg" alt="PhoenixAim Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-cyan-500/40 group-hover:ring-cyan-400 shadow-md transition-all">
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </header>
+
+
+
+
+
+    <!-- ================= MAIN DASHBOARD BODY (15 DETAILED SECTIONS) ================= -->
+    <main class="flex-1 p-4 sm:p-6 lg:p-8 space-y-8 max-w-7xl w-full mx-auto">
+
+      <!-- SECTION 1: ACTIVE GAMING SESSION CONTROLLER -->
+      <section id="overview-panel" class="rounded-3xl p-6 sm:p-8 bg-gradient-to-r from-cyan-950 via-slate-900 to-purple-950 text-white shadow-xl relative overflow-hidden">
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-bold text-xs uppercase tracking-wider">
+              Live Battle Station Connected
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-white">
+              Welcome Back, PhoenixAim!
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+              Currently logged into <strong>Station A03 (Pro VIP Stage)</strong>. Displaying 360Hz QD-OLED feed. Wooting Rapid Trigger preset active.
+            </p>
+          </div>
+
+          <!-- Active Session Countdown Card -->
+          <div class="p-6 rounded-2xl bg-slate-900/90 border border-cyan-500/40 text-center space-y-3 shrink-0 backdrop-blur-md">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-cyan-400">Session Time Remaining</div>
+            <div id="session-countdown" class="text-4xl sm:text-5xl font-mono font-black text-white tracking-widest">
+              02:47:19
+            </div>
+            <div class="flex items-center justify-center space-x-2 rtl:space-x-reverse text-xs pt-1">
+              <button id="pause-session-btn" class="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold hover:bg-amber-500/30 transition-all">
+                Pause Time
+              </button>
+              <button onclick="showAuraToast('Added 1 Hour from your banked balance!', 'success');" class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-black hover:bg-cyan-400 transition-all">
+                +1 Hr Extend
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+          <div><span class="text-slate-300">GPU Temp:</span> <strong class="text-emerald-400">54° C</strong></div>
+          <div><span class="text-slate-300">FPS Render:</span> <strong class="text-cyan-400">358 FPS</strong></div>
+          <div><span class="text-slate-300">Network Jitter:</span> <strong class="text-purple-400">0.12 ms</strong></div>
+          <div><span class="text-slate-300">Active Game:</span> <strong class="text-white">Valorant (Vanguard Valid)</strong></div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: 4 CORE METRIC CARDS -->
+      <section id="metrics-panel" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex items-center justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-black dark:text-slate-400">Banked Hours</div>
+            <div class="text-3xl font-black font-display text-black dark:text-white mt-1">14h 25m</div>
+            <div class="text-[11px] text-emerald-500 font-semibold mt-1">Valid 30 Days Rollover</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">
+            ⏱
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex items-center justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-black dark:text-slate-400">Total Play Time</div>
+            <div class="text-3xl font-black font-display text-black dark:text-white mt-1">184.5 Hrs</div>
+            <div class="text-[11px] text-purple-600 dark:text-purple-400 font-semibold mt-1">Across 42 Sessions</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl">
+            🎮
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex items-center justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-black dark:text-slate-400">AuraPlay XP</div>
+            <div class="text-3xl font-black font-display text-black dark:text-white mt-1">8,450 XP</div>
+            <div class="text-[11px] text-amber-500 font-semibold mt-1">Level 28 • 1,550 to Lv 29</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xl">
+            ⚡
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex items-center justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-black dark:text-slate-400">Tournament Win Rate</div>
+            <div class="text-3xl font-black font-display text-black dark:text-white mt-1">68.4%</div>
+            <div class="text-[11px] text-emerald-500 font-semibold mt-1">13 Cash Cup Podiums</div>
+          </div>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xl">
+            🏆
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: QUICK ACTIONS BAR -->
+      <section id="quick-actions-panel" class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4 text-xs font-bold">
+          <div class="text-black dark:text-slate-400 uppercase tracking-wider">Fast Actions:</div>
+          <div class="flex flex-wrap gap-2">
+            <a href="book-slot.html" class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 hover:bg-cyan-400 transition-all">
+              ⚡ 1-Click Station Lock
+            </a>
+            <button onclick="showAuraToast('Cloud Peripheral Profile synced to Station A03', 'success');" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:border-cyan-500 border border-slate-200 dark:border-darkslate-border transition-all">
+              🔄 Sync Hardware Presets
+            </button>
+            <button onclick="showAuraToast('Claimed daily login bonus: +100 XP!', 'success');" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white transition-all">
+              🎁 Claim Daily +100 XP
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ACTIVE & UPCOMING RESERVATIONS -->
+      <section id="reservations-panel" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-darkslate-border pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-500">Upcoming Stations</span>
+            <h3 class="text-xl font-black font-display uppercase text-black dark:text-white mt-0.5">Your Scheduled Bookings</h3>
+          </div>
+          <a href="book-slot.html" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-darkslate-deep text-xs font-bold text-black dark:text-slate-300 hover:text-cyan-500 transition-all">
+            + New Reservation
+          </a>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <div class="w-11 h-11 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-sm">
+                A03
+              </div>
+              <div>
+                <div class="font-bold text-black dark:text-white text-sm">Pro VIP Stage (360Hz QD-OLED)</div>
+                <div class="text-xs text-black dark:text-slate-400">Tonight, Nov 14 • 18:30 – 21:30 (3 Hours)</div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 text-xs font-bold">Active Now</span>
+              <button onclick="showAuraToast('Station QR Pass: AURA-A03-1830', 'info');" class="px-3 py-1.5 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-xs font-bold hover:border-cyan-500">
+                QR Ticket
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <div class="w-11 h-11 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-sm">
+                BC-1
+              </div>
+              <div>
+                <div class="font-bold text-black dark:text-white text-sm">5-Man Soundproof Suite (Clan Scrim)</div>
+                <div class="text-xs text-black dark:text-slate-400">Saturday, Nov 16 • 14:00 – 18:00 (4 Hours)</div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-600 text-xs font-bold">Confirmed</span>
+              <button onclick="showAuraToast('Booking details updated', 'info');" class="px-3 py-1.5 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-xs font-bold hover:border-purple-500">
+                Manage
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: INTERACTIVE FLOOR AVAILABILITY PREVIEW -->
+      <section id="floor-status-panel" class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-darkslate-border pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-500">Floor Status</span>
+            <h3 class="text-xl font-black font-display uppercase text-black dark:text-white mt-0.5">Live Station Availability (18 / 70 Free)</h3>
+          </div>
+          <a href="book-slot.html" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline">Full 70-Seat Map →</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-bold text-center">
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+            <span class="text-black dark:text-slate-400 block">Zone A (Standard)</span>
+            <span class="text-emerald-500 text-lg font-black font-display">8 / 25 Available</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+            <span class="text-black dark:text-slate-400 block">Zone B (Standard)</span>
+            <span class="text-emerald-500 text-lg font-black font-display">6 / 25 Available</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+            <span class="text-purple-500 block">VIP Stage</span>
+            <span class="text-purple-600 dark:text-purple-400 text-lg font-black font-display">2 / 10 Available</span>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+            <span class="text-amber-500 block">Sim Cockpits</span>
+            <span class="text-amber-600 dark:text-amber-400 text-lg font-black font-display">2 / 6 Available</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: DEDICATED DASHBOARD HUBS (SEPARATE PAGES) -->
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Hub 1: Buy Hour Packs -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between space-y-4 hover:border-pink-500 transition-all group">
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-2xl bg-pink-100 dark:bg-pink-950/60 text-pink-600 dark:text-pink-400 flex items-center justify-center font-bold text-lg">
+              🎟
+            </div>
+            <h4 class="text-base font-bold text-black dark:text-white group-hover:text-pink-500 transition-colors">
+              Buy Hour Packs
+            </h4>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Top up 1-Hour, 3-Hour Combo, Day Pass, or Night Owl Graveyard passes with instant rollover.
+            </p>
+          </div>
+          <a href="dashboard-packs.html" class="inline-flex items-center text-xs font-bold text-pink-600 dark:text-pink-400 hover:underline pt-2">
+            <span>Explore Hour Store</span>
+            <span class="ml-1 rtl:mr-1">→</span>
+          </a>
+        </div>
+
+        <!-- Hub 2: Play History & Logs -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between space-y-4 hover:border-amber-500 transition-all group">
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-lg">
+              📊
+            </div>
+            <h4 class="text-base font-bold text-black dark:text-white group-hover:text-amber-500 transition-colors">
+              Play History & Logs
+            </h4>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Inspect session timestamps, station IDs, games launched, and hardware FPS records.
+            </p>
+          </div>
+          <a href="dashboard-history.html" class="inline-flex items-center text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline pt-2">
+            <span>View All Session Logs</span>
+            <span class="ml-1 rtl:mr-1">→</span>
+          </a>
+        </div>
+
+        <!-- Hub 3: Payments & Billing (New Page 1) -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between space-y-4 hover:border-emerald-500 transition-all group">
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-lg">
+              💳
+            </div>
+            <h4 class="text-base font-bold text-black dark:text-white group-hover:text-emerald-500 transition-colors">
+              Payments & Billing
+            </h4>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Manage saved credit cards, digital wallet balance, automated reload, and PDF invoices.
+            </p>
+          </div>
+          <a href="dashboard-payments.html" class="inline-flex items-center text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline pt-2">
+            <span>Manage Billing & Wallet</span>
+            <span class="ml-1 rtl:mr-1">→</span>
+          </a>
+        </div>
+
+        <!-- Hub 4: Account & Settings (New Page 2) -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between space-y-4 hover:border-cyan-500 transition-all group">
+          <div class="space-y-2">
+            <div class="w-10 h-10 rounded-2xl bg-cyan-100 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-lg">
+              ⚙️
+            </div>
+            <h4 class="text-base font-bold text-black dark:text-white group-hover:text-cyan-500 transition-colors">
+              Account & Settings
+            </h4>
+            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+              Edit Gamertag, link Steam & Discord, configure station DPI/monitor presets, and 2FA.
+            </p>
+          </div>
+          <a href="dashboard-settings.html" class="inline-flex items-center text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline pt-2">
+            <span>Profile & Security</span>
+            <span class="ml-1 rtl:mr-1">→</span>
+          </a>
+        </div>
+
+      </section>
+
+      <!-- SECTION 7: SQUAD SCRIM ROSTER & ARENA LOBBY -->
+      <section class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-darkslate-border pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-500">Live Squad Presence</span>
+            <h3 class="text-xl font-black font-display uppercase text-black dark:text-white mt-0.5">Team Phoenix (4 Members Active in Arena)</h3>
+          </div>
+          <a href="book-slot.html" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold text-xs transition-colors">
+            Reserve Squad Suite
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+            <div>
+              <span class="font-bold text-black dark:text-white block">PhoenixAim (You)</span>
+              <span class="text-[11px] text-cyan-500">Station A03 • Valorant</span>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+            <div>
+              <span class="font-bold text-black dark:text-white block">ViperSmoke</span>
+              <span class="text-[11px] text-purple-500">Station A04 • Valorant</span>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+            <div>
+              <span class="font-bold text-black dark:text-white block">KronoX</span>
+              <span class="text-[11px] text-amber-500">Station Sim-02 • Assetto</span>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+            <div>
+              <span class="font-bold text-black dark:text-white block">EchoDash</span>
+              <span class="text-[11px] text-black dark:text-slate-400">Offline (Mobile Sync)</span>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: NETWORK DIAGNOSTICS & DEEP FREEZE AUTO-WIPE -->
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-darkslate-border pb-3">
+            <h4 class="font-bold text-sm uppercase tracking-wider text-black dark:text-white">Arena Fiber Telemetry</h4>
+            <span class="px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 font-mono text-[11px] font-bold">10 Gbps Active</span>
+          </div>
+          <div class="grid grid-cols-3 gap-3 text-center text-xs font-mono">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-darkslate-deep">
+              <span class="text-black dark:text-slate-400 block text-[10px]">Ping to Riot</span>
+              <span class="text-cyan-600 dark:text-cyan-400 font-bold text-sm">2.8ms</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-darkslate-deep">
+              <span class="text-black dark:text-slate-400 block text-[10px]">Ping to FaceIT</span>
+              <span class="text-purple-600 dark:text-purple-400 font-bold text-sm">3.9ms</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-darkslate-deep">
+              <span class="text-black dark:text-slate-400 block text-[10px]">Packet Loss</span>
+              <span class="text-emerald-500 font-bold text-sm">0.00%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-darkslate-border pb-3">
+            <h4 class="font-bold text-sm uppercase tracking-wider text-black dark:text-white">Deep Freeze Auto-Wipe Protocol</h4>
+            <span class="px-2.5 py-0.5 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-600 font-mono text-[11px] font-bold">Always Guarded</span>
+          </div>
+          <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+            All Steam, Riot, Discord logins, local browser sessions, and personal files are automatically wiped cleanly upon station session checkout.
+          </p>
+          <div class="flex items-center justify-between text-xs pt-1">
+            <span class="text-emerald-500 font-semibold">✓ Station A03 Certified Clean</span>
+            <a href="dashboard-settings.html" class="text-cyan-600 dark:text-cyan-400 font-bold hover:underline">Security Settings →</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Live countdown timer simulation
+    document.addEventListener('DOMContentLoaded', () => {
+      let secondsRemaining = 2 * 3600 + 47 * 60 + 19;
+      let isPaused = false;
+      const countdownEl = document.getElementById('session-countdown');
+      const pauseBtn = document.getElementById('pause-session-btn');
+
+      setInterval(() => {
+        if (!isPaused && secondsRemaining > 0) {
+          secondsRemaining--;
+          const hrs = String(Math.floor(secondsRemaining / 3600)).padStart(2, '0');
+          const mins = String(Math.floor((secondsRemaining % 3600) / 60)).padStart(2, '0');
+          const secs = String(secondsRemaining % 60).padStart(2, '0');
+          if (countdownEl) countdownEl.textContent = `${hrs}:${mins}:${secs}`;
+        }
+      }, 1000);
+
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', () => {
+          isPaused = !isPaused;
+          if (isPaused) {
+            pauseBtn.textContent = 'Resume Time';
+            pauseBtn.classList.remove('text-amber-300', 'bg-amber-500/20');
+            pauseBtn.classList.add('text-emerald-300', 'bg-emerald-500/20');
+            showAuraToast('Session timer paused. Minutes banked safely.', 'info');
+          } else {
+            pauseBtn.textContent = 'Pause Time';
+            pauseBtn.classList.remove('text-emerald-300', 'bg-emerald-500/20');
+            pauseBtn.classList.add('text-amber-300', 'bg-amber-500/20');
+            showAuraToast('Session timer resumed.', 'info');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

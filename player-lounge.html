@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>AuraPlay | Player's Lounge - Console, Sim & VR Pods</title>
+  <meta name="description" content="Experience gaming in ultra-luxury. 65-inch 4K OLED PS5 Pro couch lounges, Fanatec direct drive motion sim rigs, wireless VR pods, and esports gear tuning.">
+  
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    const savedDir = localStorage.getItem('site-dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#00F0FF',
+              'cyan-dark': '#0891B2',
+              purple: '#8B5CF6',
+              'purple-dark': '#6D28D9',
+              pink: '#EC4899',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+            },
+            darkslate: {
+              DEFAULT: '#0F172A',
+              deep: '#090D16',
+              card: '#131B2E',
+              border: '#1E293B',
+              lighter: '#1E293B',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            display: ['Rajdhani', 'Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-black dark:text-slate-200 dark:bg-darkslate-deep dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-purple-600 selection:text-white">
+
+  <!-- ================= STICKY HEADER SECTION (HORIZONTAL NON-WRAPPING) ================= -->
+  <header class="sticky top-0 z-50 w-full auraplay-navbar bg-white/95 dark:bg-darkslate-deep/95 backdrop-blur-md border-b border-slate-200 dark:border-darkslate-border shadow-sm transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 whitespace-nowrap">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse shrink-0 group whitespace-nowrap">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+            Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation: Horizontal No-Wrap -->
+        <nav class="hidden xl:flex items-center space-x-6 rtl:space-x-reverse mx-4 font-semibold text-sm whitespace-nowrap flex-nowrap">
+          
+          <!-- Home Dropdown -->
+          <div class="relative group shrink-0">
+            <button class="dropdown-toggle flex items-center space-x-1.5 rtl:space-x-reverse text-purple-600 dark:text-purple-400 py-2 hover:text-cyan-600 dark:hover:text-purple-300 transition-colors whitespace-nowrap">
+              <span class="active-nav-link">Home</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 rtl:right-0 rtl:left-auto mt-2 w-64 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-2xl hidden group-hover:block z-50 p-2">
+              <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 font-semibold transition-all">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-500 shrink-0"></span>
+                <div>
+                  <div class="text-sm">Neon Arena</div>
+                  <div class="text-xs text-black dark:text-slate-400 font-normal">Flagship competitive lounge</div>
+                </div>
+              </a>
+              <a href="player-lounge.html" class="flex items-center space-x-3 rtl:space-x-reverse p-3 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 font-bold transition-all">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-500 shadow-sm shadow-purple-500 shrink-0"></span>
+                <div>
+                  <div class="text-sm">Player's Lounge</div>
+                  <div class="text-xs text-black dark:text-slate-400 font-normal">Console, Sim & VR pods</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <a href="about.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">About Us</a>
+          <a href="games.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Games</a>
+          <a href="pricing.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Pricing</a>
+
+          <!-- Explore Dropdown -->
+          <div class="relative group shrink-0">
+            <button class="dropdown-toggle flex items-center space-x-1.5 rtl:space-x-reverse text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 py-2 transition-colors whitespace-nowrap">
+              <span>Explore</span>
+              <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute left-0 rtl:right-0 rtl:left-auto mt-2 w-60 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-2xl hidden group-hover:block z-50 p-2">
+              <a href="book-slot.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-all">
+                <div class="text-sm">Book Slot Page</div>
+                <div class="text-xs text-black dark:text-slate-400 font-normal">Reserve PC or PS5 Station</div>
+              </a>
+              <a href="membership.html" class="block p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-darkslate-lighter text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-semibold transition-all">
+                <div class="text-sm">Membership Passes</div>
+                <div class="text-xs text-black dark:text-slate-400 font-normal">Gamer Tiers & Perks</div>
+              </a>
+            </div>
+          </div>
+
+          <a href="blog.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Blog</a>
+          <a href="contact.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Contact Us</a>
+          <a href="dashboard.html" class="text-black dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors whitespace-nowrap shrink-0">Dashboard</a>
+        </nav>
+
+        <!-- Header Actions: Theme Toggle, LTR/RTL Toggle, Login, Mobile Menu Button -->
+        <div class="flex items-center space-x-3 rtl:space-x-reverse whitespace-nowrap shrink-0">
+          <button type="button" class="rtl-toggle-btn hidden xl:inline-flex px-3 py-2 text-xs font-bold rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all items-center space-x-1 rtl:space-x-reverse shrink-0" title="Switch text direction (LTR / RTL)">
+            <svg class="w-3.5 h-3.5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+
+          <button type="button" class="theme-toggle-btn hidden xl:inline-flex p-2 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-300 hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 transition-all shrink-0" aria-label="Toggle dark/light mode">
+            <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+            </svg>
+            <svg class="theme-moon-icon w-5 h-5 text-black dark:text-slate-300" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+            </svg>
+          </button>
+
+          <!-- Login Desktop CTA -->
+          <a href="login.html" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
+            Sign In
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button id="mobile-menu-btn" type="button" class="xl:hidden p-2.5 rounded-xl border border-slate-200 dark:border-darkslate-border bg-slate-100 dark:bg-darkslate-card text-black dark:text-slate-200 hover:text-purple-500 transition-colors focus:outline-none shrink-0" aria-label="Open mobile menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU DRAWER ================= -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 z-50 w-80 max-w-[85vw] h-full bg-white dark:bg-darkslate-card border-l rtl:border-l-0 rtl:border-r border-slate-200 dark:border-darkslate-border shadow-2xl transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between overflow-y-auto">
+    <div>
+      <!-- Drawer Top Bar: Brand Logo & Close Icon -->
+      <div class="p-6 border-b border-slate-200 dark:border-darkslate-border flex items-center justify-between">
+        <a href="index.html" class="flex items-center space-x-2.5 rtl:space-x-reverse">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-md">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <span class="text-xl font-black font-display uppercase tracking-tight text-black dark:text-white">Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span></span>
+        </a>
+        <button id="mobile-menu-close" type="button" class="p-2 rounded-xl text-black dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-darkslate-deep transition-colors focus:outline-none" aria-label="Close mobile menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links (Matching Image 4) -->
+      <nav class="p-5 space-y-1.5 font-bold">
+        <!-- 1. Home Dropdown -->
+        <div>
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors" data-target="mobile-sub-home">
+            <span>Home</span>
+            <svg class="mobile-arrow w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-sub-home" class=" pl-4 rtl:pl-0 rtl:pr-4 py-1 space-y-1">
+            <a href="index.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Neon Arena</a>
+            <a href="player-lounge.html" class="block p-2.5 rounded-lg text-sm font-semibold bg-cyan-50 dark:bg-cyan-950/70 border border-cyan-500/20 text-cyan-600 dark:text-cyan-400">Player's Lounge</a>
+          </div>
+        </div>
+
+        <!-- 2. About Us -->
+        <a href="about.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">About Us</a>
+
+        <!-- 3. Games -->
+        <a href="games.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Games</a>
+
+        <!-- 4. Pricing -->
+        <a href="pricing.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Pricing</a>
+
+        <!-- 5. Explore Dropdown -->
+        <div>
+          <button type="button" class="mobile-dropdown-btn w-full flex items-center justify-between p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors" data-target="mobile-sub-explore">
+            <span>Explore</span>
+            <svg class="mobile-arrow w-4 h-4 text-slate-400 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div id="mobile-sub-explore" class="hidden pl-4 rtl:pl-0 rtl:pr-4 py-1 space-y-1">
+            <a href="book-slot.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Book Slot Page</a>
+            <a href="membership.html" class="block p-2.5 rounded-lg text-sm font-semibold text-black dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Membership Passes</a>
+          </div>
+        </div>
+
+        <!-- 6. Blog -->
+        <a href="blog.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Blog</a>
+
+        <!-- 7. Contact Us -->
+        <a href="contact.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Contact Us</a>
+
+        <!-- 8. Dashboard -->
+        <a href="dashboard.html" class="block p-3 rounded-xl text-base font-bold text-black dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-darkslate-card transition-colors">Dashboard</a>
+      </nav>
+    </div>
+
+    <!-- Drawer Footer: Sign In / Register & Settings Controls (Matching Image 4 & Image 5) -->
+    <div class="p-6 border-t border-slate-200 dark:border-darkslate-border space-y-4">
+      <a href="login.html" class="w-full flex items-center justify-center py-3.5 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all text-center">
+        Sign In / Register
+      </a>
+
+      <!-- Settings row directly below Sign In button (Image 5) -->
+      <div class="pt-2 flex items-center justify-between">
+        <span class="text-sm font-bold text-slate-900 dark:text-white">Settings:</span>
+        <div class="flex items-center space-x-2.5 rtl:space-x-reverse">
+          <!-- Theme toggle button matching Image 5 -->
+          <button type="button" class="theme-toggle-btn w-10 h-10 rounded-2xl bg-slate-100 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center justify-center text-slate-800 dark:text-slate-200 hover:border-cyan-500 transition-colors shadow-sm" aria-label="Toggle dark mode">
+            <svg class="theme-sun-icon w-5 h-5 text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            <svg class="theme-moon-icon w-5 h-5 text-slate-800 dark:text-slate-200" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+          </button>
+          <!-- RTL toggle button matching Image 5 -->
+          <button type="button" class="rtl-toggle-btn px-4 h-10 rounded-2xl bg-slate-100 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex items-center space-x-1.5 rtl:space-x-reverse text-sm font-bold text-slate-900 dark:text-white hover:border-cyan-500 transition-colors shadow-sm" title="Switch text direction">
+            <span class="rtl-arrow text-sm">←</span>
+            <span class="rtl-status-text">RTL</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<main>
+
+    <!-- ================= SECTION 1: HERO - PLAYER'S LOUNGE ================= -->
+    <section class="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-6 sm:py-8 lg:py-10 bg-mesh-light dark:bg-mesh-dark">
+      <!-- Background Image with Theme-Adaptive Scrim Overlay -->
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <img src="assets/images/hero-bg-lounge.png" alt="AuraPlay Lounge Suite" class="w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-50/75 via-slate-50/45 to-transparent dark:from-darkslate-deep/85 dark:via-darkslate-deep/50 dark:to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-50 dark:to-darkslate-deep"></div>
+      </div>
+      <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-10 left-10 w-[450px] h-[450px] bg-pink-500/10 dark:bg-pink-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-3.5 lg:space-y-4 text-center lg:text-left rtl:lg:text-right">
+
+            <h1 class="text-2xl xs:text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-black font-display tracking-tight text-black dark:text-white uppercase leading-none hero-headline">
+              Your Living Room, <br>
+              <span>Radically Upgraded.</span>
+            </h1>
+
+            <p class="text-sm sm:text-base lg:text-base xl:text-lg text-black dark:text-white max-w-2xl mx-auto lg:mx-0 font-bold leading-normal sm:leading-relaxed hero-subtitle-boosted">
+              Forget cramped sofas and small televisions. Immerse yourself in 65" LG OLED couch suites, tactile Fanatec direct drive cockpits, room-scale wireless VR pods, and craft mocktails with your squad.
+            </p>
+
+            <!-- Experience Chips -->
+            <div class="flex flex-wrap gap-2 justify-center lg:justify-start rtl:lg:justify-end pt-1">
+              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+                <span class="text-purple-500">🎮</span>
+                <span>PlayStation 5 Pro & OLEDs</span>
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+                <span class="text-pink-500">🏎️</span>
+                <span>Fanatec Motion Simulators</span>
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+                <span class="text-amber-500">🥽</span>
+                <span>Wireless VR Arenas</span>
+              </span>
+              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+                <span class="text-cyan-500">🍸</span>
+                <span>Artisan Gamer Refreshments</span>
+              </span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start rtl:lg:justify-end gap-3 pt-1.5">
+              <a href="book-slot.html" class="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-xl shadow-purple-500/25 transition-all transform hover:-translate-y-0.5 text-center">
+                Book a Lounge Couch Bay
+              </a>
+              <a href="#lounge-bays" class="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold text-black dark:text-slate-200 dark:text-white bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all text-center">
+                Tour Lounge Experiences ↓
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Visual: Lounge Suite Composite -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 opacity-30 dark:opacity-40 blur-xl"></div>
+              <div class="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-darkslate-border bg-white dark:bg-darkslate-card shadow-2xl">
+                <img src="assets/images/hero-player-lounge-pods.jpg" alt="AuraPlay Player Lounge Pods" class="w-full h-64 sm:h-80 lg:h-[350px] xl:h-[390px] object-cover transform hover:scale-105 transition-transform duration-700">
+                <div class="absolute bottom-3 left-3 right-3 p-3 rounded-2xl bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-200 dark:border-darkslate-border shadow-lg">
+                  <div class="flex items-center justify-between mb-0.5">
+                    <span class="text-xs font-bold uppercase text-purple-600 dark:text-purple-400">VIP Couch Suite #04</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300">4-PLAYER LOCAL</span>
+                  </div>
+                  <div class="text-xs sm:text-sm font-extrabold text-black dark:text-white">65" LG OLED • DualSense Edge • Dolby Atmos 7.1</div>
+                  <div class="text-[11px] text-black dark:text-slate-400 mt-0.5">Available for Squad Bookings</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: LOUNGE QUICK STATUS TICKER ================= -->
+    <section class="py-6 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Console Suites</div>
+            <div class="text-lg font-black text-black dark:text-white">12 Available <span class="text-purple-500 text-xs">PS5 Pro / Xbox</span></div>
+          </div>
+          <div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Motion Sim Rigs</div>
+            <div class="text-lg font-black text-black dark:text-white">6 Bays <span class="text-pink-500 text-xs">Fanatec DD2</span></div>
+          </div>
+          <div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">VR Holo Pods</div>
+            <div class="text-lg font-black text-black dark:text-white">4 Wireless <span class="text-cyan-500 text-xs">Room-Scale</span></div>
+          </div>
+          <div>
+            <div class="text-xs text-black dark:text-slate-400 uppercase font-semibold">Lounge Drink Menu</div>
+            <div class="text-lg font-black text-black dark:text-white">24 Elixirs <span class="text-amber-500 text-xs">Craft & Energy</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: THE PLAYER'S LOUNGE PHILOSOPHY ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Social Immersion</span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Gaming Is Better Together In The Same Room
+            </h2>
+            <p class="text-black dark:text-slate-300 text-base leading-relaxed">
+              We grew tired of playing alone on headsets. Player's Lounge brings back the golden age of split-screen laughter, shoulder-to-shoulder rivalry, and high-fives on game-winning goals, wrapped in world-class audio-visual luxury.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+                <div class="text-2xl mb-1">🛋️</div>
+                <div class="text-sm font-bold text-black dark:text-white">Deep Velvet Sectionals</div>
+                <div class="text-xs text-black dark:text-slate-400">Spacious seating for up to 6 squad members</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+                <div class="text-2xl mb-1">🔊</div>
+                <div class="text-sm font-bold text-black dark:text-white">Subwoofer Rumblers</div>
+                <div class="text-xs text-black dark:text-slate-400">Feel every explosion and tire drift in your seat</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <img src="assets/images/lounge-social-friends-couch.jpg" alt="Friends playing games together in lounge" class="rounded-3xl shadow-2xl border border-slate-200 dark:border-darkslate-border w-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: CONSOLE COUCH SUITES ================= -->
+    <section id="lounge-bays" class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Console Masterpiece</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            4K OLED Couch Suites
+          </h2>
+          <p class="text-black dark:text-slate-300 mt-3 text-base">Plug into PlayStation 5 Pro, Xbox Series X, or Nintendo Switch OLED with four pro controllers ready to roll.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 rounded-3xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border shadow-sm">
+            <div class="text-3xl mb-4">🎮</div>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">PlayStation 5 Pro Suite</h3>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">
+              Equipped with PlayStation Spectral Super Resolution (PSSR), 60FPS ray tracing on 65" LG G4 OLEDs, and 4 DualSense Edge controllers.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-darkslate-border flex justify-between items-center text-xs">
+              <span class="font-bold text-purple-600">$8.00 / hr (up to 4 players)</span>
+              <a href="book-slot.html" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold">Reserve</a>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border shadow-sm">
+            <div class="text-3xl mb-4">💚</div>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">Xbox Series X Suite</h3>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">
+              Full Xbox Game Pass Ultimate library installed with 400+ titles, Quick Resume across 5 games, and Xbox Elite Series 2 gamepads.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-darkslate-border flex justify-between items-center text-xs">
+              <span class="font-bold text-emerald-600">$8.00 / hr (up to 4 players)</span>
+              <a href="book-slot.html" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold">Reserve</a>
+            </div>
+          </div>
+
+          <div class="p-8 rounded-3xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border shadow-sm">
+            <div class="text-3xl mb-4">🍄</div>
+            <h3 class="text-xl font-bold font-display uppercase text-black dark:text-white">Nintendo Party Suite</h3>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">
+              Super Smash Bros Ultimate, Mario Kart 8 Deluxe, Mario Party, and Overcooked 2 with 4 Pro Wireless Controllers and GameCube adapters.
+            </p>
+            <div class="mt-6 pt-4 border-t border-slate-200 dark:border-darkslate-border flex justify-between items-center text-xs">
+              <span class="font-bold text-pink-600">$7.00 / hr (up to 4 players)</span>
+              <a href="book-slot.html" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold">Reserve</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: FANATEC SIM RACING PAVILION ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <img src="assets/images/lounge-motion-sim-cockpit.png" alt="Direct-drive motion racing simulator cockpit" class="rounded-3xl shadow-2xl border border-slate-200 dark:border-darkslate-border w-full object-cover">
+          </div>
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-pink-500">Pure G-Force</span>
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+              Direct-Drive Motion Simulators
+            </h2>
+            <p class="text-black dark:text-slate-300 text-base leading-relaxed">
+              Step into the driver's seat of our 6 Fanatec Podium DD2 motion cockpits. Experience real 25Nm steering resistance, active pitch/roll motion actuators that simulate curb rumble, and triple 55" wrap-around curved screens.
+            </p>
+            <ul class="space-y-3 text-sm text-black dark:text-slate-300">
+              <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-pink-500">✔</span><span>Hydraulic inverted loadcell pedal assemblies for true brake pressure</span></li>
+              <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-pink-500">✔</span><span>Official Formula 1 V2.5 and Porsche 911 GT3 suede steering wheels</span></li>
+              <li class="flex items-center space-x-2 rtl:space-x-reverse"><span class="text-pink-500">✔</span><span>Pre-configured telemetry for iRacing, Assetto Corsa Competizione & F1 24</span></li>
+            </ul>
+            <div class="pt-2">
+              <a href="book-slot.html" class="inline-flex items-center px-6 py-3 rounded-xl text-sm font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white shadow-lg shadow-pink-600/25">
+                Reserve Sim Bay Lap Time
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: VR HOLODECK & META ARENA ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep border-y border-slate-200 dark:border-darkslate-border cyber-grid">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column Content -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></span>
+              <span>Immersion Holodeck</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-tight">
+              Room-Scale Wireless <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-600">Virtual Reality Arenas</span>
+            </h2>
+
+            <p class="text-black dark:text-slate-300 text-base leading-relaxed">
+              Step inside our acoustically padded 4m x 4m VR holodeck bays. Enjoy unrestricted 360-degree freedom with high-bitrate Wi-Fi 6E wireless streaming, Valve Index finger-tracking controllers, and full-body haptic feedback.
+            </p>
+
+            <div class="space-y-3">
+              <div class="p-4 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-start space-x-3.5 rtl:space-x-reverse shadow-sm">
+                <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-sm shrink-0">🥽</div>
+                <div>
+                  <div class="text-sm font-bold text-black dark:text-white">Valve Index 144Hz & Meta Quest 3</div>
+                  <p class="text-xs text-black dark:text-slate-400 mt-0.5 leading-relaxed">Sub-millimeter optical lighthouse tracking with 130° wide field-of-view for competitive titles.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-start space-x-3.5 rtl:space-x-reverse shadow-sm">
+                <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-sm shrink-0">🦺</div>
+                <div>
+                  <div class="text-sm font-bold text-black dark:text-white">40-Point bbhaptics Chest & Arm Feedback</div>
+                  <p class="text-xs text-black dark:text-slate-400 mt-0.5 leading-relaxed">Feel recoil impulses, atmospheric winds, and physical impact sensations in real time.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-start space-x-3.5 rtl:space-x-reverse shadow-sm">
+                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-sm shrink-0">✨</div>
+                <div>
+                  <div class="text-sm font-bold text-black dark:text-white">Hospital-Grade UV-C Sanitization</div>
+                  <p class="text-xs text-black dark:text-slate-400 mt-0.5 leading-relaxed">All headstraps, facial interfaces, and controllers are sterilized between every session.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="book-slot.html" class="inline-flex items-center px-8 py-3.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:scale-105 transition-all shadow-lg shadow-cyan-500/25">
+                Book VR Immersion Bay →
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column Showcase Image with Fallbacks & Telemetry Badge -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-2xl gaming-glow-card group">
+              <img 
+                src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=1000&auto=format&fit=crop" 
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1000&auto=format&fit=crop';" 
+                alt="Room-Scale Virtual Reality Arena" 
+                class="w-full h-80 sm:h-96 lg:h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              
+              <div class="absolute top-4 left-4 px-3 py-1.5 rounded-xl bg-slate-900/85 backdrop-blur-md border border-cyan-500/30 text-cyan-400 text-xs font-mono font-bold flex items-center space-x-2 rtl:space-x-reverse">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 live-indicator"></span>
+                <span>Boundary: 4.0m × 4.0m Safe Zone</span>
+              </div>
+
+              <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-xs font-bold text-white bg-slate-900/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/10">
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                  <span class="text-emerald-400">● 144 FPS Locked</span>
+                  <span class="text-slate-400">|</span>
+                  <span>Zero Cable Tether</span>
+                </div>
+                <span class="text-purple-400 font-mono">VR Bay 02</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 7: CREATOR & STREAMING PODS ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Content Creation</span>
+        <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+          Private Streamer Creator Booths
+        </h2>
+        <p class="text-black dark:text-slate-300 mt-3 text-base">Soundproofed studios with 4K Sony mirrorless cams, Elgato Key Lights, Shure broadcast mics, and multi-monitor OBS presets.</p>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+          <div class="text-2xl mb-2">🎙️</div>
+          <h4 class="text-lg font-bold uppercase font-display text-black dark:text-white">Studio Audio Stack</h4>
+          <p class="text-xs text-black dark:text-slate-400 mt-2">Shure SM7B dynamic microphone paired with TC-Helicon GoXLR mixer and hardware noise gate.</p>
+        </div>
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+          <div class="text-2xl mb-2">📹</div>
+          <h4 class="text-lg font-bold uppercase font-display text-black dark:text-white">4K Mirrorless Video</h4>
+          <p class="text-xs text-black dark:text-slate-400 mt-2">Sony Alpha 4K camera with Sigma 16mm f/1.4 lens for cinematic background blur bokeh.</p>
+        </div>
+        <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+          <div class="text-2xl mb-2">💡</div>
+          <h4 class="text-lg font-bold uppercase font-display text-black dark:text-white">Studio Lighting</h4>
+          <p class="text-xs text-black dark:text-slate-400 mt-2">Dual Elgato Key Light Air panels and custom RGB tube wall accents adjustable via Stream Deck.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 8: RETRO ARCADE CORNER ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div class="space-y-4 max-w-xl">
+            <span class="text-xs font-extrabold uppercase text-amber-500">Nostalgia Lives Here</span>
+            <h3 class="text-3xl sm:text-4xl font-black font-display uppercase text-black dark:text-white">The Retro Candy Cab Alley</h3>
+            <p class="text-black dark:text-slate-300 text-sm leading-relaxed">
+              Relive the golden era of fighting games with authentic Japanese Sega Astro City and Taito Vewlix arcade cabinets loaded with Street Fighter III: 3rd Strike, Capcom vs SNK 2, and Metal Slug with zero-lag Sanwa parts.
+            </p>
+            <div class="text-xs font-bold text-amber-600 dark:text-amber-400">Tokens included free with any 2-hour or higher pass!</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=700&auto=format&fit=crop" alt="Arcade cabs" class="rounded-3xl shadow-xl w-full lg:w-96 h-60 object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 9: CURATED COUCH CO-OP GAMES ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Party Classics</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            Top Couch Co-Op Hits
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">🍳</div>
+            <h4 class="font-bold text-black dark:text-white text-base">Overcooked! All You Can Eat</h4>
+            <div class="text-xs text-black dark:text-slate-400 mt-1">4-Player Party Brawler Lounge</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">🥊</div>
+            <h4 class="font-bold text-black dark:text-white text-base">Super Smash Bros Ultimate</h4>
+            <div class="text-xs text-black dark:text-slate-400 mt-1">8-Player Local Brawler</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">🏎️</div>
+            <h4 class="font-bold text-black dark:text-white text-base">Mario Kart 8 Deluxe</h4>
+            <div class="text-xs text-black dark:text-slate-400 mt-1">4-Player Split Screen</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
+            <div class="text-3xl mb-2">👫</div>
+            <h4 class="font-bold text-black dark:text-white text-base">It Takes Two</h4>
+            <div class="text-xs text-black dark:text-slate-400 mt-1">2-Player Masterpiece</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 10: FANATEC DIRECT-DRIVE SIMULATOR CALIBRATION & FORCE-FEEDBACK LAB ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border cyber-grid">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-3.5 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-500 dark:text-pink-400 text-xs font-bold tracking-widest uppercase">
+              <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+              <span>Pro Sim Telemetry</span>
+            </div>
+            
+            <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-tight">
+              Direct-Drive Force Feedback <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">& Motion Cockpits</span>
+            </h2>
+
+            <p class="text-black dark:text-slate-300 text-base leading-relaxed">
+              Experience authentic motorsport G-forces with Fanatec Podium DD2 wheelbases delivering 25Nm of unfiltered torque, hydraulic load-cell inverted brake pedals, and triple 32-inch 165Hz wrap-around monitors.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3.5">
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+                <div class="text-pink-500 font-bold text-sm">25 Nm Direct-Drive</div>
+                <div class="text-xs text-black dark:text-slate-400 mt-1">Podium DD2 brushless servo motor with zero cogging.</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+                <div class="text-purple-500 font-bold text-sm">100kg Load-Cell</div>
+                <div class="text-xs text-black dark:text-slate-400 mt-1">Hydraulic pressure-sensing threshold brake calibration.</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+                <div class="text-cyan-500 font-bold text-sm">Triple 165Hz Wrap</div>
+                <div class="text-xs text-black dark:text-slate-400 mt-1">180-degree panoramic peripheral FOV immersion.</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border">
+                <div class="text-amber-500 font-bold text-sm">Tactile ButtKickers</div>
+                <div class="text-xs text-black dark:text-slate-400 mt-1">Curb vibration and suspension telemetry under seat.</div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="book-slot.html" class="inline-flex items-center px-7 py-3.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 hover:scale-105 transition-all shadow-lg shadow-purple-500/25">
+                Book Motion Sim Cockpit →
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-darkslate-border shadow-2xl gaming-glow-card group relative">
+              <img src="assets/images/lounge-sim-telemetry-wheel.jpg" alt="Fanatec Direct-Drive Steering Wheel & Motion Telemetry" class="w-full h-80 sm:h-96 lg:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between text-xs font-bold text-white bg-slate-900/85 backdrop-blur-md px-4 py-3 rounded-2xl border border-white/10">
+                <span class="text-pink-400 font-mono">Telemetry: iRacing & AC Competizione</span>
+                <span class="text-emerald-400">Pod 03 Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 11: WEEKLY COMMUNITY SOCIAL NIGHTS ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-pink-500">Weekly Hangouts</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white mt-1">
+            Lounge Social Calendar
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <span class="text-xs font-black text-purple-600 uppercase">TUESDAY NIGHTS</span>
+            <h4 class="text-xl font-bold font-display uppercase text-black dark:text-white mt-1">Smash Bros King of the Hill</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">Winner stays on, casual community rotation with free pizza slice per entry.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <span class="text-xs font-black text-emerald-600 uppercase">THURSDAY NIGHTS</span>
+            <h4 class="text-xl font-bold font-display uppercase text-black dark:text-white mt-1">EA FC 25 Champions League</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">2v2 tournament on 65" OLEDs with official trophies and gaming gear vouchers.</p>
+          </div>
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
+            <span class="text-xs font-black text-pink-600 uppercase">SATURDAY MIDNIGHT</span>
+            <h4 class="text-xl font-bold font-display uppercase text-black dark:text-white mt-1">Mario Kart Grand Prix</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2">150cc 32-player bracket. Bananas, blue shells, and midnight milkshakes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 12: PRIVATE SQUAD PARTY BOOKINGS ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-purple-600">Events & Birthdays</span>
+        <h3 class="text-3xl sm:text-5xl font-black font-display uppercase text-black dark:text-white">
+          Rent The Entire Player's Lounge
+        </h3>
+        <p class="text-black dark:text-slate-300 max-w-2xl mx-auto text-base">
+          Celebrate birthdays, team celebrations, or host private squad LANs. Includes exclusive access to all 12 console suites, 6 sim bays, dedicated bartenders, and catering.
+        </p>
+        <div class="pt-2">
+          <a href="contact.html" class="px-8 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg">
+            Inquire About Private Events
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 13: PLAYER COMMUNITY FEEDBACK & VERIFIED RATINGS ================= -->
+    <section class="py-20 bg-slate-50 dark:bg-darkslate-deep">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Verified Gamer Reviews</span>
+          <h2 class="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            Player's Lounge Feedback
+          </h2>
+          <p class="text-black dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            Rated 4.9/5 stars by over 1,420+ local console squads, sim racers, and VR explorers. Real verified post-session feedback.
+          </p>
+        </div>
+
+        <!-- 4 Metric Rating Badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center shadow-sm">
+            <div class="text-2xl font-black font-display text-purple-600 dark:text-purple-400">4.9 / 5.0</div>
+            <div class="text-xs font-bold text-black dark:text-white mt-1">Overall Satisfaction</div>
+            <div class="text-[11px] text-black dark:text-slate-400 mt-0.5">Based on 1,420 reviews</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center shadow-sm">
+            <div class="text-2xl font-black font-display text-pink-500">5.0 / 5.0</div>
+            <div class="text-xs font-bold text-black dark:text-white mt-1">Sim Force Feedback</div>
+            <div class="text-[11px] text-black dark:text-slate-400 mt-0.5">Fanatec DD2 25Nm</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center shadow-sm">
+            <div class="text-2xl font-black font-display text-cyan-500">4.9 / 5.0</div>
+            <div class="text-xs font-bold text-black dark:text-white mt-1">Couch Comfort & Sound</div>
+            <div class="text-[11px] text-black dark:text-slate-400 mt-0.5">Dolby Atmos 7.1 Suites</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center shadow-sm">
+            <div class="text-2xl font-black font-display text-emerald-500">100%</div>
+            <div class="text-xs font-bold text-black dark:text-white mt-1">Hardware Reliability</div>
+            <div class="text-[11px] text-black dark:text-slate-400 mt-0.5">0 disconnects reported</div>
+          </div>
+        </div>
+
+        <!-- 4 Detailed Player Feedback Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+              <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+                "Our 5-man squad spent 6 hours playing Tekken 8 and FC 25 in Suite 2. The 65-inch OLED has zero input lag, and the custom velvet couches made marathon gaming completely painless."
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs">
+              <div>
+                <strong class="text-black dark:text-white block font-display">Marcus_V</strong>
+                <span class="text-[10px] text-purple-600 dark:text-purple-400 font-bold">PS5 Pro Suite #02</span>
+              </div>
+              <span class="text-[10px] text-black dark:text-slate-400">Oct 29, 2026</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+              <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+                "The Fanatec direct drive simulator is absurdly realistic. Feeling the Spa-Francorchamps curb rumble through the carbon chassis and 100kg brake pedal is something you can't get at home."
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs">
+              <div>
+                <strong class="text-black dark:text-white block font-display">ApexDrifter</strong>
+                <span class="text-[10px] text-pink-500 font-bold">Fanatec Sim Bay #04</span>
+              </div>
+              <span class="text-[10px] text-black dark:text-slate-400">Oct 26, 2026</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+              <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+                "Hosted my 24th birthday in the private lounge with 14 friends. Having simultaneous access to the sim cockpits and 4-player Mario Kart couch setups was the best party we've ever had."
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs">
+              <div>
+                <strong class="text-black dark:text-white block font-display">Elena Ramos</strong>
+                <span class="text-[10px] text-cyan-500 font-bold">Full Lounge Buyout</span>
+              </div>
+              <span class="text-[10px] text-black dark:text-slate-400">Oct 22, 2026</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex text-amber-400 text-xs mb-3">★★★★★</div>
+              <p class="text-xs text-black dark:text-slate-300 leading-relaxed italic">
+                "The VR holodeck tracking has zero jitter. Playing Beat Saber and Half-Life Alyx with complete wire-free boundary tracking gave us zero motion sickness. Essential visit in Sunnyvale!"
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-darkslate-border flex items-center justify-between text-xs">
+              <div>
+                <strong class="text-black dark:text-white block font-display">Kev_VR</strong>
+                <span class="text-[10px] text-emerald-500 font-bold">VR Holo Pod #01</span>
+              </div>
+              <span class="text-[10px] text-black dark:text-slate-400">Oct 19, 2026</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 14: LOUNGE SQUAD REVIEWS ================= -->
+    <section class="py-20 bg-white dark:bg-darkslate-card border-y border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-purple-600 dark:text-purple-400">Squad Experiences</span>
+          <h2 class="text-3xl sm:text-4xl font-black font-display uppercase tracking-tight text-black dark:text-white">
+            VIP Pod & Suite Stories
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+          
+          <!-- Testimonial 1 -->
+          <div class="p-8 rounded-3xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border shadow-sm hover:border-purple-500 transition-all duration-300 flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex text-amber-400 text-sm">★★★★★</div>
+                  <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-500/20">
+                    SUITE 03 • 6-PLAYER CO-OP
+                  </span>
+                </div>
+                <p class="text-sm sm:text-base italic text-black dark:text-slate-300 leading-relaxed min-h-[96px] flex items-center">
+                  "We booked Suite 3 for a 4-hour FIFA tournament with 6 friends. The couches are insanely comfortable, food delivery was prompt, and the 65-inch OLED made every goal look unreal."
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain horizontal line -->
+            <div class="w-full border-t border-slate-300 dark:border-slate-700 my-5"></div>
+
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/images/avatar-4.jpg" alt="Daniel & Squad" class="w-11 h-11 rounded-full object-cover shrink-0 border border-purple-500/30 shadow-md">
+              <div class="flex-1 min-w-0">
+                <strong class="text-sm font-bold text-black dark:text-white block truncate">— Daniel & Squad</strong>
+                <span class="text-xs text-black dark:text-slate-400 font-normal block truncate">Console Lounge Regulars • EA FC 25 Squad</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-8 rounded-3xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border shadow-sm hover:border-pink-500 transition-all duration-300 flex flex-col justify-between h-full">
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex text-amber-400 text-sm">★★★★★</div>
+                  <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-pink-50 dark:bg-pink-950/60 text-pink-700 dark:text-pink-300 border border-pink-500/20">
+                    SIM BAY 02 • DIRECT-DRIVE
+                  </span>
+                </div>
+                <p class="text-sm sm:text-base italic text-black dark:text-slate-300 leading-relaxed min-h-[96px] flex items-center">
+                  "The direct drive racing cockpit is so good it ruined playing racing games on my home desk forever. The force feedback and pedal vibration give you real goosebumps."
+                </p>
+              </div>
+            </div>
+
+            <!-- Plain horizontal line -->
+            <div class="w-full border-t border-slate-300 dark:border-slate-700 my-5"></div>
+
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/images/avatar-1.jpg" alt="Tyler Chen" class="w-11 h-11 rounded-full object-cover shrink-0 border border-pink-500/30 shadow-md">
+              <div class="flex-1 min-w-0">
+                <strong class="text-sm font-bold text-black dark:text-white block truncate">— Tyler Chen</strong>
+                <span class="text-xs text-black dark:text-slate-400 font-normal block truncate">iRacing GT3 Driver • Spa-Francorchamps Sim Record</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 15: VIP POD RESERVATION STICKER SHOWCASE ================= -->
+    <section class="py-20 lg:py-24 bg-[#1a1528] text-white relative overflow-hidden border-t border-b border-purple-900/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Text Content -->
+          <div class="lg:col-span-6 space-y-6 text-center lg:text-left rtl:lg:text-right">
+            <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-bold uppercase tracking-widest">
+              <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+              <span>Ultra-Comfort Gaming Lounge</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-black font-display tracking-tight text-white uppercase leading-[1.05]">
+              Your Console & Sim <br>
+              <span class="text-purple-400">Player's Lounge Needs</span> <br>
+              Instant Pod Reservations
+            </h2>
+
+            <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              Skip the wait for high-demand 4K OLED couch suites, direct-drive Fanatec racing simulators, and wireless VR holodecks. Reserve private pods ahead with custom game installations.
+            </p>
+
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start rtl:lg:justify-end gap-4">
+              <a href="book-slot.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-purple-600/30 transition-all transform hover:-translate-y-0.5">
+                Reserve Lounge Pod Now →
+              </a>
+              <a href="games.html" class="w-full sm:w-auto px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all">
+                Explore 180+ Titles
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Sticker Image (No border, pure sticker look as requested) -->
+          <div class="lg:col-span-6 flex items-center justify-center lg:justify-end">
+            <div class="relative w-full max-w-md lg:max-w-xl flex justify-center">
+              <img src="assets/images/sticker-lounge-pod.png" alt="AuraPlay Player Lounge Pod Telemetry Sticker" class="w-full h-auto object-contain sticker-float-purple select-none pointer-events-none border-0 shadow-none">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <!-- ================= UNIFIED FOOTER ================= -->
+  <!-- ================= UNIFIED FOOTER ================= -->
+  <footer class="bg-white dark:bg-darkslate-card border-t border-slate-200 dark:border-darkslate-border transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        
+        <!-- Brand & Social Column -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse group whitespace-nowrap">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-purple-600 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-300 shrink-0">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+              </svg>
+            </div>
+            <span class="text-2xl font-black tracking-tight text-black dark:text-white font-display uppercase leading-none">
+              Aura<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500">Play</span>
+            </span>
+          </a>
+          <p class="text-black dark:text-slate-400 text-sm leading-relaxed max-w-sm">
+            Premier competitive gaming arena, custom liquid-cooled RTX 4090 battlestations, 360Hz OLED displays, Fanatec direct drive sim cockpits, and PS5 Pro tournament suites.
+          </p>
+          <div class="space-y-1.5 text-xs text-black dark:text-slate-400">
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-cyan-500">📍</span>
+              <span>42 Blossom Valley Way, Sunnyvale, CA 94087</span>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-purple-500">🕒</span>
+              <span>Open 24 Hours / 7 Days a Week</span>
+            </div>
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+              <span class="text-emerald-500">📞</span>
+              <span>+1 (800) 555-AURA (2872)</span>
+            </div>
+          </div>
+
+          <!-- Social Media Icons (Light & Dark Mode) -->
+          <div class="pt-2">
+            <div class="text-xs font-bold uppercase text-black dark:text-slate-300 mb-2.5 tracking-wider">Connect With Us</div>
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on Instagram" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-500 dark:hover:text-pink-400 hover:border-pink-400 dark:hover:border-pink-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-5 h-5 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on Facebook" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <!-- Twitter / X -->
+              <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on X" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-black dark:hover:text-white hover:border-slate-400 dark:hover:border-slate-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="AuraPlay on LinkedIn" class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-darkslate-card flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-400 dark:hover:border-blue-500 shadow-sm transition-all hover:scale-105">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Navigation -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Navigation</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="index.html" class="hover:text-cyan-500 transition-colors">Neon Arena</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">Player's Lounge</a></li>
+            <li><a href="about.html" class="hover:text-cyan-500 transition-colors">About AuraPlay</a></li>
+            <li><a href="games.html" class="hover:text-cyan-500 transition-colors">180+ Game Catalog</a></li>
+            <li><a href="pricing.html" class="hover:text-cyan-500 transition-colors">Hourly Rates & Passes</a></li>
+            <li><a href="membership.html" class="hover:text-cyan-500 transition-colors">Membership Perks</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Arena Stations & Booking -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Arena Stations</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="book-slot.html" class="hover:text-cyan-500 transition-colors">Reserve Battlestation</a></li>
+            <li><a href="book-slot.html" class="hover:text-cyan-500 transition-colors">Alpha RTX 4090 Rigs</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">Fanatec Sim Racing Bays</a></li>
+            <li><a href="player-lounge.html" class="hover:text-cyan-500 transition-colors">PS5 Pro OLED Lounges</a></li>
+            <li><a href="dashboard.html" class="hover:text-cyan-500 transition-colors">Gamer Dashboard</a></li>
+            <li><a href="dashboard-packs.html" class="hover:text-cyan-500 transition-colors">Active Time Packs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Community & Support -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-black font-display uppercase tracking-wider text-black dark:text-white">Community & Support</h4>
+          <ul class="space-y-2 text-sm text-black dark:text-slate-400">
+            <li><a href="blog.html" class="hover:text-cyan-500 transition-colors">Gaming Tips & Guides</a></li>
+            <li><a href="blog.html" class="hover:text-cyan-500 transition-colors">Esports Tournament News</a></li>
+            <li><a href="contact.html" class="hover:text-cyan-500 transition-colors">Contact Arena Desk</a></li>
+            <li><a href="login.html" class="hover:text-cyan-500 transition-colors">Gamer Portal Login</a></li>
+            <li><a href="dashboard-history.html" class="hover:text-cyan-500 transition-colors">Match History</a></li>
+            <li><a href="404.html" class="hover:text-cyan-500 transition-colors">System Diagnostics</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Sub-Footer / Centered Copyright (Links from Image 3 removed) -->
+      <div class="mt-12 pt-8 border-t border-slate-200 dark:border-darkslate-border text-center text-xs text-black dark:text-slate-400">
+        © 2026 AuraPlay Gaming Lounge LLC. All Rights Reserved. Built for champions.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
