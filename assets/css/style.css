@@ -497,3 +497,69 @@ html.dark .hero-badge-glass {
   color: #ffffff !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
+/* ========================================================
+   FAQ ACCORDION & DROPDOWN COMPONENT
+   ======================================================== */
+details.faq-item summary::-webkit-details-marker,
+details summary::-webkit-details-marker {
+  display: none !important;
+}
+details.faq-item summary,
+details summary {
+  list-style: none !important;
+  cursor: pointer;
+}
+details.faq-item[open] .faq-chevron,
+details[open] .faq-chevron,
+details.faq-item[open] summary .group-open\:rotate-180 {
+  transform: rotate(180deg) !important;
+}
+details.faq-item summary:hover .faq-chevron,
+details summary:hover .faq-chevron {
+  border-color: #06b6d4;
+  color: #06b6d4;
+}
+
+/* ========================================================
+   UNIVERSAL TOP-RIGHT POPUP TOAST SYSTEM
+   ======================================================== */
+#aura-universal-toast,
+#booking-toast,
+#contact-toast,
+#game-request-toast {
+  position: fixed !important;
+  top: 1.25rem !important;
+  right: 1.25rem !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+html[dir="rtl"] #aura-universal-toast,
+html[dir="rtl"] #booking-toast,
+html[dir="rtl"] #contact-toast,
+html[dir="rtl"] #game-request-toast {
+  right: auto !important;
+  left: 1.25rem !important;
+}
+
+
+/* ========================================================
+   HERO BACKGROUND IMAGE COLOR & CLARITY (LIGHT MODE ONLY)
+   Slightly increases background image color, saturation,
+   and sharpness in light mode so it is never washed out or blurry.
+   Dark mode remains completely untouched.
+   ======================================================== */
+html:not(.dark) .hero-bg-img,
+html:not(.dark) .hero-bg-container img,
+html:not(.dark) section:first-of-type .absolute.inset-0 > img {
+  opacity: 0.96 !important;
+  filter: saturate(1.25) contrast(1.08) brightness(0.98) !important;
+  -webkit-filter: saturate(1.25) contrast(1.08) brightness(0.98) !important;
+}
+
+html:not(.dark) .hero-bg-container div[class*="backdrop-blur"],
+html:not(.dark) section:first-of-type .absolute.inset-0 > div[class*="backdrop-blur"] {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}

@@ -138,8 +138,66 @@
   }
 
   // --- Universal Toast System (Disabled per user requirement: No popups) ---
+    // --- Custom Game Request Handler with Top-Right Popup Toast ---
+  window.submitGameRequest = function () {
+    const input = document.getElementById('custom-game-input');
+    const toast = document.getElementById('game-request-toast');
+    const inner = document.getElementById('game-toast-inner');
+    const icon = document.getElementById('game-toast-icon');
+    const title = document.getElementById('game-toast-title');
+    const msg = document.getElementById('game-toast-msg');
+    if (!input || !toast || !inner) return;
+
+    const val = input.value.trim();
+
+    // Check if game title is greater than 2 letters
+    if (val.length <= 2) {
+      inner.className = 'p-4 rounded-2xl shadow-2xl border-2 border-amber-500/80 bg-slate-900 text-white flex items-start space-x-3 rtl:space-x-reverse';
+      icon.className = 'w-6 h-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold';
+      icon.innerHTML = '&#9888;';
+      title.className = 'font-bold text-xs uppercase tracking-wider text-amber-400 mb-0.5';
+      title.textContent = 'Invalid Game Title';
+      msg.className = 'text-xs text-slate-200 leading-relaxed';
+      msg.textContent = 'Please enter the correct game title (more than 2 characters).';
+
+      toast.classList.remove('translate-x-[150%]');
+      toast.classList.add('translate-x-0');
+
+      if (window._gameToastTimeout) clearTimeout(window._gameToastTimeout);
+      window._gameToastTimeout = setTimeout(window.dismissGameToast, 4000);
+      input.focus();
+    } else {
+      inner.className = 'p-4 rounded-2xl shadow-2xl border-2 border-emerald-500/80 bg-slate-900 text-white flex items-start space-x-3 rtl:space-x-reverse';
+      icon.className = 'w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold';
+      icon.innerHTML = '&#10003;';
+      title.className = 'font-bold text-xs uppercase tracking-wider text-emerald-400 mb-0.5';
+      title.textContent = 'Request Submitted!';
+      msg.className = 'text-xs text-slate-200 leading-relaxed';
+      msg.textContent = '"' + val + '" request received! Our NOC team will cache and preload the title within 4 hours.';
+
+      toast.classList.remove('translate-x-[150%]');
+      toast.classList.add('translate-x-0');
+
+      if (window._gameToastTimeout) clearTimeout(window._gameToastTimeout);
+      window._gameToastTimeout = setTimeout(window.dismissGameToast, 4000);
+      input.value = '';
+    }
+  };
+
+  window.dismissGameToast = function () {
+    const toast = document.getElementById('game-request-toast');
+    if (toast) {
+      toast.classList.remove('translate-x-0');
+      toast.classList.add('translate-x-[150%]');
+    }
+  };
+
   window.showAuraToast = function (message, type = 'success') {
-    // Popups suppressed as requested
+    const isSuccess = (type === 'success' || type === 'info');
+    const title = (type === 'info') ? 'AuraPlay Telemetry' : (isSuccess ? 'AuraPlay Confirmed' : 'System Notice');
+    if (window.showAuraPopup) {
+      window.showAuraPopup(title, message, isSuccess);
+    }
   };
 
   // --- Universal Form Feedback Mock ---
@@ -257,11 +315,138 @@
   }
 
   // --- Initialize when DOM is ready ---
+  
+
   document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
+        initTheme();
     initDirection();
     initMobileMenu();
     initForms();
     initDashboardSidebar();
   });
 })();
+
+// ========================================================
+// FAQ ACCORDION DROPDOWN SYSTEM ACROSS ALL PAGES
+// ========================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const faqDetails = document.querySelectorAll('details.faq-item, section details');
+  faqDetails.forEach(detail => {
+    detail.classList.add('faq-item');
+    const summary = detail.querySelector('summary');
+    if (summary) {
+      summary.addEventListener('click', (e) => {
+        const isOpening = !detail.hasAttribute('open');
+        if (isOpening) {
+          // Close other open FAQ items in the same container for clean accordion dropdown
+          const container = detail.closest('.space-y-4') || detail.parentElement;
+          if (container) {
+            container.querySelectorAll('details[open]').forEach(other => {
+              if (other !== detail) {
+                other.removeAttribute('open');
+              }
+            });
+          }
+        }
+      });
+    }
+  });
+});
+
+// ========================================================
+// UNIVERSAL TOP-RIGHT POPUP NOTIFICATION SYSTEM
+// ========================================================
+(function() {
+  let auraToastTimeout = null;
+
+  window.dismissAuraPopup = function() {
+    const toast = document.getElementById('aura-universal-toast');
+    if (toast) {
+      toast.classList.remove('translate-x-0');
+      toast.classList.add('translate-x-[150%]');
+    }
+    if (auraToastTimeout) {
+      clearTimeout(auraToastTimeout);
+      auraToastTimeout = null;
+    }
+  };
+
+  window.showAuraPopup = function(title, message, isSuccess = false) {
+    let toast = document.getElementById('aura-universal-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'aura-universal-toast';
+      toast.className = 'fixed top-5 right-5 z-[99999] transform translate-x-[150%] transition-transform duration-300 ease-out max-w-sm pointer-events-auto';
+      toast.innerHTML = `
+        <div id="aura-toast-inner" class="p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse">
+          <div id="aura-toast-icon" class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black"></div>
+          <div class="flex-1 text-left rtl:text-right">
+            <div id="aura-toast-title" class="font-bold text-xs uppercase tracking-wider mb-0.5"></div>
+            <div id="aura-toast-msg" class="text-xs leading-relaxed"></div>
+          </div>
+          <button type="button" onclick="window.dismissAuraPopup()" class="text-slate-400 hover:text-white p-1 focus:outline-none shrink-0" aria-label="Close notification">&#x2715;</button>
+        </div>
+      `;
+      document.body.appendChild(toast);
+    }
+
+    const inner = document.getElementById('aura-toast-inner');
+    const icon = document.getElementById('aura-toast-icon');
+    const titleEl = document.getElementById('aura-toast-title');
+    const msgEl = document.getElementById('aura-toast-msg');
+
+    if (inner && icon && titleEl && msgEl) {
+      if (isSuccess) {
+        inner.className = 'p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse bg-slate-900/95 border-emerald-500/80 text-white backdrop-blur-md shadow-emerald-500/20';
+        icon.className = 'w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black bg-emerald-500 text-slate-950';
+        icon.innerHTML = '&#x2713;';
+        titleEl.className = 'font-bold text-xs uppercase tracking-wider mb-0.5 text-emerald-400';
+      } else {
+        inner.className = 'p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse bg-slate-900/95 border-red-500/80 text-white backdrop-blur-md shadow-red-500/20';
+        icon.className = 'w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black bg-red-500 text-white';
+        icon.innerHTML = '&#x2715;';
+        titleEl.className = 'font-bold text-xs uppercase tracking-wider mb-0.5 text-red-400';
+      }
+
+      titleEl.textContent = title;
+      msgEl.className = 'text-xs text-slate-200 leading-relaxed';
+      msgEl.textContent = message;
+
+      toast.classList.remove('translate-x-[150%]');
+      toast.classList.add('translate-x-0');
+
+      if (auraToastTimeout) clearTimeout(auraToastTimeout);
+      auraToastTimeout = setTimeout(() => {
+        window.dismissAuraPopup();
+      }, 4500);
+    }
+  };
+})();
+
+
+// ========================================================
+// DASHBOARD BUTTON NOTIFICATION ENHANCEMENT
+// Ensures all buttons across dashboard pages trigger
+// proper top-right popup toast notifications.
+// ========================================================
+document.addEventListener('DOMContentLoaded', () => {
+  const isDashboardPage = window.location.pathname.includes('dashboard') || !!document.querySelector('.dash-nav-link');
+  if (!isDashboardPage) return;
+
+  const buttons = document.querySelectorAll('button:not(#theme-toggle):not(#rtl-toggle):not(#theme-toggle-drawer):not(#rtl-toggle-drawer):not(#sidebar-toggle-btn):not(#dashboard-sidebar-close):not([aria-label="Close notification"]):not([data-target])');
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(() => {
+        const toast = document.getElementById('aura-universal-toast');
+        const isShown = toast && toast.classList.contains('translate-x-0');
+        if (!isShown && window.showAuraPopup) {
+          const btnText = btn.innerText.trim().replace(/\s+/g, ' ');
+          if (btnText && btnText.length > 0 && !btnText.includes('✕') && !btnText.includes('RTL')) {
+            window.showAuraPopup('Action Confirmed', btnText + ' completed successfully.', true);
+          }
+        }
+      }, 150);
+    });
+  });
+});

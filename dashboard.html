@@ -260,9 +260,7 @@
               02:47:19
             </div>
             <div class="flex items-center justify-center space-x-2 rtl:space-x-reverse text-xs pt-1">
-              <button id="pause-session-btn" class="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold hover:bg-amber-500/30 transition-all">
-                Pause Time
-              </button>
+              <button onclick="window.showAuraPopup(\'Session Paused\', \'Station timer paused. Station is held reserved for 15 minutes.\', true);"  id="pause-session-btn" class="px-4 py-2 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold hover:bg-amber-500/30 transition-all">Pause Time</button>
               <button onclick="showAuraToast('Added 1 Hour from your banked balance!', 'success');" class="px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-black hover:bg-cyan-400 transition-all">
                 +1 Hr Extend
               </button>

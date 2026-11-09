@@ -147,7 +147,7 @@
           </button>
 
           <!-- Login CTA -->
-          <a href="login.html" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
+          <a href="login.html" class="hidden xl:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
             Sign In
           </a>
 
@@ -257,9 +257,9 @@
     <!-- SECTION 1: HERO & LIVE INSTANT SEARCH -->
     <section class="py-16 lg:py-24 bg-slate-100/90 dark:bg-darkslate-deep/90 border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
       <!-- Background Image with Theme-Adaptive Scrim Overlay -->
-      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <img src="assets/images/hero-bg-games.jpg" alt="AuraPlay Games Arena" class="w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-slate-50/35 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep backdrop-blur-[0.5px]"></div>
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container">
+        <img src="assets/images/hero-bg-games.jpg" alt="AuraPlay Games Arena" class="hero-bg-img w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/45 via-slate-50/25 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep "></div>
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
         <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
@@ -285,27 +285,36 @@
       </div>
     </section>
 
-    <!-- SECTION 2: INTERACTIVE FILTER TABS & PLATFORM SELECTOR -->
-    <section class="py-6 bg-white/95 dark:bg-darkslate-card/95 border-b border-slate-200 dark:border-darkslate-border sticky top-20 z-40 backdrop-blur-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center space-x-2 sm:space-x-3 rtl:space-x-reverse overflow-x-auto py-1">
-        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-cyan-500 text-black shadow-md transition-all whitespace-nowrap active-filter" data-category="all">
-          All Titles (15)
-        </button>
-        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="pc">
-          PC Competitive (RTX 4090)
-        </button>
-        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="console">
-          PS5 Pro & Switch
-        </button>
-        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="sim">
-          Sim Racing (Fanatec DD)
-        </button>
-        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="vr">
-          VR Holodeck
-        </button>
-        <button class="game-filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-darkslate-deep text-black dark:text-slate-300 hover:text-cyan-500 transition-all whitespace-nowrap" data-category="fighting">
-          Fighting Game Dojo
-        </button>
+    <!-- SECTION 2: PLATFORM HARDWARE & ZERO-LATENCY ARCHITECTURE -->
+    <section class="py-10 bg-white/95 dark:bg-darkslate-card/95 border-b border-slate-200 dark:border-darkslate-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border text-center space-y-1">
+            <span class="text-xl">🖥️</span>
+            <div class="font-bold text-xs text-black dark:text-white uppercase font-display">PC Esports Arena</div>
+            <div class="text-[11px] text-cyan-500 font-semibold">360Hz & 540Hz QD-OLED</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border text-center space-y-1">
+            <span class="text-xl">🏎️</span>
+            <div class="font-bold text-xs text-black dark:text-white uppercase font-display">Sim Motorsport</div>
+            <div class="text-[11px] text-purple-500 font-semibold">Triple 4K Fanatec DD</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border text-center space-y-1">
+            <span class="text-xl">🎮</span>
+            <div class="font-bold text-xs text-black dark:text-white uppercase font-display">PS5 Pro Suites</div>
+            <div class="text-[11px] text-cyan-500 font-semibold">4K Native 120 FPS</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border text-center space-y-1">
+            <span class="text-xl">🥽</span>
+            <div class="font-bold text-xs text-black dark:text-white uppercase font-display">VR Holodeck</div>
+            <div class="text-[11px] text-emerald-500 font-semibold">Wi-Fi 6E Wireless 360°</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border text-center space-y-1 col-span-2 md:col-span-1">
+            <span class="text-xl">🥋</span>
+            <div class="font-bold text-xs text-black dark:text-white uppercase font-display">Fighting Game Dojo</div>
+            <div class="text-[11px] text-pink-500 font-semibold">Optical Leverless Sticks</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -852,7 +861,7 @@
             <tbody class="divide-y divide-slate-100 dark:divide-darkslate-border text-black dark:text-slate-300 font-semibold text-xs sm:text-sm">
               <tr>
                 <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Valorant</td>
-                <td class="p-4 sm:p-5 text-cyan-500">RTX 4090 / i9-14900KS</td>
+                <td class="p-4 sm:p-5 text-cyan-600 dark:text-cyan-400 font-bold">RTX 4090 / i9-14900KS</td>
                 <td class="p-4 sm:p-5">1440p High</td>
                 <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">580 FPS</td>
                 <td class="p-4 sm:p-5 font-mono">420 FPS</td>
@@ -860,7 +869,7 @@
               </tr>
               <tr>
                 <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Counter-Strike 2</td>
-                <td class="p-4 sm:p-5 text-cyan-500">RTX 4090 / i9-14900KS</td>
+                <td class="p-4 sm:p-5 text-cyan-600 dark:text-cyan-400 font-bold">RTX 4090 / i9-14900KS</td>
                 <td class="p-4 sm:p-5">1440p Competitive</td>
                 <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">460 FPS</td>
                 <td class="p-4 sm:p-5 font-mono">310 FPS</td>
@@ -868,7 +877,7 @@
               </tr>
               <tr>
                 <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Tekken 8</td>
-                <td class="p-4 sm:p-5 text-purple-500">PS5 Pro Suite</td>
+                <td class="p-4 sm:p-5 text-cyan-600 dark:text-cyan-400 font-bold">PS5 Pro Suite</td>
                 <td class="p-4 sm:p-5">4K Native</td>
                 <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">60 FPS Locked</td>
                 <td class="p-4 sm:p-5 font-mono">60 FPS</td>
@@ -876,7 +885,7 @@
               </tr>
               <tr>
                 <td class="p-4 sm:p-5 font-bold text-black dark:text-white">Assetto Corsa Comp.</td>
-                <td class="p-4 sm:p-5 text-blue-500">Sim Triple 4K Rig</td>
+                <td class="p-4 sm:p-5 text-cyan-600 dark:text-cyan-400 font-bold">Sim Triple 4K Rig</td>
                 <td class="p-4 sm:p-5">11520 x 2160</td>
                 <td class="p-4 sm:p-5 font-mono text-emerald-500 font-bold">144 FPS</td>
                 <td class="p-4 sm:p-5 font-mono">118 FPS</td>
@@ -1004,11 +1013,23 @@
         <p class="text-black dark:text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">
           Members can request any title from Steam, Epic, or PlayStation. Our Network Operations Center will cache, verify, and preload the title onto our high-speed NVMe SAN within 4 hours.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-          <input type="text" placeholder="Enter game title or Steam URL..." class="px-5 py-3.5 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-xs text-black dark:text-white focus:outline-none focus:border-cyan-500 shadow-sm flex-1">
-          <button class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:from-cyan-400 hover:to-purple-500 transition-all">
+        <form id="custom-game-form" onsubmit="event.preventDefault(); submitGameRequest();" class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+          <input type="text" id="custom-game-input" placeholder="Enter game title or Steam URL..." class="px-5 py-3.5 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-xs text-black dark:text-white focus:outline-none focus:border-cyan-500 shadow-sm flex-1">
+          <button type="submit" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-extrabold text-xs uppercase tracking-wider shadow-md hover:from-cyan-400 hover:to-purple-500 transition-all">
             Submit Request
           </button>
+        </form>
+
+        <!-- Top-Right Popup Toast Notification Container -->
+        <div id="game-request-toast" class="fixed top-5 right-5 z-50 transform translate-x-[150%] transition-transform duration-300 ease-out max-w-sm pointer-events-auto">
+          <div id="game-toast-inner" class="p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse">
+            <div id="game-toast-icon" class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black"></div>
+            <div class="flex-1 text-left rtl:text-right">
+              <div id="game-toast-title" class="font-bold text-xs uppercase tracking-wider mb-0.5"></div>
+              <div id="game-toast-msg" class="text-xs leading-relaxed"></div>
+            </div>
+            <button type="button" onclick="dismissGameToast()" class="text-slate-400 hover:text-white p-1 focus:outline-none shrink-0" aria-label="Close notification">&#x2715;</button>
+          </div>
         </div>
       </div>
     </section>
@@ -1103,7 +1124,7 @@
         <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-widest border border-cyan-500/40">
           Ready For Your Next Match?
         </span>
-        <h2 class="text-4xl sm:text-5xl font-black font-display uppercase tracking-tight text-white">
+        <h2 style="color: #ffffff !important;" class="text-4xl sm:text-5xl font-black font-display uppercase tracking-tight text-white">
           Reserve Your Station & Launch Any Title in Seconds
         </h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -1243,6 +1264,62 @@
 
   <script src="assets/js/main.js"></script>
   <script>
+    // Custom Game Request Handler & Top-Right Popup Toast Notification
+    let gameToastTimeout = null;
+
+    function dismissGameToast() {
+      const toast = document.getElementById('game-request-toast');
+      if (toast) {
+        toast.classList.add('translate-x-[150%]');
+        toast.classList.remove('translate-x-0');
+      }
+      if (gameToastTimeout) {
+        clearTimeout(gameToastTimeout);
+        gameToastTimeout = null;
+      }
+    }
+
+    function submitGameRequest() {
+      const input = document.getElementById('custom-game-input');
+      const toast = document.getElementById('game-request-toast');
+      const inner = document.getElementById('game-toast-inner');
+      const icon = document.getElementById('game-toast-icon');
+      const title = document.getElementById('game-toast-title');
+      const msg = document.getElementById('game-toast-msg');
+
+      if (!input || !toast || !inner || !icon || !title || !msg) return;
+
+      const val = input.value.trim();
+
+      // Condition: Game title must be greater than 2 letters
+      if (val.length <= 2) {
+        inner.className = 'p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse bg-slate-900/95 border-red-500/80 text-white backdrop-blur-md shadow-red-500/20';
+        icon.className = 'w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black bg-red-500 text-white';
+        icon.innerHTML = '&#x2715;';
+        title.className = 'font-bold text-xs uppercase tracking-wider mb-0.5 text-red-400';
+        title.textContent = 'Invalid Game Title';
+        msg.className = 'text-xs text-slate-200 leading-relaxed';
+        msg.textContent = 'Please enter the correct game title (must be greater than 2 letters).';
+      } else {
+        inner.className = 'p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse bg-slate-900/95 border-emerald-500/80 text-white backdrop-blur-md shadow-emerald-500/20';
+        icon.className = 'w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black bg-emerald-500 text-slate-950';
+        icon.innerHTML = '&#x2713;';
+        title.className = 'font-bold text-xs uppercase tracking-wider mb-0.5 text-emerald-400';
+        title.textContent = 'Request Submitted!';
+        msg.className = 'text-xs text-slate-200 leading-relaxed';
+        msg.textContent = `"${val}" request received! Our NOC engineers will cache and preload it within 4 hours.`;
+        input.value = '';
+      }
+
+      toast.classList.remove('translate-x-[150%]');
+      toast.classList.add('translate-x-0');
+
+      if (gameToastTimeout) clearTimeout(gameToastTimeout);
+      gameToastTimeout = setTimeout(() => {
+        dismissGameToast();
+      }, 4500);
+    }
+
     // Platform Filter Logic for 15 Cards
     document.addEventListener('DOMContentLoaded', () => {
       const filterBtns = document.querySelectorAll('.game-filter-btn');

@@ -147,7 +147,7 @@
           </button>
 
           <!-- Login CTA -->
-          <a href="login.html" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
+          <a href="login.html" class="hidden xl:inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 transition-all shrink-0">
             Sign In
           </a>
 
@@ -257,9 +257,9 @@
     <!-- SECTION 1: HERO & 24/7 HELPDESK OVERVIEW -->
     <section class="py-16 lg:py-24 bg-slate-100 dark:bg-darkslate-deep border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
       <!-- Background Image with Theme-Adaptive Scrim Overlay -->
-      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <img src="assets/images/hero-bg-contact.png" alt="AuraPlay 24/7 Welcome Desk & Support Center" class="w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/60 via-slate-50/35 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep backdrop-blur-[0.5px]"></div>
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container">
+        <img src="assets/images/hero-bg-contact.png" alt="AuraPlay 24/7 Welcome Desk & Support Center" class="hero-bg-img w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/45 via-slate-50/25 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep "></div>
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
         <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
@@ -364,22 +364,22 @@
             <p class="text-xs text-black dark:text-slate-400">Our on-site systems engineers respond in under 15 minutes during operating hours.</p>
           </div>
 
-          <form data-aura-form data-success-msg="Message delivered! Our staff will respond shortly." class="space-y-4">
+          <form id="contact-transmission-form" onsubmit="event.preventDefault(); validateAndDispatchContact();" class="space-y-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold uppercase text-black dark:text-slate-400 mb-1.5">Name</label>
-                <input type="text" name="name" required minlength="2" placeholder="e.g. Alex Mercer" pattern="^[A-Za-z\s'-]{2,}$" title="Name must contain at least 2 characters and no numbers" oninput="this.value = this.value.replace(/[0-9]/g, '')" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500">
+                <input type="text" id="contact-name-input" name="name" required minlength="2" placeholder="e.g. Alex Mercer" pattern="^[A-Za-z\s'-]{2,}$" title="Name must contain at least 2 characters and no numbers" oninput="this.value = this.value.replace(/[0-9]/g, '')" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500">
               </div>
               <div>
                 <label class="block text-xs font-bold uppercase text-black dark:text-slate-400 mb-1.5">Email Address</label>
-                <input type="email" name="email" required placeholder="name@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address like name@gmail.com" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500">
+                <input type="email" id="contact-email-input" name="email" required placeholder="name@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email address like name@gmail.com" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500">
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold uppercase text-black dark:text-slate-400 mb-1.5">Phone Number</label>
-                <input type="tel" name="phone" required minlength="10" maxlength="10" placeholder="10-digit phone number (e.g. 9876543210)" pattern="[0-9]{10}" title="Phone number must be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500">
+                <input type="tel" id="contact-phone-input" name="phone" required minlength="10" maxlength="10" placeholder="10-digit phone number (e.g. 9876543210)" pattern="[0-9]{10}" title="Phone number must be exactly 10 digits" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500">
               </div>
               <div>
                 <label class="block text-xs font-bold uppercase text-black dark:text-slate-400 mb-1.5">Inquiry Department</label>
@@ -395,7 +395,7 @@
 
             <div>
               <label class="block text-xs font-bold uppercase text-black dark:text-slate-400 mb-1.5">Message / Details</label>
-              <textarea rows="4" required placeholder="Describe your inquiry, requested dates, squad size, or hardware requirements..." class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500"></textarea>
+              <textarea id="contact-msg-input" rows="4" required placeholder="Describe your inquiry, requested dates, squad size, or hardware requirements..." class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border text-black dark:text-white text-xs font-semibold focus:outline-none focus:border-cyan-500"></textarea>
             </div>
 
             <button type="submit" class="w-full py-4 rounded-xl text-center font-black uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 hover:scale-[1.01] shadow-xl shadow-cyan-500/25 transition-all text-xs">
@@ -658,24 +658,41 @@
         </div>
 
         <div class="space-y-4 text-xs sm:text-sm">
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-2">
-            <h4 class="font-bold text-black dark:text-white text-base">Is there an age limit to game at AuraPlay?</h4>
-            <p class="text-black dark:text-slate-400 leading-relaxed">
+          <details class="faq-item group rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border p-5 sm:p-6 transition-all">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-black dark:text-white text-sm sm:text-base select-none [&::-webkit-details-marker]:hidden">
+              <span>Is there an age limit to game at AuraPlay?</span>
+              <span class="w-8 h-8 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-center justify-center shrink-0 ml-3 rtl:mr-3 rtl:ml-0 text-cyan-500 transition-transform duration-200 group-open:rotate-180 faq-chevron">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="pt-3.5 mt-3 border-t border-slate-200 dark:border-darkslate-border/60 text-xs sm:text-sm text-black dark:text-slate-400 leading-relaxed">
               Gamers of all ages are welcome during day shifts (08:00 AM to 10:00 PM). Gamers under 16 must have parental consent on file. Overnight lock-in sessions (11:00 PM to 08:00 AM) are strictly 18+ with valid government photo ID.
-            </p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-2">
-            <h4 class="font-bold text-black dark:text-white text-base">Can I bring my own keyboard, mouse, and headset?</h4>
-            <p class="text-black dark:text-slate-400 leading-relaxed">
+            </div>
+          </details>
+
+          <details class="faq-item group rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border p-5 sm:p-6 transition-all">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-black dark:text-white text-sm sm:text-base select-none [&::-webkit-details-marker]:hidden">
+              <span>Can I bring my own keyboard, mouse, and headset?</span>
+              <span class="w-8 h-8 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-center justify-center shrink-0 ml-3 rtl:mr-3 rtl:ml-0 text-cyan-500 transition-transform duration-200 group-open:rotate-180 faq-chevron">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="pt-3.5 mt-3 border-t border-slate-200 dark:border-darkslate-border/60 text-xs sm:text-sm text-black dark:text-slate-400 leading-relaxed">
               Absolutely! Every station features convenient front-panel USB-C and USB-A 3.2 Gen 2 ports connected directly to the motherboard for zero-latency hot-swapping of your personal gear.
-            </p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border space-y-2">
-            <h4 class="font-bold text-black dark:text-white text-base">Can I bring sealed outside beverages?</h4>
-            <p class="text-black dark:text-slate-400 leading-relaxed">
+            </div>
+          </details>
+
+          <details class="faq-item group rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border p-5 sm:p-6 transition-all">
+            <summary class="flex items-center justify-between cursor-pointer list-none font-bold text-black dark:text-white text-sm sm:text-base select-none [&::-webkit-details-marker]:hidden">
+              <span>Can I bring sealed outside beverages?</span>
+              <span class="w-8 h-8 rounded-xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex items-center justify-center shrink-0 ml-3 rtl:mr-3 rtl:ml-0 text-cyan-500 transition-transform duration-200 group-open:rotate-180 faq-chevron">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="pt-3.5 mt-3 border-t border-slate-200 dark:border-darkslate-border/60 text-xs sm:text-sm text-black dark:text-slate-400 leading-relaxed">
               Sealed water bottles and sports drinks in spill-proof containers are permitted at battlestations. To safeguard our high-end electronics, open liquids and messy meals are not allowed at desk stations.
-            </p>
-          </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -823,5 +840,208 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+
+    <!-- Top-Right Popup Toast Notification Container for contact.html -->
+    <div id="contact-toast" class="fixed top-5 right-5 z-[100] transform translate-x-[150%] transition-transform duration-300 ease-out max-w-sm pointer-events-auto">
+      <div id="contact-toast-inner" class="p-4 rounded-2xl shadow-2xl border flex items-start space-x-3 rtl:space-x-reverse">
+        <div id="contact-toast-icon" class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-xs font-black"></div>
+        <div class="flex-1 text-left rtl:text-right">
+          <div id="contact-toast-title" class="font-bold text-xs uppercase tracking-wider mb-0.5"></div>
+          <div id="contact-toast-msg" class="text-xs leading-relaxed"></div>
+        </div>
+        <button type="button" onclick="dismissContactToast()" class="text-slate-400 hover:text-white p-1 focus:outline-none shrink-0" aria-label="Close notification">&#x2715;</button>
+      </div>
+    </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nameInput = document.getElementById('contact-name-input');
+      const emailInput = document.getElementById('contact-email-input');
+      const phoneInput = document.getElementById('contact-phone-input');
+      const msgInput = document.getElementById('contact-msg-input');
+
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
+      const phoneRegex = /^[0-9]{10}$/;
+
+      let isAdvancing = false;
+
+      // 1. Name Validation Helper
+      function isNameValid() {
+        const val = nameInput ? nameInput.value.trim() : '';
+        return val.length >= 2 && !/[0-9]/.test(val);
+      }
+
+      // 2. Email Validation Helper
+      function isEmailValid() {
+        const val = emailInput ? emailInput.value.trim() : '';
+        return emailRegex.test(val);
+      }
+
+      // 3. Phone Validation Helper
+      function isPhoneValid() {
+        const val = phoneInput ? phoneInput.value.trim() : '';
+        return phoneRegex.test(val);
+      }
+
+      // --- NAME FIELD LOGIC ---
+      if (nameInput) {
+        nameInput.addEventListener('input', () => {
+          nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+        });
+
+        nameInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            if (isNameValid()) {
+              isAdvancing = true;
+              if (emailInput) emailInput.focus();
+              setTimeout(() => { isAdvancing = false; }, 200);
+            } else {
+              window.showAuraPopup('Invalid Name', 'Name must contain at least 2 characters and cannot contain numbers.', false);
+              setTimeout(() => nameInput.focus(), 50);
+            }
+          }
+        });
+
+        nameInput.addEventListener('blur', () => {
+          if (isAdvancing) return;
+          const val = nameInput.value.trim();
+          if (val.length > 0 && !isNameValid()) {
+            window.showAuraPopup('Invalid Name', 'Name must contain at least 2 characters and cannot contain numbers.', false);
+            setTimeout(() => nameInput.focus(), 50);
+          } else if (isNameValid() && (!emailInput.value || !isEmailValid())) {
+            // Automatically advance to email address once correct name is entered
+            isAdvancing = true;
+            if (emailInput) emailInput.focus();
+            setTimeout(() => { isAdvancing = false; }, 200);
+          }
+        });
+      }
+
+      // --- EMAIL FIELD LOGIC ---
+      if (emailInput) {
+        emailInput.addEventListener('focus', () => {
+          if (isAdvancing) return;
+          if (!isNameValid()) {
+            window.showAuraPopup('Step 1 Required', 'Please enter your name first (at least 2 characters, no numbers).', false);
+            if (nameInput) nameInput.focus();
+          }
+        });
+
+        emailInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            if (!isNameValid()) {
+              window.showAuraPopup('Invalid Name', 'Please complete your name first.', false);
+              nameInput.focus();
+              return;
+            }
+            if (isEmailValid()) {
+              isAdvancing = true;
+              if (phoneInput) phoneInput.focus();
+              setTimeout(() => { isAdvancing = false; }, 200);
+            } else {
+              window.showAuraPopup('Invalid Email Address', 'Email address must follow the format name@gmail.com.', false);
+              setTimeout(() => emailInput.focus(), 50);
+            }
+          }
+        });
+
+        emailInput.addEventListener('blur', () => {
+          if (isAdvancing) return;
+          const val = emailInput.value.trim();
+          if (val.length > 0 && !isEmailValid()) {
+            window.showAuraPopup('Invalid Email Address', 'Email address must follow the format name@gmail.com.', false);
+            setTimeout(() => emailInput.focus(), 50);
+          } else if (isEmailValid() && (!phoneInput.value || !isPhoneValid())) {
+            // Automatically advance to phone once correct email is entered
+            isAdvancing = true;
+            if (phoneInput) phoneInput.focus();
+            setTimeout(() => { isAdvancing = false; }, 200);
+          }
+        });
+      }
+
+      // --- PHONE FIELD LOGIC ---
+      if (phoneInput) {
+        phoneInput.addEventListener('input', () => {
+          phoneInput.value = phoneInput.value.replace(/[^0-9]/g, '').slice(0, 10);
+        });
+
+        phoneInput.addEventListener('focus', () => {
+          if (isAdvancing) return;
+          if (!isNameValid()) {
+            window.showAuraPopup('Step 1 Required', 'Please enter your name first.', false);
+            if (nameInput) nameInput.focus();
+            return;
+          }
+          if (!isEmailValid()) {
+            window.showAuraPopup('Step 2 Required', 'Please enter a valid email address following name@gmail.com.', false);
+            if (emailInput) emailInput.focus();
+            return;
+          }
+        });
+
+        phoneInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            if (!isPhoneValid()) {
+              window.showAuraPopup('Invalid Phone Number', 'Mobile phone number must be exactly 10 digits.', false);
+              setTimeout(() => phoneInput.focus(), 50);
+            } else if (msgInput) {
+              msgInput.focus();
+            }
+          }
+        });
+
+        phoneInput.addEventListener('blur', () => {
+          if (isAdvancing) return;
+          const val = phoneInput.value.trim();
+          if (val.length > 0 && !isPhoneValid()) {
+            window.showAuraPopup('Invalid Phone Number', 'Mobile phone number must be exactly 10 digits.', false);
+            setTimeout(() => phoneInput.focus(), 50);
+          } else if (isPhoneValid() && msgInput && !msgInput.value.trim()) {
+            msgInput.focus();
+          }
+        });
+      }
+
+      // --- DISPATCH MESSAGE SUBMISSION ---
+      window.validateAndDispatchContact = function() {
+        if (!isNameValid()) {
+          window.showAuraPopup('Invalid Name', 'Name must contain at least 2 characters and cannot contain numbers.', false);
+          if (nameInput) nameInput.focus();
+          return false;
+        }
+
+        if (!isEmailValid()) {
+          window.showAuraPopup('Invalid Email Address', 'Email address must follow the format name@gmail.com.', false);
+          if (emailInput) emailInput.focus();
+          return false;
+        }
+
+        if (!isPhoneValid()) {
+          window.showAuraPopup('Invalid Phone Number', 'Mobile phone number must be exactly 10 digits.', false);
+          if (phoneInput) phoneInput.focus();
+          return false;
+        }
+
+        const msgVal = msgInput ? msgInput.value.trim() : '';
+        if (!msgVal || msgVal.length === 0) {
+          window.showAuraPopup('Message Required', 'Please enter your inquiry details or message.', false);
+          if (msgInput) msgInput.focus();
+          return false;
+        }
+
+        // On proper submission: Show success popup in top right
+        window.showAuraPopup('Transmission Delivered!', 'Your message has been sent to AuraPlay Command. Systems engineers will respond within 15 minutes.', true);
+        const form = document.getElementById('contact-transmission-form');
+        if (form) form.reset();
+        return true;
+      };
+    });
+  </script>
+
 </body>
 </html>
