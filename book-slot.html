@@ -255,22 +255,26 @@
 <main>
 
     <!-- SECTION 1: HERO & REAL-TIME BOOKING ENGINE -->
-    <section class="py-16 lg:py-20 bg-slate-100 dark:bg-darkslate-deep border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
+    <section class="py-16 lg:py-20 bg-darkslate-deep text-white border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
       <!-- Background Image with Theme-Adaptive Scrim Overlay -->
-      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container">
-        <img src="assets/images/tour-pc-arena-wide.jpg" alt="AuraPlay PC Arena Station Floor" class="hero-bg-img w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/45 via-slate-50/25 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep "></div>
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container bg-darkslate-deep">
+        <img src="assets/images/tour-pc-arena-wide.jpg" alt="AuraPlay PC Arena Station Floor" class="hero-bg-img w-full h-full object-cover object-center transform scale-105">
+        <div class="absolute inset-0 bg-black/35 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 pointer-events-none"></div>
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
-        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full hero-badge-glass text-xs font-black uppercase tracking-widest shadow-md">
           Interactive Floor Grid • Live Station Telemetry
         </span>
         <h1 class="text-4xl sm:text-6xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-tight hero-headline">
           Reserve Your <span>Battle Station</span> In Advance
         </h1>
-        <p class="text-black dark:text-white text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-bold hero-subtitle-boosted">
-          Select your preferred hardware tier, customize your monitor ergonomics, pick your favorite station on our live 70-rig floor map, and lock in guaranteed play time without queuing.
-        </p>
+        <!-- Hero Subtitle Reference Capsule -->
+        <div class="hero-capsule rounded-2xl sm:rounded-3xl p-4 sm:p-5 sm:px-6 max-w-2xl sm:max-w-3xl mx-auto">
+          <p class="text-sm sm:text-base leading-relaxed hero-subtitle-boosted text-center">
+            Select your preferred hardware tier, customize your monitor ergonomics, pick your favorite station on our live 70-rig floor map, and lock in guaranteed play time without queuing.
+          </p>
+        </div>
 
         <!-- Live Station Radar Counter -->
         <div class="inline-flex items-center justify-center space-x-6 rtl:space-x-reverse px-5 py-2.5 rounded-2xl bg-white/90 dark:bg-darkslate-card/90 backdrop-blur-md border border-slate-300 dark:border-slate-700 shadow-md text-xs sm:text-sm font-bold">
@@ -349,9 +353,9 @@
           </div>
           <!-- Legend -->
           <div class="flex items-center space-x-4 rtl:space-x-reverse text-xs font-semibold mt-3 md:mt-0">
-            <div class="flex items-center space-x-1.5"><span class="w-3.5 h-3.5 rounded bg-cyan-500"></span><span>Selected</span></div>
-            <div class="flex items-center space-x-1.5"><span class="w-3.5 h-3.5 rounded bg-slate-200 dark:bg-darkslate-card border border-slate-300 dark:border-darkslate-border"></span><span>Available</span></div>
-            <div class="flex items-center space-x-1.5"><span class="w-3.5 h-3.5 rounded bg-slate-400/40 opacity-40"></span><span>Occupied</span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-3.5 h-3.5 rounded bg-cyan-500 shadow-sm shadow-cyan-500/50 ring-1 ring-cyan-400/50"></span><span>Selected</span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-3.5 h-3.5 rounded bg-emerald-500 shadow-sm shadow-emerald-500/50 ring-1 ring-emerald-400/50"></span><span>Available</span></div>
+            <div class="flex items-center space-x-1.5"><span class="w-3.5 h-3.5 rounded bg-rose-500/80 border border-rose-500 shadow-sm shadow-rose-500/30 flex items-center justify-center text-[8px] text-white font-black leading-none">✕</span><span>Occupied</span></div>
           </div>
         </div>
 
@@ -359,16 +363,16 @@
         <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-xl">
           <div class="grid grid-cols-5 sm:grid-cols-10 gap-2 sm:gap-3 text-center">
             <!-- Row 1: Arena Alpha -->
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A01">A01</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A02">A02</button>
-            <button class="seat-btn py-3 rounded-xl border-2 border-cyan-500 bg-cyan-500 text-black font-mono text-xs font-black shadow-md" data-seat="A03">A03</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A04">A04</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border opacity-40 cursor-not-allowed bg-slate-200 dark:bg-slate-800 font-mono text-xs font-bold" disabled>A05</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border opacity-40 cursor-not-allowed bg-slate-200 dark:bg-slate-800 font-mono text-xs font-bold" disabled>A06</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A07">A07</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A08">A08</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A09">A09</button>
-            <button class="seat-btn py-3 rounded-xl border border-slate-300 dark:border-darkslate-border hover:border-cyan-500 bg-slate-50 dark:bg-darkslate-deep font-mono text-xs font-bold transition-all" data-seat="A10">A10</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A01">A01</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A02">A02</button>
+            <button class="seat-btn py-3 rounded-xl border-2 border-cyan-400 bg-cyan-500 text-slate-950 font-mono text-xs font-black shadow-lg shadow-cyan-500/30 ring-2 ring-cyan-400/50" data-seat="A03">A03</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A04">A04</button>
+            <button class="seat-btn py-3 rounded-xl border border-rose-500/40 bg-rose-500/10 dark:bg-rose-950/20 text-rose-500/60 line-through opacity-60 cursor-not-allowed font-mono text-xs font-bold" disabled title="Station Occupied">A05</button>
+            <button class="seat-btn py-3 rounded-xl border border-rose-500/40 bg-rose-500/10 dark:bg-rose-950/20 text-rose-500/60 line-through opacity-60 cursor-not-allowed font-mono text-xs font-bold" disabled title="Station Occupied">A06</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A07">A07</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A08">A08</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A09">A09</button>
+            <button class="seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm" data-seat="A10">A10</button>
           </div>
           <div class="mt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-black dark:text-slate-400 pt-4 border-t border-slate-100 dark:border-darkslate-border gap-2">
             <span>Currently Selected: <strong id="selected-seat-label" class="text-cyan-500 font-bold">Station A03 (Zone Alpha - 360Hz QD-OLED)</strong></span>
@@ -863,11 +867,9 @@
       seatBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           seatBtns.forEach(b => {
-            b.classList.remove('border-2', 'border-cyan-500', 'bg-cyan-500', 'text-black', 'shadow-md');
-            b.classList.add('border-slate-300', 'dark:border-darkslate-border', 'bg-slate-50', 'dark:bg-darkslate-deep', 'text-slate-900', 'dark:text-white');
+            b.className = 'seat-btn py-3 rounded-xl border border-emerald-500/40 hover:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 font-mono text-xs font-bold transition-all hover:scale-105 shadow-sm';
           });
-          btn.classList.add('border-2', 'border-cyan-500', 'bg-cyan-500', 'text-black', 'shadow-md');
-          btn.classList.remove('border-slate-300', 'dark:border-darkslate-border', 'bg-slate-50', 'dark:bg-darkslate-deep', 'text-slate-900', 'dark:text-white');
+          btn.className = 'seat-btn py-3 rounded-xl border-2 border-cyan-400 bg-cyan-500 text-slate-950 font-mono text-xs font-black shadow-lg shadow-cyan-500/30 ring-2 ring-cyan-400/50';
           const seatNum = btn.getAttribute('data-seat');
           if (seatLabel) {
             seatLabel.textContent = `Station ${seatNum} (Zone Alpha - 360Hz QD-OLED)`;

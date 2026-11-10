@@ -243,22 +243,26 @@
 <main>
 
     <!-- SECTION 1: HERO & PRICING PHILOSOPHY -->
-    <section class="py-16 lg:py-24 bg-slate-100 dark:bg-darkslate-deep border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
+    <section class="py-16 lg:py-24 bg-darkslate-deep text-white border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden">
       <!-- Background Image with Theme-Adaptive Scrim Overlay -->
-      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container">
-        <img src="assets/images/hero-bg-pricing.png" alt="AuraPlay Pricing Hardware" class="hero-bg-img w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/45 via-slate-50/25 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep "></div>
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container bg-darkslate-deep">
+        <img src="assets/images/hero-bg-pricing.png" alt="AuraPlay Pricing Hardware" class="hero-bg-img w-full h-full object-cover object-center transform scale-105">
+        <div class="absolute inset-0 bg-black/35 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 pointer-events-none"></div>
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
-        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full hero-badge-glass text-xs font-black uppercase tracking-widest shadow-md">
           Transparent Rates • Rollover Unused Minutes
         </span>
         <h1 class="text-4xl sm:text-6xl font-black font-display uppercase tracking-tight text-black dark:text-white leading-tight hero-headline">
           Pay For What You Play. <span>Zero Hidden Fees.</span>
         </h1>
-        <p class="text-black dark:text-white text-base sm:text-lg max-w-2xl mx-auto font-bold hero-subtitle-boosted">
-          Every pack grants full access to liquid-cooled RTX 4090 battle stations, 360Hz displays, low-jitter 10Gbps LAN, and our 250+ title local SAN storage library.
-        </p>
+        <!-- Hero Subtitle Reference Capsule -->
+        <div class="hero-capsule rounded-2xl sm:rounded-3xl p-4 sm:p-5 sm:px-6 max-w-2xl sm:max-w-3xl mx-auto">
+          <p class="text-sm sm:text-base leading-relaxed hero-subtitle-boosted text-center">
+            Every pack grants full access to liquid-cooled RTX 4090 battle stations, 360Hz displays, low-jitter 10Gbps LAN, and our 250+ title local SAN storage library.
+          </p>
+        </div>
 
         <!-- Quick Guarantee Badges -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 text-xs font-bold text-black dark:text-white">

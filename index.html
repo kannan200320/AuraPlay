@@ -258,12 +258,12 @@
 <main>
 
     <!-- ================= SECTION 1: HERO - NEON ARENA ================= -->
-    <section class="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-6 sm:py-8 lg:py-10 bg-mesh-light dark:bg-mesh-dark">
+    <section class="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden py-6 sm:py-8 lg:py-10 bg-darkslate-deep text-white">
       <!-- Background Image with Theme-Adaptive Scrim Overlay -->
-      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container">
-        <img src="assets/images/hero-bg-home1.png" alt="AuraPlay Arena Setup" class="hero-bg-img w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-50/55 via-slate-50/30 to-transparent dark:from-darkslate-deep/85 dark:via-darkslate-deep/50 dark:to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-50 dark:to-darkslate-deep"></div>
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container bg-darkslate-deep">
+        <img src="assets/images/hero-bg-home1.png" alt="AuraPlay Arena Setup" class="hero-bg-img w-full h-full object-cover object-center transform scale-105">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/45 pointer-events-none"></div>
       </div>
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-3xl pointer-events-none"></div>
@@ -273,30 +273,39 @@
           
           <div class="lg:col-span-7 space-y-3.5 lg:space-y-4 text-center lg:text-left rtl:lg:text-right">
 
+            <!-- Hero Reference Badge -->
+            <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full hero-badge-glass text-xs font-black uppercase tracking-widest shadow-md mb-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+              <span>NOW LIVE: 360HZ LIQUID-COOLED ARENA</span>
+            </div>
+
             <h1 class="text-2xl xs:text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-black font-display tracking-tight text-black dark:text-white uppercase leading-none hero-headline">
               Play Hard. <br>
               <span>Win Big. Repeat.</span>
             </h1>
 
-            <p class="text-sm sm:text-base lg:text-base xl:text-lg text-black dark:text-white max-w-2xl mx-auto lg:mx-0 font-bold leading-normal sm:leading-relaxed hero-subtitle-boosted">
-              Step into the ultimate competitive gaming arena. Custom liquid-cooled RTX 4090 battlestations, 360Hz QD-OLED monitors, zero-jitter 10 Gbps dedicated fiber, and an elite PC lounge built for champions.
-            </p>
+            <!-- Hero Subtitle Reference Capsule -->
+            <div class="hero-capsule rounded-2xl sm:rounded-3xl p-4 sm:p-5 max-w-2xl mx-auto lg:mx-0">
+              <p class="text-sm sm:text-base leading-relaxed hero-subtitle-boosted text-center lg:text-left rtl:lg:text-right">
+                Step into the ultimate competitive gaming arena. Custom liquid-cooled RTX 4090 battlestations, 360Hz QD-OLED monitors, zero-jitter 10 Gbps dedicated fiber, and an elite PC lounge built for champions.
+              </p>
+            </div>
 
             <!-- Hardware Spec Chips -->
             <div class="flex flex-wrap gap-2 justify-center lg:justify-start rtl:lg:justify-end pt-1">
-              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-bold text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
                 <span class="text-cyan-500">⚡</span>
                 <span>NVIDIA RTX 4090 24GB</span>
               </span>
-              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-bold text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
                 <span class="text-purple-500">🖥️</span>
                 <span>360Hz OLED Displays</span>
               </span>
-              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-bold text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
                 <span class="text-emerald-500">🌐</span>
                 <span>Dual 10Gbps Dedicated Fiber</span>
               </span>
-              <span class="px-2.5 py-1 rounded-lg bg-white/95 dark:bg-darkslate-card/95 backdrop-blur-md border border-slate-300 dark:border-slate-700 text-xs font-bold text-black dark:text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-white/20 text-xs font-bold text-white shadow-sm flex items-center space-x-1.5 rtl:space-x-reverse">
                 <span class="text-pink-500">💺</span>
                 <span>Herman Miller Embody Chairs</span>
               </span>
@@ -307,25 +316,25 @@
               <a href="book-slot.html" class="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-extrabold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-xl shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5 text-center">
                 Reserve PC Station Now
               </a>
-              <a href="games.html" class="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold text-black dark:text-slate-200 dark:text-white bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border hover:bg-slate-100 dark:hover:bg-darkslate-lighter transition-all text-center flex items-center justify-center space-x-2 rtl:space-x-reverse">
+              <a href="games.html" class="w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl text-sm sm:text-base font-bold text-white bg-slate-900/80 hover:bg-slate-800 border border-white/20 backdrop-blur-md transition-all text-center flex items-center justify-center space-x-2 rtl:space-x-reverse">
                 <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Browse 180+ Games</span>
               </a>
             </div>
 
             <!-- Fast Stats -->
-            <div class="grid grid-cols-3 gap-3 pt-3 border-t border-slate-200 dark:border-darkslate-border max-w-lg mx-auto lg:mx-0">
+            <div class="grid grid-cols-3 gap-3 pt-3 border-t border-white/15 max-w-lg mx-auto lg:mx-0">
               <div>
                 <div class="text-lg sm:text-2xl font-black font-display text-cyan-600 dark:text-cyan-400">70+</div>
-                <div class="text-[11px] sm:text-xs text-black dark:text-slate-400 font-semibold uppercase">Pro Battlestations</div>
+                <div class="text-[11px] sm:text-xs text-slate-300 font-semibold uppercase">Pro Battlestations</div>
               </div>
               <div>
                 <div class="text-lg sm:text-2xl font-black font-display text-purple-600 dark:text-purple-400">24/7</div>
-                <div class="text-[11px] sm:text-xs text-black dark:text-slate-400 font-semibold uppercase">Open Round Clock</div>
+                <div class="text-[11px] sm:text-xs text-slate-300 font-semibold uppercase">Open Round Clock</div>
               </div>
               <div>
                 <div class="text-lg sm:text-2xl font-black font-display text-pink-600 dark:text-pink-400">99.9%</div>
-                <div class="text-[11px] sm:text-xs text-black dark:text-slate-400 font-semibold uppercase">Uptime & 0 Lag</div>
+                <div class="text-[11px] sm:text-xs text-slate-300 font-semibold uppercase">Uptime & 0 Lag</div>
               </div>
             </div>
 
@@ -752,43 +761,49 @@
           <p class="text-black dark:text-slate-300 mt-3">Compete against regional talent on zero-latency LAN servers with cash prizes, trophies, and Twitch livestream casting.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="rounded-3xl p-6 bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all">
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-black bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-400">THIS SATURDAY • 6 PM</span>
-              <span class="text-sm font-extrabold text-amber-500">$1,500 Cash</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+          <div class="h-full rounded-3xl p-4 sm:p-5 lg:p-6 bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div class="flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between mb-4 gap-1.5">
+                <span class="px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-black bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-400 shrink-0">THIS SATURDAY • 6 PM</span>
+                <span class="text-xs sm:text-sm font-extrabold text-amber-500 shrink-0">$1,500 Cash</span>
+              </div>
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-black font-display uppercase text-black dark:text-white mb-2 min-h-[3.5rem] flex items-center leading-tight">Valorant 5v5 Open LAN</h3>
+              <p class="text-xs text-black dark:text-slate-400 mb-6 leading-relaxed flex-1 min-h-[3rem]">Double elimination bracket. 16 team cap. Casted on official AuraPlay Twitch with live spectator screens.</p>
             </div>
-            <h3 class="text-2xl font-black font-display uppercase text-black dark:text-white mb-2">Valorant 5v5 Open LAN</h3>
-            <p class="text-xs text-black dark:text-slate-400 mb-6 leading-relaxed">Double elimination bracket. 16 team cap. Casted on official AuraPlay Twitch with live spectator screens.</p>
-            <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-darkslate-border">
-              <span class="text-xs font-bold text-black dark:text-slate-400">12 / 16 Teams Registered</span>
-              <a href="book-slot.html" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white">Register Squad</a>
-            </div>
-          </div>
-
-          <div class="rounded-3xl p-6 bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all">
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-black bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-400">SUNDAY • 4 PM</span>
-              <span class="text-sm font-extrabold text-amber-500">$800 Cash</span>
-            </div>
-            <h3 class="text-2xl font-black font-display uppercase text-black dark:text-white mb-2">Tekken 8 Clash of Iron</h3>
-            <p class="text-xs text-black dark:text-slate-400 mb-6 leading-relaxed">1v1 double bracket on 65" OLED lounges with official Sanwa arcade fight sticks provided or bring your own.</p>
-            <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-darkslate-border">
-              <span class="text-xs font-bold text-black dark:text-slate-400">28 / 32 Players</span>
-              <a href="book-slot.html" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white">Enter Bracket</a>
+            <div class="pt-4 mt-auto border-t border-slate-100 dark:border-darkslate-border flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center justify-between gap-2.5">
+              <span class="text-xs font-bold text-black dark:text-slate-400 text-center sm:text-left md:text-center lg:text-left">12 / 16 Teams Registered</span>
+              <a href="book-slot.html" class="w-full sm:w-auto md:w-full lg:w-auto px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white whitespace-nowrap text-center shadow-md transition-all">Register Squad</a>
             </div>
           </div>
 
-          <div class="rounded-3xl p-6 bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all">
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-black bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-400">WEDNESDAY • 8 PM</span>
-              <span class="text-sm font-extrabold text-amber-500">$500 + Gear</span>
+          <div class="h-full rounded-3xl p-4 sm:p-5 lg:p-6 bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div class="flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between mb-4 gap-1.5">
+                <span class="px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-black bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-400 shrink-0">SUNDAY • 4 PM</span>
+                <span class="text-xs sm:text-sm font-extrabold text-amber-500 shrink-0">$800 Cash</span>
+              </div>
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-black font-display uppercase text-black dark:text-white mb-2 min-h-[3.5rem] flex items-center leading-tight">Tekken 8 Clash of Iron</h3>
+              <p class="text-xs text-black dark:text-slate-400 mb-6 leading-relaxed flex-1 min-h-[3rem]">1v1 double bracket on 65" OLED lounges with official Sanwa arcade fight sticks provided or bring your own.</p>
             </div>
-            <h3 class="text-2xl font-black font-display uppercase text-black dark:text-white mb-2">Sim Racing Apex Sprint</h3>
-            <p class="text-xs text-black dark:text-slate-400 mb-6 leading-relaxed">Spa-Francorchamps hotlap shootout in the Fanatec DD2 motion bays. Top 3 walk away with prizes.</p>
-            <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-darkslate-border">
-              <span class="text-xs font-bold text-black dark:text-slate-400">Open Qualifiers</span>
-              <a href="book-slot.html" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white">Book Lap Time</a>
+            <div class="pt-4 mt-auto border-t border-slate-100 dark:border-darkslate-border flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center justify-between gap-2.5">
+              <span class="text-xs font-bold text-black dark:text-slate-400 text-center sm:text-left md:text-center lg:text-left">28 / 32 Players</span>
+              <a href="book-slot.html" class="w-full sm:w-auto md:w-full lg:w-auto px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white whitespace-nowrap text-center shadow-md transition-all">Enter Bracket</a>
+            </div>
+          </div>
+
+          <div class="h-full rounded-3xl p-4 sm:p-5 lg:p-6 bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+            <div class="flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between mb-4 gap-1.5">
+                <span class="px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-black bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-400 shrink-0">WEDNESDAY • 8 PM</span>
+                <span class="text-xs sm:text-sm font-extrabold text-amber-500 shrink-0">$500 + Gear</span>
+              </div>
+              <h3 class="text-lg sm:text-xl lg:text-2xl font-black font-display uppercase text-black dark:text-white mb-2 min-h-[3.5rem] flex items-center leading-tight">Sim Racing Apex Sprint</h3>
+              <p class="text-xs text-black dark:text-slate-400 mb-6 leading-relaxed flex-1 min-h-[3rem]">Spa-Francorchamps hotlap shootout in the Fanatec DD2 motion bays. Top 3 walk away with prizes.</p>
+            </div>
+            <div class="pt-4 mt-auto border-t border-slate-100 dark:border-darkslate-border flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch sm:items-center md:items-stretch lg:items-center justify-between gap-2.5">
+              <span class="text-xs font-bold text-black dark:text-slate-400 text-center sm:text-left md:text-center lg:text-left">Open Qualifiers</span>
+              <a href="book-slot.html" class="w-full sm:w-auto md:w-full lg:w-auto px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white whitespace-nowrap text-center shadow-md transition-all">Book Lap Time</a>
             </div>
           </div>
         </div>
@@ -1341,4 +1356,3 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-

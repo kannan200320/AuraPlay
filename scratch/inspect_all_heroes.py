@@ -1,25 +1,25 @@
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
+import re, glob
 
-pages = ['index.html', 'player-lounge.html', 'about.html', 'games.html', 'pricing.html']
+pages = ['index.html', 'player-lounge.html', 'about.html', 'games.html', 'pricing.html', 'membership.html', 'book-slot.html', 'blog.html', 'contact.html']
 
 for p in pages:
-    print(f"\n==================== {p} HERO SECTION ====================")
-    with open(p, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-    
-    hero_start = -1
-    hero_end = -1
-    for idx, l in enumerate(lines):
-        if 'SECTION 1:' in l or 'SECTION 1 ' in l or 'hero' in l.lower() and '<section' in l:
-            if hero_start == -1:
-                hero_start = idx
-        if hero_start != -1 and ('SECTION 2:' in l or 'SECTION 2 ' in l):
-            hero_end = idx
-            break
-    
-    if hero_start != -1 and hero_end != -1:
-        for i in range(hero_start, min(hero_end + 1, len(lines))):
-            print(f"{i+1}: {lines[i]}", end='')
-    else:
-        print(f"Could not cleanly find hero bounds: start={hero_start}, end={hero_end}")
+    content = open(p, encoding='utf-8').read()
+    m = re.search(r'(<!--\s*={2,}\s*SECTION 1:[^>]*-->\s*<section[^>]*>.*?</section>)', content, re.DOTALL | re.IGNORECASE)
+    if m:
+        sec = m.group(1)
+        imgs = re.findall(r'<img[^>]*src=[\'"]([^\'"]+)[\'"][^>]*', sec)
+        overlays = re.findall(r'<div[^>]*class=[\'"]([^\'"]*bg-gradient[^\'"]*)[\'"]', sec)
+        titles = re.findall(r'<h1[^>]*>(.*?)</h1>', sec, re.DOTALL)
+        paragraphs = re.findall(r'<p[^>]*class=[\'"]([^\'"]*)[\'"][^>]*>(.*?)</p>', sec, re.DOTALL)
+        hero_bg_containers = re.findall(r'<div[^>]*hero-bg-container[^>]*>.*?</div>\s*</div>', sec, re.DOTALL)
+        print(f'=== {p} ===')
+        print('  Images:', imgs)
+        print('  Overlays:', overlays)
+        if titles:
+            clean_title = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', titles[0])).strip()
+            print('  Title:', clean_title[:80])
+        if paragraphs:
+            clean_p = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', '', paragraphs[0][1])).strip()
+            print('  P[0] class:', paragraphs[0][0])
+            print('  P[0] text:', clean_p[:100])
+        print()

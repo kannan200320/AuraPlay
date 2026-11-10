@@ -433,70 +433,73 @@ html:not(.dark) .text-black {
 }
 
 /* ========================================================
-   HIGH-CONTRAST HERO TYPOGRAPHY & VISIBILITY ENGINE
-   - Light mode: Pure 100% solid black text without white color or shadow
-   - Dark mode: Pure 100% white text with deep contrast drop-shadow
+   UNIFIED HERO TYPOGRAPHY & VISIBILITY ENGINE (BOTH MODES)
+   Light mode hero section features the exact same dark mode
+   text styling (brilliant white with drop shadow, dark glass capsule)
+   and deep, vibrant, highly visible background image.
    ======================================================== */
 .hero-headline,
 .hero-headline span,
-.hero-headline * {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-  text-shadow: none !important;
-  filter: none !important;
-}
-
+.hero-headline *,
 html.dark .hero-headline,
 html.dark .hero-headline span,
 html.dark .hero-headline * {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 25px rgba(0, 0, 0, 0.95) !important;
+  filter: none !important;
 }
 
 /* Standard Hero Subtitle for all pages */
-.hero-subtitle {
-  color: #000000 !important;
-  text-shadow: none !important;
-}
-
-html.dark .hero-subtitle {
-  color: #ffffff !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95), 0 2px 14px rgba(0, 0, 0, 0.9) !important;
-}
-
-/* Specifically intensified text color for the hero screenshot sentences in light mode */
-.hero-subtitle-boosted {
-  color: #000000 !important;
-  font-weight: 700 !important;
-  -webkit-text-stroke: 0.35px #000000;
-  text-shadow: 0 0 1px #000000 !important;
-}
-
+.hero-subtitle,
+html.dark .hero-subtitle,
+.hero-subtitle-boosted,
 html.dark .hero-subtitle-boosted {
-  color: #ffffff !important;
+  color: rgba(255, 255, 255, 0.95) !important;
   font-weight: 500 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
   -webkit-text-stroke: 0px transparent !important;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.95), 0 2px 14px rgba(0, 0, 0, 0.9) !important;
 }
 
-.hero-badge-glass {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-color: rgba(203, 213, 225, 0.9);
-  color: #000000 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
+.hero-badge-glass,
 html.dark .hero-badge-glass {
-  background-color: rgba(15, 23, 42, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-color: rgba(51, 65, 85, 0.9);
-  color: #ffffff !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
 }
+
+/* ========================================================
+   HERO SUBTITLE REFERENCE CAPSULE COMPONENT
+   Matches the reference hero design with a sleek, translucent
+   pill-card container and fine border for maximum legibility
+   over vibrant, highly visible background imagery in both themes.
+   ======================================================== */
+.hero-capsule,
+html.dark .hero-capsule {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
+  transition: all 0.25s ease;
+}
+
+.hero-capsule p,
+.hero-capsule .hero-subtitle,
+.hero-capsule .hero-subtitle-boosted,
+html.dark .hero-capsule p,
+html.dark .hero-capsule .hero-subtitle,
+html.dark .hero-capsule .hero-subtitle-boosted {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
+  -webkit-text-stroke: 0px transparent !important;
+  margin: 0 !important;
+}
+
 /* ========================================================
    FAQ ACCORDION & DROPDOWN COMPONENT
    ======================================================== */
@@ -545,21 +548,45 @@ html[dir="rtl"] #game-request-toast {
 
 
 /* ========================================================
-   HERO BACKGROUND IMAGE COLOR & CLARITY (LIGHT MODE ONLY)
-   Slightly increases background image color, saturation,
-   and sharpness in light mode so it is never washed out or blurry.
-   Dark mode remains completely untouched.
+   HERO BACKGROUND IMAGE CLARITY & VISIBILITY (BOTH MODES)
+   Ensures the hero background image is vibrant, rich, sharp,
+   and fully visible across the entire section in both light
+   and dark modes, exactly matching dark mode richness.
    ======================================================== */
-html:not(.dark) .hero-bg-img,
-html:not(.dark) .hero-bg-container img,
-html:not(.dark) section:first-of-type .absolute.inset-0 > img {
-  opacity: 0.96 !important;
-  filter: saturate(1.25) contrast(1.08) brightness(0.98) !important;
-  -webkit-filter: saturate(1.25) contrast(1.08) brightness(0.98) !important;
+.hero-bg-container {
+  background-color: #090D16 !important;
 }
 
-html:not(.dark) .hero-bg-container div[class*="backdrop-blur"],
-html:not(.dark) section:first-of-type .absolute.inset-0 > div[class*="backdrop-blur"] {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+.hero-bg-img,
+.hero-bg-container img,
+section:first-of-type .absolute.inset-0 > img {
+  opacity: 0.95 !important;
+  filter: saturate(1.25) contrast(1.1) brightness(0.96) !important;
+  -webkit-filter: saturate(1.25) contrast(1.1) brightness(0.96) !important;
+}
+
+/* ========================================================
+   DESKTOP DROPDOWN FREEZE-ON-CLICK & HOVER BRIDGE
+   ======================================================== */
+.relative.group.is-frozen > div[class*="absolute"],
+.relative.group.is-open > div[class*="absolute"] {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.relative.group.is-frozen .dropdown-toggle svg,
+.relative.group.is-open .dropdown-toggle svg {
+  transform: rotate(180deg) !important;
+}
+
+/* Invisible bridge across the mt-2 gap */
+.relative.group > div[class*="absolute"]::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 16px;
 }

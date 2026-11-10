@@ -230,11 +230,12 @@
 <main>
 
     <!-- ================= SECTION 1: ABOUT HERO (HARDWARE LAB) ================= -->
-    <section class="py-16 lg:py-24 bg-slate-100 dark:bg-darkslate-deep border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden transition-colors duration-300">
+    <section class="py-16 lg:py-24 bg-darkslate-deep text-white border-b border-slate-200 dark:border-darkslate-border relative overflow-hidden transition-colors duration-300">
       <!-- Background Image with Theme-Adaptive Scrim Overlay -->
-      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container">
-        <img src="assets/images/hero-bg-about.jpg" alt="AuraPlay Hardware Lab" class="hero-bg-img w-full h-full object-cover object-center opacity-80 sm:opacity-90 dark:opacity-90 filter dark:brightness-100 transform scale-105">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/45 via-slate-50/25 to-slate-50 dark:from-darkslate-deep/70 dark:via-darkslate-deep/45 dark:to-darkslate-deep "></div>
+      <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden hero-bg-container bg-darkslate-deep">
+        <img src="assets/images/hero-bg-about.jpg" alt="AuraPlay Hardware Lab" class="hero-bg-img w-full h-full object-cover object-center transform scale-105">
+        <div class="absolute inset-0 bg-black/35 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/50 pointer-events-none"></div>
       </div>
       <!-- Subtle Digital Glow Accents -->
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 blur-3xl pointer-events-none rounded-full"></div>
@@ -242,7 +243,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-6">
         
         <!-- Live Badge -->
-        <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/90 backdrop-blur-md border border-cyan-400 dark:border-cyan-500/50 text-cyan-950 dark:text-cyan-200 text-xs font-extrabold uppercase tracking-widest shadow-sm">
+        <div class="inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-1.5 rounded-full hero-badge-glass text-xs font-black uppercase tracking-widest shadow-md">
           <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
           <span>THE STORY BEHIND AURAPLAY • SUNNYVALE, CA</span>
         </div>
@@ -253,39 +254,41 @@
           <span>Engineered For Champions.</span>
         </h1>
 
-        <!-- Subtitle -->
-        <p class="text-base sm:text-lg text-black dark:text-white leading-relaxed max-w-2xl mx-auto font-bold hero-subtitle-boosted">
-          AuraPlay was founded by competitive gamers and hardware engineers to eliminate the latency and performance divide between casual enthusiasts and tier-one esports pros.
-        </p>
+        <!-- Hero Subtitle Reference Capsule -->
+        <div class="hero-capsule rounded-2xl sm:rounded-3xl p-4 sm:p-5 sm:px-6 max-w-2xl sm:max-w-3xl mx-auto">
+          <p class="text-sm sm:text-base leading-relaxed hero-subtitle-boosted text-center">
+            AuraPlay was founded by competitive gamers and hardware engineers to eliminate the latency and performance divide between casual enthusiasts and tier-one esports pros.
+          </p>
+        </div>
 
         <!-- 3 Core Founding Pillars (Clean Visual Cards) -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left rtl:text-right">
-          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-2">
+          <div class="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/15 shadow-sm space-y-2">
             <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-black text-sm">
               01
             </div>
-            <h3 class="font-black text-sm uppercase text-black dark:text-white font-display">Zero Hardware Gatekeeping</h3>
-            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+            <h3 class="font-black text-sm uppercase text-white font-display">Zero Hardware Gatekeeping</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
               Every station features liquid-cooled RTX 4090s and 360Hz QD-OLED displays open to every player.
             </p>
           </div>
 
-          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-2">
+          <div class="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/15 shadow-sm space-y-2">
             <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-black text-sm">
               02
             </div>
-            <h3 class="font-black text-sm uppercase text-black dark:text-white font-display">LAN Tournament Grade</h3>
-            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+            <h3 class="font-black text-sm uppercase text-white font-display">LAN Tournament Grade</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
               Dual 10Gbps dedicated optical fiber providing sub-4ms routing directly to NA competitive servers.
             </p>
           </div>
 
-          <div class="p-5 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border shadow-sm space-y-2">
+          <div class="p-5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/15 shadow-sm space-y-2">
             <div class="w-9 h-9 rounded-xl bg-pink-500/10 text-pink-600 dark:text-pink-400 flex items-center justify-center font-black text-sm">
               03
             </div>
-            <h3 class="font-black text-sm uppercase text-black dark:text-white font-display">Social Gaming Clubhouse</h3>
-            <p class="text-xs text-black dark:text-slate-400 leading-relaxed">
+            <h3 class="font-black text-sm uppercase text-white font-display">Social Gaming Clubhouse</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
               Console couch lounges and motion sim cockpits built for shoulder-to-shoulder camaraderie.
             </p>
           </div>
@@ -296,7 +299,7 @@
           <a href="book-slot.html" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-black text-xs uppercase tracking-wider text-black bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/25 transition-all">
             Reserve A Battlestation →
           </a>
-          <a href="pricing.html" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-black dark:text-slate-200 dark:text-white bg-white dark:bg-darkslate-card hover:bg-slate-50 dark:hover:bg-darkslate-lighter border border-slate-200 dark:border-darkslate-border transition-all">
+          <a href="pricing.html" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-slate-900/80 hover:bg-slate-800 border border-white/20 backdrop-blur-md transition-all">
             View Hour Passes
           </a>
         </div>
@@ -487,26 +490,26 @@
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
-            <div class="text-3xl mb-3">⚡</div>
-            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Zero Latency</h4>
-            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">No packet loss. No frame drops. No excuses. We test every station with hardware probes every morning.</p>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-stretch">
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex flex-col justify-start shadow-sm">
+            <div class="text-3xl mb-3 shrink-0">⚡</div>
+            <h4 class="text-base sm:text-lg font-bold font-display uppercase text-black dark:text-white min-h-[3.25rem] flex items-center leading-tight">Zero Latency</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed flex-1">No packet loss. No frame drops. No excuses. We test every station with hardware probes every morning.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
-            <div class="text-3xl mb-3">🤝</div>
-            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Zero Toxicity</h4>
-            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">Competitive passion is encouraged; hate and harassment are strictly banned. Everyone plays with dignity.</p>
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex flex-col justify-start shadow-sm">
+            <div class="text-3xl mb-3 shrink-0">🤝</div>
+            <h4 class="text-base sm:text-lg font-bold font-display uppercase text-black dark:text-white min-h-[3.25rem] flex items-center leading-tight">Zero Toxicity</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed flex-1">Competitive passion is encouraged; hate and harassment are strictly banned. Everyone plays with dignity.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
-            <div class="text-3xl mb-3">🧼</div>
-            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Hospital-Grade Clean</h4>
-            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">Keyboards, mice, and desk mats undergo continuous cleaning cycles throughout every shift.</p>
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex flex-col justify-start shadow-sm">
+            <div class="text-3xl mb-3 shrink-0">🧼</div>
+            <h4 class="text-base sm:text-lg font-bold font-display uppercase text-black dark:text-white min-h-[3.25rem] flex items-center leading-tight">Hospital-Grade Clean</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed flex-1">Keyboards, mice, and desk mats undergo continuous cleaning cycles throughout every shift.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border">
-            <div class="text-3xl mb-3">💡</div>
-            <h4 class="text-lg font-bold font-display uppercase text-black dark:text-white">Community First</h4>
-            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed">Every member is family. We host beginner workshops, collegiate scrims, and fun community mixers.</p>
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border flex flex-col justify-start shadow-sm">
+            <div class="text-3xl mb-3 shrink-0">💡</div>
+            <h4 class="text-base sm:text-lg font-bold font-display uppercase text-black dark:text-white min-h-[3.25rem] flex items-center leading-tight">Community First</h4>
+            <p class="text-xs text-black dark:text-slate-400 mt-2 leading-relaxed flex-1">Every member is family. We host beginner workshops, collegiate scrims, and fun community mixers.</p>
           </div>
         </div>
       </div>
@@ -525,31 +528,31 @@
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
-            <div>
-              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full shadow-sm">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3 min-h-[3.75rem]">
                 <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-bold text-lg shrink-0">🛡️</div>
-                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white">Hardware Sandbox Isolation</h4>
+                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white leading-tight">Hardware Sandbox Isolation</h4>
               </div>
-              <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Disk images are re-flashed via PXE boot between player sessions, wiping local memory and eliminating background scripts.</p>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed flex-1">Disk images are re-flashed via PXE boot between player sessions, wiping local memory and eliminating background scripts.</p>
             </div>
           </div>
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
-            <div>
-              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full shadow-sm">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3 min-h-[3.75rem]">
                 <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-lg shrink-0">⚖️</div>
-                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white">Tournament Referee Sanctioning</h4>
+                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white leading-tight">Tournament Referee Sanctioning</h4>
               </div>
-              <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Live match arbiters verify all user peripheral configs, rapid-trigger actuations, and enforce sanctioned rulebooks.</p>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed flex-1">Live match arbiters verify all user peripheral configs, rapid-trigger actuations, and enforce sanctioned rulebooks.</p>
             </div>
           </div>
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
-            <div>
-              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full shadow-sm">
+            <div class="flex flex-col flex-1">
+              <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3 min-h-[3.75rem]">
                 <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center font-bold text-lg shrink-0">⚡</div>
-                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white">Sub-Millisecond Ping Parity</h4>
+                <h4 class="text-sm font-bold font-display uppercase text-black dark:text-white leading-tight">Sub-Millisecond Ping Parity</h4>
               </div>
-              <p class="text-xs text-black dark:text-slate-400 leading-relaxed">Enterprise fiber switches equalize routing hops so every station competes on identical 4ms local gateway latency.</p>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed flex-1">Enterprise fiber switches equalize routing hops so every station competes on identical 4ms local gateway latency.</p>
             </div>
           </div>
         </div>
@@ -610,24 +613,30 @@
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
-            <div class="text-3xl mb-2">🥇</div>
-            <h4 class="font-bold font-display uppercase text-black dark:text-white">Team Apex Shadows</h4>
-            <div class="text-xs text-amber-500 font-bold">2025 Regional LAN Champions</div>
-            <p class="text-xs text-black dark:text-slate-400 mt-2">Trained 400+ hours inside AuraPlay Bootcamp Suite 01 before qualifying for Nationals.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center flex flex-col justify-between shadow-sm">
+            <div class="w-full flex flex-col items-center">
+              <div class="text-3xl mb-2 shrink-0">🥇</div>
+              <h4 class="font-bold font-display uppercase text-black dark:text-white min-h-[2rem] flex items-center justify-center leading-snug">Team Apex Shadows</h4>
+              <div class="text-xs text-amber-500 font-bold min-h-[2.5rem] flex items-center justify-center leading-tight mt-1">2025 Regional LAN Champions</div>
+            </div>
+            <p class="text-xs text-black dark:text-slate-400 mt-3 pt-3 border-t border-slate-100 dark:border-darkslate-border/50 leading-relaxed flex-1 flex items-center justify-center">Trained 400+ hours inside AuraPlay Bootcamp Suite 01 before qualifying for Nationals.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
-            <div class="text-3xl mb-2">🏎️</div>
-            <h4 class="font-bold font-display uppercase text-black dark:text-white">Liam 'Apex' Sterling</h4>
-            <div class="text-xs text-pink-500 font-bold">Sim Hotlap World Record #4</div>
-            <p class="text-xs text-black dark:text-slate-400 mt-2">Achieved a 1:41.22 lap at Spa-Francorchamps on our Fanatec DD2 motion rig.</p>
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center flex flex-col justify-between shadow-sm">
+            <div class="w-full flex flex-col items-center">
+              <div class="text-3xl mb-2 shrink-0">🏎️</div>
+              <h4 class="font-bold font-display uppercase text-black dark:text-white min-h-[2rem] flex items-center justify-center leading-snug">Liam 'Apex' Sterling</h4>
+              <div class="text-xs text-pink-500 font-bold min-h-[2.5rem] flex items-center justify-center leading-tight mt-1">Sim Hotlap World Record #4</div>
+            </div>
+            <p class="text-xs text-black dark:text-slate-400 mt-3 pt-3 border-t border-slate-100 dark:border-darkslate-border/50 leading-relaxed flex-1 flex items-center justify-center">Achieved a 1:41.22 lap at Spa-Francorchamps on our Fanatec DD2 motion rig.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center">
-            <div class="text-3xl mb-2">🥊</div>
-            <h4 class="font-bold font-display uppercase text-black dark:text-white">Kenji Sato</h4>
-            <div class="text-xs text-cyan-500 font-bold">Tekken 8 Summer Brawler Winner</div>
-            <p class="text-xs text-black dark:text-slate-400 mt-2">Undefeated 18-match streak in our Sunday Fighter lounge competitions.</p>
+          <div class="h-full p-6 rounded-2xl bg-white dark:bg-darkslate-card border border-slate-200 dark:border-darkslate-border text-center flex flex-col justify-between shadow-sm">
+            <div class="w-full flex flex-col items-center">
+              <div class="text-3xl mb-2 shrink-0">🥊</div>
+              <h4 class="font-bold font-display uppercase text-black dark:text-white min-h-[2rem] flex items-center justify-center leading-snug">Kenji Sato</h4>
+              <div class="text-xs text-cyan-500 font-bold min-h-[2.5rem] flex items-center justify-center leading-tight mt-1">Tekken 8 Summer Brawler Winner</div>
+            </div>
+            <p class="text-xs text-black dark:text-slate-400 mt-3 pt-3 border-t border-slate-100 dark:border-darkslate-border/50 leading-relaxed flex-1 flex items-center justify-center">Undefeated 18-match streak in our Sunday Fighter lounge competitions.</p>
           </div>
         </div>
       </div>
@@ -850,19 +859,19 @@
         <!-- 3 Role Opportunity Badges -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 items-stretch">
           
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full shadow-sm">
             <div class="flex-1 flex flex-col">
-              <div class="mb-3">
+              <div class="mb-3 shrink-0">
                 <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
                   FULL TIME • HARDWARE
                 </span>
               </div>
-              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2">Rig & System Engineer</h3>
-              <p class="text-xs text-black dark:text-slate-400 leading-relaxed min-h-[48px]">
+              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2 min-h-[3.25rem] flex items-center leading-tight">Rig & System Engineer</h3>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed flex-1">
                 Maintain custom water loops, diagnose GPU overclocking stability, and manage 10Gbps PXE network image deployment.
               </p>
             </div>
-            <div class="pt-4 mt-4 border-t border-slate-200 dark:border-darkslate-border/80">
+            <div class="pt-4 mt-auto border-t border-slate-200 dark:border-darkslate-border/80">
               <div class="text-xs font-bold text-cyan-500 flex items-center justify-between">
                 <span>Competitive Pay</span>
                 <span class="text-slate-400 dark:text-slate-600 font-normal">•</span>
@@ -871,19 +880,19 @@
             </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full shadow-sm">
             <div class="flex-1 flex flex-col">
-              <div class="mb-3">
+              <div class="mb-3 shrink-0">
                 <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
                   PART TIME • EVENTS
                 </span>
               </div>
-              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2">Tournament Arbiter</h3>
-              <p class="text-xs text-black dark:text-slate-400 leading-relaxed min-h-[48px]">
+              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2 min-h-[3.25rem] flex items-center leading-tight">Tournament Arbiter</h3>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed flex-1">
                 Manage live Challengers brackets, resolve in-game disputes, arbitrate LAN matches, and stream match scores on Twitch.
               </p>
             </div>
-            <div class="pt-4 mt-4 border-t border-slate-200 dark:border-darkslate-border/80">
+            <div class="pt-4 mt-auto border-t border-slate-200 dark:border-darkslate-border/80">
               <div class="text-xs font-bold text-purple-500 flex items-center justify-between">
                 <span>Weekend Shifts</span>
                 <span class="text-slate-400 dark:text-slate-600 font-normal">•</span>
@@ -892,19 +901,19 @@
             </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full">
+          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-darkslate-deep border border-slate-200 dark:border-darkslate-border flex flex-col justify-between h-full shadow-sm">
             <div class="flex-1 flex flex-col">
-              <div class="mb-3">
+              <div class="mb-3 shrink-0">
                 <span class="px-2.5 py-1 rounded-md text-[11px] font-black uppercase tracking-wider bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20">
                   FULL / PART TIME
                 </span>
               </div>
-              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2">Lounge Concierge</h3>
-              <p class="text-xs text-black dark:text-slate-400 leading-relaxed min-h-[48px]">
+              <h3 class="text-lg font-bold font-display uppercase text-black dark:text-white mb-2 min-h-[3.25rem] flex items-center leading-tight">Lounge Concierge</h3>
+              <p class="text-xs text-black dark:text-slate-400 leading-relaxed flex-1">
                 Welcome players, manage station check-ins, guide gamers on hardware tuning, and ensure pristine station cleanliness.
               </p>
             </div>
-            <div class="pt-4 mt-4 border-t border-slate-200 dark:border-darkslate-border/80">
+            <div class="pt-4 mt-auto border-t border-slate-200 dark:border-darkslate-border/80">
               <div class="text-xs font-bold text-pink-500 flex items-center justify-between">
                 <span>Flexible Hours</span>
                 <span class="text-slate-400 dark:text-slate-600 font-normal">•</span>
@@ -912,8 +921,6 @@
               </div>
             </div>
           </div>
-
-        </div>
 
         </div>
 

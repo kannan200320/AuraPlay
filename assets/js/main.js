@@ -70,7 +70,56 @@
   }
 
   // --- Mobile Navigation Drawer ---
-  function initMobileMenu() {
+    // --- Desktop Navigation Dropdown Freeze-on-Click ---
+  function initDesktopDropdowns() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+      const container = toggle.closest('.relative.group') || toggle.parentElement;
+      if (!container) return;
+
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const isCurrentlyOpen = container.classList.contains('is-frozen');
+
+        // Close all other dropdowns
+        document.querySelectorAll('.relative.group.is-frozen').forEach(other => {
+          if (other !== container) {
+            other.classList.remove('is-frozen', 'is-open');
+          }
+        });
+
+        // Toggle freeze state on this dropdown
+        if (isCurrentlyOpen) {
+          container.classList.remove('is-frozen', 'is-open');
+        } else {
+          container.classList.add('is-frozen', 'is-open');
+        }
+      });
+    });
+
+    // Close frozen dropdown on click outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.relative.group')) {
+        document.querySelectorAll('.relative.group.is-frozen').forEach(el => {
+          el.classList.remove('is-frozen', 'is-open');
+        });
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.relative.group.is-frozen').forEach(el => {
+          el.classList.remove('is-frozen', 'is-open');
+        });
+      }
+    });
+  }
+
+function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
     const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
@@ -321,6 +370,7 @@
         initTheme();
     initDirection();
     initMobileMenu();
+    initDesktopDropdowns();
     initForms();
     initDashboardSidebar();
   });
